@@ -67,6 +67,30 @@ if [ -z "$HTML_FOOTER" ]; then
   exit 1
 fi
 
+HTML_DIRECTORY_FILE="${8:-templates/directory.frag.html}"
+if [ ! -f "$HTML_DIRECTORY_FILE" ]; then
+  echo "ERROR: Directory template '$HTML_DIRECTORY_FILE' does not exist."
+  exit 1
+fi
+HTML_DIRECTORY=$(<"$HTML_DIRECTORY_FILE")
+if [ -z "$HTML_DIRECTORY" ]; then
+  echo "ERROR: Directory template is empty."
+  exit 1
+fi
+
+HTML_DIRECTORY_ITEM_FILE="${9:-templates/directory-item.frag.html}"
+if [ ! -f "$HTML_DIRECTORY_ITEM_FILE" ]; then
+  echo "ERROR: Directory item template '$HTML_DIRECTORY_ITEM_FILE' does not exist."
+  exit 1
+fi
+HTML_DIRECTORY_ITEM=$(<"$HTML_DIRECTORY_ITEM_FILE")
+if [ -z "$HTML_DIRECTORY_ITEM" ]; then
+  echo "ERROR: Directory item template is empty."
+  exit 1
+fi
+
+# Build Articles
+
 mkdir -p "$OUTPUT_DIRECTORY"
 
 find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
@@ -77,35 +101,30 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
   title=$(basename "${slug}")
   page_title="$title$PAGE_TITLE_SUFFIX"
 
-  # Encode path as URL-safe string (strip newlines to avoid trailing %0A)
+  # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
   url="$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
-  # Extract first non-empty line, remove quotes, and limit to 160 characters (meta description limit)
+  # Extract First Non-Empty Line, Remove Quotes, and Limit to 160 Characters (Meta Description Limit)
   description=$(grep -m 1 '.' "$filepath" | sed 's/[\"\x27]//g' | cut -c1-160)
 
   mkdir -p "$output_directory"
 
   body=$(pandoc "$filepath")
 
-  # Replace {{HEAD}} in the Layout HTML template with the contents of the Head HTML template
+  # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
   layout=$(echo "${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}")
-  # Replace {{BODY}} in the Layout HTML template with the contents of the Body HTML template
-  layout=$(echo "${layout//\{\{BODY\}\}/$HTML_BODY}")
-  # Replace {{FOOTER}} in the Layout HTML template with the contents of the Footer HTML template
-  layout=$(echo "${layout//\{\{FOOTER\}\}/$HTML_FOOTER}")
+  # Replace {{BODY}} in the Layout HTML Template with the Contents of the Body HTML Template
+  layout="${layout//\{\{BODY\}\}/$HTML_BODY}"
+  # Replace {{FOOTER}} in the Layout HTML Template with the Contents of the Footer HTML Template
+  layout="${layout//\{\{FOOTER\}\}/$HTML_FOOTER}"
 
-  # Replace {{PAGE_TITLE}} in the Layout HTML template with the filename of the Markdown file being processed
-  layout=$(echo "${layout//\{\{PAGE_TITLE\}\}/$page_title}")
-  # Replace {{TITLE}} in the Layout HTML template with the filename of the Markdown file being processed
-  layout=$(echo "${layout//\{\{TITLE\}\}/$title}")
-  # Replace {{DESCRIPTION}} in the Layout HTML template with the first line of content in the Markdown file being processed
-  layout=$(echo "${layout//\{\{DESCRIPTION\}\}/$description}")
-  # Replace {{MARKDOWN}} in the Layout HTML template with the contents of the Markdown file being processed
-  layout=$(echo "${layout//\{\{MARKDOWN\}\}/$body}")
-  # Replace {{URL}} in the Layout HTML template with the URL of the Markdown file being processed
-  layout=$(echo "${layout//\{\{URL\}\}/$url}")
+  layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
+  layout="${layout//\{\{TITLE\}\}/$title}"
+  layout="${layout//\{\{DESCRIPTION\}\}/$description}"
+  layout="${layout//\{\{MARKDOWN\}\}/$body}"
+  layout="${layout//\{\{URL\}\}/$url}"
 
-  # Replace {{YEAR}} in the Layout HTML template with the current year
-  layout=$(echo "${layout//\{\{YEAR\}\}/$(date +%Y)}")
+  # Replace {{YEAR}} in the Layout HTML Template with the Current Year
+  layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
 
   echo "$layout" > "$output_path"
 
@@ -115,6 +134,64 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
 
   echo "🔨🤠 GENERATED: $output_path"
 done
+
+# Build Directory Indexes
+
+find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
+  # Determine Articles by Counting Subfolders Within a Directory (Articles Only Contain a Single index.html)
+  if [ -f "$directory/index.html" ]; then
+    folder_count=$(find "$directory" -mindepth 1 -maxdepth 1 -type d | wc -l)
+    if [ "$folder_count" -eq 0 ]; then
+      continue
+    fi
+  fi
+
+  directory_relative="${directory#$OUTPUT_DIRECTORY/}"
+  page_title="${directory_relative}${PAGE_TITLE_SUFFIX}"
+
+  article_links=""
+  for subdirectory in "$directory"/*/; do
+    [ ! -d "$subdirectory" ] && continue # Skip Empty Directories
+
+    slug=$(basename "$subdirectory")
+    href="/${subdirectory}"
+
+    directory_item="${HTML_DIRECTORY_ITEM//\{\{ARTICLE_HREF\}\}/$href}"
+    directory_item="${directory_item//\{\{ARTICLE_TITLE\}\}/$slug}"
+    article_links+="$directory_item"
+  done
+
+  placeholder="<p class='size-full text-gray-500 text-center'>No articles found in this directory.</p>"
+  articles="${article_links:-$placeholder}"
+
+  body="${HTML_DIRECTORY//\{\{DIRECTORY\}\}/$directory}"
+  body="${body//\{\{ARTICLES\}\}/$articles}"
+
+  # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
+  layout=$(echo "${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}")
+  # Replace {{BODY}} in the Layout HTML Template with the Contents of the Populated Directory HTML Template
+  layout="${layout//\{\{BODY\}\}/$body}"
+  # Replace {{FOOTER}} in the Layout HTML Template with the Contents of the Footer HTML Template
+  layout="${layout//\{\{FOOTER\}\}/$HTML_FOOTER}"
+
+  layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
+  layout="${layout//\{\{DESCRIPTION\}\}/Directory index for $directory_relative}"
+  layout="${layout//\{\{URL\}\}/$directory_relative}"
+
+  # Replace {{YEAR}} in the Layout HTML Template with the Current Year
+  layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
+
+  output_path="$directory/index.html"
+  echo "$layout" > "$output_path"
+
+  if [ "$PRETTIER_ENABLED" = true ]; then
+    prettier --write "$output_path"
+  fi
+
+  echo "🔨🤠 GENERATED DIRECTORY: $output_path"
+done
+
+# Development Server
 
 if [ -n "$DEV_SERVER_PORT" ]; then
   if command -v serve &> /dev/null; then
