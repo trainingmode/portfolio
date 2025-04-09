@@ -71,9 +71,10 @@ mkdir -p "$OUTPUT_DIRECTORY"
 
 find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
   path_relative="${filepath#$INPUT_DIRECTORY/}"
-  output_path="$OUTPUT_DIRECTORY/${path_relative%.md}.html"
-  output_directory=$(dirname "$output_path")
-  title=$(basename "${path_relative%.md}")
+  slug="${path_relative%.md}"
+  output_directory="$OUTPUT_DIRECTORY/${slug}"
+  output_path="$output_directory/index.html"
+  title=$(basename "${slug}")
   page_title="$title$PAGE_TITLE_SUFFIX"
 
   # Encode path as URL-safe string (strip newlines to avoid trailing %0A)
