@@ -11,11 +11,11 @@
 
 PRETTIER_ENABLED=true
 
-INPUT_DIR="${1:-markdown}"
-OUTPUT_DIR="${2:-projects}"
+INPUT_DIRECTORY="${1:-markdown}"
+OUTPUT_DIRECTORY="${2:-projects}"
 
-if [ ! -d "$INPUT_DIR" ]; then
-  echo "ERROR: Input directory '$INPUT_DIR' does not exist."
+if [ ! -d "$INPUT_DIRECTORY" ]; then
+  echo "ERROR: Input directory '$INPUT_DIRECTORY' does not exist."
   exit 1
 fi
 
@@ -33,11 +33,11 @@ if [ -z "$HTML_LAYOUT" ]; then
   exit 1
 fi
 
-mkdir -p "$OUTPUT_DIR"
+mkdir -p "$OUTPUT_DIRECTORY"
 
-find "$INPUT_DIR" -name "*.md" | while read -r filepath; do
-  path_relative="${filepath#$INPUT_DIR/}"
-  output_path="$OUTPUT_DIR/${path_relative%.md}.html"
+find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
+  path_relative="${filepath#$INPUT_DIRECTORY/}"
+  output_path="$OUTPUT_DIRECTORY/${path_relative%.md}.html"
   output_directory=$(dirname "$output_path")
   title=$(basename "${path_relative%.md}")
 
