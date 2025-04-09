@@ -1,33 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{TITLE}}</title>
-    <meta name="description" content="{{DESCRIPTION}}" />
-
-    <meta property="og:title" content="{{TITLE}}" />
-    <meta property="og:description" content="{{DESCRIPTION}}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{URL}}" />
-    <!-- <meta property="og:image" content="{{IMAGE}}" /> -->
-    <meta property="og:image" content="img/og-image.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{TITLE}}" />
-    <meta name="twitter:description" content="{{DESCRIPTION}}" />
-    <!-- <meta name="twitter:image" content="{{IMAGE}}" /> -->
-    <meta name="twitter:image" content="img/og-image.png" />
-
-    <link rel="canonical" href="{{URL}}" />
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css" />
-  </head>
+  {{HEAD}}
   <body>
-    <main>{{BODY}}</main>
+    <nav>
+      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+        <span class="text-3xl">Λ</span><span class="tracking-tighter">lf</span
+        ><span class="tracking-[-0.035em]">r</span
+        ><span class="tracking-tighter">ed</span><span class="text-3xl">.</span>
+      </a>
+    </nav>
+    {{BODY}}
   </body>
-  <footer>
-    <p>&copy; 2025 Alfred R. Duarte. All rights reserved.</p>
-  </footer>
+  {{FOOTER}}
 </html>

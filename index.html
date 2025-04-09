@@ -9,7 +9,7 @@
       content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & entrepreneur."
     />
     <meta name="author" content="Alfred R. Duarte" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/public/favicon.ico" />
 
     <meta property="og:title" content="Alfred R. Duarte | Portfolio" />
     <meta
@@ -18,7 +18,7 @@
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://alfred.ad" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image" content="/public/og-image.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alfred R. Duarte | Portfolio" />
@@ -26,21 +26,37 @@
       name="twitter:description"
       content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & entrepreneur."
     />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="/public/og-image.png" />
 
     <link rel="canonical" href="https://alfred.ad" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/style.css" />
+
+    <link rel="stylesheet" href="/public/gfm-light.css" />
+    <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body>
+    <nav>
+      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+        <span class="text-3xl">Λ</span><span class="tracking-tighter">lf</span
+        ><span class="tracking-[-0.035em]">r</span
+        ><span class="tracking-tighter">ed</span><span class="text-3xl">.</span>
+      </a>
+    </nav>
     <main>
       <h1>Alfred R. Duarte</h1>
       <p>Multi-disciplinary creative, engineer, & entrepreneur.</p>
       <a href="projects/design/dataing/test%20ArtCle">test ArtCle</a>
     </main>
   </body>
-  <footer>
-    <p>&copy; 2025 Alfred R. Duarte. All rights reserved.</p>
+  <footer class="text-center">
+    <p>
+      &copy;
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <noscript>2025</noscript>
+      Alfred R. Duarte. All rights reserved.
+    </p>
   </footer>
 </html>
