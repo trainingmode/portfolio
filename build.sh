@@ -12,6 +12,7 @@
 PAGE_TITLE_SUFFIX=" | Alfred R. Duarte | Portfolio"
 
 PRETTIER_ENABLED=true
+PURGE_BUILD_FOLDER=true
 
 DEV_SERVER_PORT="${1}"
 
@@ -89,6 +90,13 @@ if [ -z "$HTML_DIRECTORY_ITEM" ]; then
   exit 1
 fi
 
+# Purge Build Folder
+
+if [ "$PURGE_BUILD_FOLDER" = true ]; then
+  echo "🧹😮‍💨 CLEANUP: Removing build folder '$OUTPUT_DIRECTORY'."
+  rm -rf "$OUTPUT_DIRECTORY"
+fi
+
 # Build Articles
 
 mkdir -p "$OUTPUT_DIRECTORY"
@@ -161,7 +169,7 @@ find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
     article_links+="$directory_item"
   done
 
-  placeholder="<p class='size-full text-gray-500 text-center'>No articles found in this directory.</p>"
+  placeholder="<p class='size-full text-neutral-500 text-center'>No articles found in this directory.</p>"
   articles="${article_links:-$placeholder}"
 
   body="${HTML_DIRECTORY//\{\{DIRECTORY\}\}/$directory}"

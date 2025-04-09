@@ -1,6 +1,8 @@
-<div class="flex gap-1 text-sm">
-  <span class="mr-1">Index of</span>
-  <a href="/"><pre>portfolio/</pre></a>
-  <a href="/{{DIRECTORY}}"><pre>{{DIRECTORY}}/</pre></a>
+<div class="flex flex-col gap-4 mt-2">
+  <div class="flex gap-2 text-xs items-baseline">
+    <span class="mr-1 text-sm">Index of</span>
+    <a href="/"><pre>portfolio/</pre></a>
+    <a href="/{{DIRECTORY}}"><pre>{{DIRECTORY}}/</pre></a>
+  </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 text-sm">{{ARTICLES}}</div>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 text-sm">{{ARTICLES}}</div>
