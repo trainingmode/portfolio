@@ -35,7 +35,7 @@ if (!("navigation" in window)) {
   );
 }
 
-const content = document.getElementById("content");
+const content = document.getElementById("markdown");
 
 const errorPage = {
   title: "404 - Not Found",
