@@ -1,11 +1,10 @@
-.markdown {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 45px;
+body {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
-
 @media (max-width: 767px) {
-  .markdown {
-    padding: 15px;
+  body {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
