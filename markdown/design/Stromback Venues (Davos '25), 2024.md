@@ -36,18 +36,18 @@ I determined a simple goal: tell visual stories that excite viewers & incentiviz
 
 #### Materials produced:
 
-- **`1`** logo (multiple iterations); Figma
-- **`1`** wordmark (multiple iterations); Figma
-- **`1`** deck; Figma
-- **`1`** deck; Google Slides
-- **`2`** deck themes; Figma
-- **`2`** deck themes; Google Slides
-- **`30`** slides; Figma
-- **`30`** slides; Google Slides
-- **`16`** slide themes; Figma
-- **`16`** slide themes; Google Slides
-- **`10`** concept slide themes; Figma
-- **`3`** large-scale print-ready graphics; designed in Figma, made print-ready in Illustrator
+- **`1`** **logo** (multiple iterations); _Figma_
+- **`1`** **wordmark** (multiple iterations); _Figma_
+- **`1`** **deck**; _Figma_
+- **`1`** **deck**; _Google Slides_
+- **`2`** **deck themes**; _Figma_
+- **`2`** **deck themes**; _Google Slides_
+- **`30`** **slides**; _Figma_
+- **`30`** **slides**; _Google Slides_
+- **`16`** **slide themes**; _Figma_
+- **`16`** **slide themes**; _Google Slides_
+- **`10`** concept **slide themes**; _Figma_
+- **`3`** large-scale **print-ready graphics**; designed in _Figma_, **made print-ready** in _Illustrator_
 
 #### Tools used:
 
