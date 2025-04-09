@@ -16,6 +16,8 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+
+  --color-primary: #e40b5a; /* #0969da */
 }
 
 .markdown .octicon {
@@ -55,7 +57,7 @@
 
 .markdown a {
   background-color: transparent;
-  color: #0969da;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
@@ -229,7 +231,7 @@
 .markdown [role="button"]:focus,
 .markdown input[type="radio"]:focus,
 .markdown input[type="checkbox"]:focus {
-  outline: 2px solid #0969da;
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
   box-shadow: none;
 }
@@ -245,7 +247,7 @@
 .markdown [role="button"]:focus-visible,
 .markdown input[type="radio"]:focus-visible,
 .markdown input[type="checkbox"]:focus-visible {
-  outline: 2px solid #0969da;
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
   box-shadow: none;
 }
@@ -839,7 +841,7 @@
   left: calc(1.5rem * -1);
   pointer-events: none;
   content: "";
-  border: 2px solid #0969da;
+  border: 2px solid var(--color-primary);
   border-radius: 6px;
 }
 
@@ -1074,11 +1076,11 @@
 }
 
 .markdown .markdown-alert.markdown-alert-note {
-  border-left-color: #0969da;
+  border-left-color: var(--color-primary);
 }
 
 .markdown .markdown-alert.markdown-alert-note .markdown-alert-title {
-  color: #0969da;
+  color: var(--color-primary);
 }
 
 .markdown .markdown-alert.markdown-alert-important {
