@@ -8,3 +8,7 @@ body {
     padding-right: 1rem;
   }
 }
+
+.markdown ul > li {
+  list-style-type: disc;
+}
