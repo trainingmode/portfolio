@@ -1,6 +1,9 @@
 body {
   padding-left: 2rem;
   padding-right: 2rem;
+
+  width: 100vw;
+  height: 100vh;
 }
 @media (max-width: 767px) {
   body {

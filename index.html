@@ -39,35 +39,31 @@
     <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body>
-    <nav>
+    <nav class="pt-1 flex justify-between items-center">
       <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
         <span class="text-3xl">Λ</span><span class="tracking-tighter">lf</span
         ><span class="tracking-[-0.035em]">r</span
         ><span class="tracking-tighter">ed</span><span class="text-3xl">.</span>
       </a>
+      <div class="flex gap-4 text-sm font-medium uppercase tracking-tight">
+        <a href="projects/design">Design</a>
+        <a href="projects/engineering">Engineering</a>
+      </div>
     </nav>
     <main>
       <h1>Alfred R. Duarte</h1>
       <p>Multi-disciplinary creative, engineer, & entrepreneur.</p>
-      <a href="projects/design/dataing/test%20ArtCle">test ArtCle</a>
-      <div class="grid grid-cols-2 gap-4">
-        <a href="projects/design" class="bg-gray-100 p-4 rounded-lg">
-          <h2>Design</h2>
-        </a>
-        <a href="projects/engineering" class="bg-gray-100 p-4 rounded-lg">
-          <h2>Engineering</h2>
-        </a>
+      <!-- <a href="projects/design/dataing/test%20ArtCle">test ArtCle</a> -->
       </div>
     </main>
   </body>
-  <footer class="text-center">
-    <p>
-      &copy;
+  <footer class="fixed bottom-1.5 w-full text-center">
+    <p class="text-[0.65rem] text-gray-500 cursor-default">
+      Articles, materials on this site produced by Alfred R. Duarte, 2020 -
       <script>
-        document.write(new Date().getFullYear());
+        document.write(new Date().getFullYear() + '.');
       </script>
-      <noscript>2025</noscript>
-      Alfred R. Duarte. All rights reserved.
+      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>

@@ -37,32 +37,35 @@
     <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body>
-    <nav>
+    <nav class="pt-1 flex justify-between items-center">
       <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
         <span class="text-3xl">Λ</span><span class="tracking-tighter">lf</span
         ><span class="tracking-[-0.035em]">r</span
         ><span class="tracking-tighter">ed</span><span class="text-3xl">.</span>
       </a>
+      <div class="flex gap-4 text-sm font-medium uppercase tracking-tight">
+        <a href="projects/design">Design</a>
+        <a href="projects/engineering">Engineering</a>
+      </div>
     </nav>
     <header>
       <h1>test ArtCle</h1>
     </header>
     <main
       id="markdown"
-      class="markdown max-w-[980px] mx-0 my-auto p-[15px] lg:p-[45px]"
+      class="markdown max-w-[980px] mx-0 my-auto p-[15px] md:p-[45px]"
     >
       <h1 id="yeesss"><em>YEesss</em></h1>
       <p>** HELLO **</p>
     </main>
   </body>
-  <footer>
-    <p>
-      &copy;
+  <footer class="fixed bottom-1.5 w-full text-center">
+    <p class="text-[0.65rem] text-gray-500 cursor-default">
+      Articles, materials on this site produced by Alfred R. Duarte, 2020 -
       <script>
-        document.write(new Date().getFullYear());
+        document.write(new Date().getFullYear() + ".");
       </script>
-      <noscript>2025</noscript>
-      Alfred R. Duarte. All rights reserved.
+      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>
