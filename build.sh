@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/opt/homebrew/bin/bash
 
 # chmod +x build.sh
 # ./build.sh
@@ -16,6 +16,7 @@ PURGE_BUILD_FOLDER=true
 
 DOMAIN="https://alfred.ad"
 DEFAULT_META_IMAGE="/public/og-image.png"
+DEFAULT_ARTICLE_IMAGE=""
 
 DEV_SERVER_PORT="${1}"
 
@@ -102,9 +103,11 @@ fi
 
 # Build Articles
 
+declare -A article_images
+
 mkdir -p "$OUTPUT_DIRECTORY"
 
-find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
+while read -r filepath; do
   path_relative="${filepath#$INPUT_DIRECTORY/}"
   slug="${path_relative%.md}"
   output_directory="$OUTPUT_DIRECTORY/${slug}"
@@ -123,6 +126,8 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
     meta_image=$(echo "$first_line" | sed -n 's/.*](\(.*\))/\1/p') # Extract the URL Between the )[ and ] Character Sequences
     # Extract the Second Non-Empty Line as the Description
     description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
+    # Store Extracted Article Image for Directory Item
+    article_images["$output_directory"]="$meta_image"
   else
     meta_image="$DEFAULT_META_IMAGE"
   fi
@@ -156,11 +161,11 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
   fi
 
   echo "🔨🤠 GENERATED: $output_path"
-done
+done < <(find "$INPUT_DIRECTORY" -name "*.md")
 
 # Build Directory Indexes
 
-find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
+while read -r directory; do
   # Determine Articles by Counting Subfolders Within a Directory (Articles Only Contain a Single index.html)
   if [ -f "$directory/index.html" ]; then
     folder_count=$(find "$directory" -mindepth 1 -maxdepth 1 -type d | wc -l)
@@ -179,10 +184,17 @@ find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
     slug=$(basename "$subdirectory")
     href="/${subdirectory}"
 
+    article_image="${article_images["${subdirectory%/}"]}"
+    if [ -z "$article_image" ]; then
+      article_image="$DEFAULT_ARTICLE_IMAGE"
+    fi
+
     directory_item="${HTML_DIRECTORY_ITEM//\{\{ARTICLE_HREF\}\}/$href}"
     directory_item="${directory_item//\{\{ARTICLE_TITLE\}\}/$slug}"
+    directory_item="${directory_item//\{\{ARTICLE_IMAGE\}\}/$article_image}"
     article_links+="$directory_item"
   done
+  
 
   placeholder="<p class='size-full text-neutral-500 text-center'>No articles found in this directory.</p>"
   articles="${article_links:-$placeholder}"
@@ -214,7 +226,7 @@ find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
   fi
 
   echo "🔨🤠 GENERATED DIRECTORY: $output_path"
-done
+done < <(find "$OUTPUT_DIRECTORY" -type d)
 
 # Development Server
 

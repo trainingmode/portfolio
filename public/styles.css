@@ -8,3 +8,7 @@ body {
     padding-right: 1rem;
   }
 }
+
+img[src=""] {
+  display: none;
+}
