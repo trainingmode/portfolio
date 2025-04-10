@@ -14,6 +14,7 @@ PAGE_TITLE_SUFFIX=" | Alfred R. Duarte | Portfolio"
 PRETTIER_ENABLED=true
 PURGE_BUILD_FOLDER=true
 
+DOMAIN="https://alfred.ad"
 DEFAULT_META_IMAGE="/public/og-image.png"
 
 DEV_SERVER_PORT="${1}"
@@ -112,7 +113,7 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
   page_title="$title$PAGE_TITLE_SUFFIX"
 
   # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
-  url="$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
+  url="$DOMAIN/$OUTPUT_DIRECTORY/$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
   # Extract First Non-Empty Line, Remove Quotes
   first_line=$(grep -m 1 '.' "$filepath" | sed 's/[\"\x27]//g')
   # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
@@ -146,7 +147,7 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
   layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
   # Replace {{IMAGE}} in the Layout HTML Template with the Meta Image
-  layout="${layout//\{\{IMAGE\}\}/$meta_image}"
+  layout="${layout//\{\{IMAGE\}\}/$DOMAIN$meta_image}"
 
   echo "$layout" > "$output_path"
 
@@ -202,6 +203,8 @@ find "$OUTPUT_DIRECTORY" -type d | while read -r directory; do
 
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
   layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
+  # Replace {{IMAGE}} in the Layout HTML Template with the Default Meta Image
+  layout="${layout//\{\{IMAGE\}\}/$DOMAIN$DEFAULT_META_IMAGE}"
 
   output_path="$directory/index.html"
   echo "$layout" > "$output_path"
