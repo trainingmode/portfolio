@@ -14,6 +14,8 @@ PAGE_TITLE_SUFFIX=" | Alfred R. Duarte | Portfolio"
 PRETTIER_ENABLED=true
 PURGE_BUILD_FOLDER=true
 
+DEFAULT_META_IMAGE="/public/og-image.png"
+
 DEV_SERVER_PORT="${1}"
 
 INPUT_DIRECTORY="${2:-markdown}"
@@ -111,8 +113,18 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
 
   # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
   url="$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
-  # Extract First Non-Empty Line, Remove Quotes, and Limit to 160 Characters (Meta Description Limit)
-  description=$(grep -m 1 '.' "$filepath" | sed 's/[\"\x27]//g' | cut -c1-160)
+  # Extract First Non-Empty Line, Remove Quotes
+  first_line=$(grep -m 1 '.' "$filepath" | sed 's/[\"\x27]//g')
+  # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
+  description="${first_line:0:160}"
+  # Use First Line as Hero Image if Starts with ![
+  if [ "${first_line:0:2}" = "![" ]; then
+    meta_image=$(echo "$first_line" | sed -n 's/.*](\(.*\))/\1/p') # Extract the URL Between the )[ and ] Character Sequences
+    # Extract the Second Non-Empty Line as the Description
+    description=$(grep -m 2 '.' "$filepath" | sed 's/[\"\x27]//g' | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
+  else
+    meta_image="$DEFAULT_META_IMAGE"
+  fi
 
   mkdir -p "$output_directory"
 
@@ -133,6 +145,8 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
 
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
   layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
+  # Replace {{IMAGE}} in the Layout HTML Template with the Meta Image
+  layout="${layout//\{\{IMAGE\}\}/$meta_image}"
 
   echo "$layout" > "$output_path"
 
