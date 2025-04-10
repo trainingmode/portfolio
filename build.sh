@@ -3,6 +3,9 @@
 # chmod +x build.sh
 # ./build.sh
 
+# > Note: Requires Bash 4
+# >> brew install bash
+
 # > Note: Requires pandoc.
 # >> brew install pandoc
 
