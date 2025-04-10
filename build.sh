@@ -114,15 +114,15 @@ find "$INPUT_DIRECTORY" -name "*.md" | while read -r filepath; do
 
   # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
   url="$DOMAIN/$OUTPUT_DIRECTORY/$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
-  # Extract First Non-Empty Line, Remove Quotes
-  first_line=$(grep -m 1 '.' "$filepath" | sed 's/[\"\x27]//g')
+  # Extract First Non-Empty Line
+  first_line=$(grep -m 1 '.' "$filepath")
   # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
   description="${first_line:0:160}"
   # Use First Line as Hero Image if Starts with ![
   if [ "${first_line:0:2}" = "![" ]; then
     meta_image=$(echo "$first_line" | sed -n 's/.*](\(.*\))/\1/p') # Extract the URL Between the )[ and ] Character Sequences
     # Extract the Second Non-Empty Line as the Description
-    description=$(grep -m 2 '.' "$filepath" | sed 's/[\"\x27]//g' | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
+    description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
   else
     meta_image="$DEFAULT_META_IMAGE"
   fi
