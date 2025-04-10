@@ -83,6 +83,17 @@ if [ -z "$HTML_DIRECTORY" ]; then
   exit 1
 fi
 
+HTML_DIRECTORY_CRUMB_FILE="${9:-templates/directory-crumb.frag.html}"
+if [ ! -f "$HTML_DIRECTORY_CRUMB_FILE" ]; then
+  echo "ERROR: Directory crumb template '$HTML_DIRECTORY_CRUMB_FILE' does not exist."
+  exit 1
+fi
+HTML_DIRECTORY_CRUMB=$(<"$HTML_DIRECTORY_CRUMB_FILE")
+if [ -z "$HTML_DIRECTORY_CRUMB" ]; then
+  echo "ERROR: Directory crumb template is empty."
+  exit 1
+fi
+
 HTML_DIRECTORY_ITEM_FILE="${9:-templates/directory-item.frag.html}"
 if [ ! -f "$HTML_DIRECTORY_ITEM_FILE" ]; then
   echo "ERROR: Directory item template '$HTML_DIRECTORY_ITEM_FILE' does not exist."
@@ -199,7 +210,22 @@ while read -r directory; do
   placeholder="<p class='size-full text-neutral-500 text-center'>No articles found in this directory.</p>"
   articles="${article_links:-$placeholder}"
 
-  body="${HTML_DIRECTORY//\{\{DIRECTORY\}\}/$directory}"
+  # Breadcrumbs
+  crumbs=()
+  directory_path="$directory"
+  while [[ -n "$directory_path" && "$directory_path" != "/" && "$directory_path" != "." ]]; do # Not Empty, Not Root or Current Directory
+    directory_name=$(basename "$directory_path")
+    # Replace {{DIRECTORY_HREF}} in the Directory Crumb HTML Template with the Full Directory Path
+    crumb="${HTML_DIRECTORY_CRUMB//\{\{DIRECTORY_HREF\}\}/$directory_path}"
+    # Replace {{DIRECTORY_NAME}} in the Directory Crumb HTML Template with the Directory Name
+    crumb="${crumb//\{\{DIRECTORY_NAME\}\}/$directory_name}"
+    crumbs=("$crumb" "${crumbs[@]}")
+    # Trim the Directory Name from the Directory Path
+    directory_path=$(dirname "$directory_path")
+  done
+  echo "CRUMBS: ${crumbs[@]}"HTML_DIRECTORY_CRUMB
+
+  body="${HTML_DIRECTORY//\{\{CRUMBS\}\}/${crumbs[@]}}"
   body="${body//\{\{ARTICLES\}\}/$articles}"
 
   # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
