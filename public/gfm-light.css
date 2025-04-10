@@ -114,12 +114,6 @@
   top: -0.5em;
 }
 
-.markdown figure {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .markdown img {
   border-style: none;
   max-width: 100%;
@@ -136,7 +130,16 @@
 }
 
 .markdown figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   margin: 1em 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .markdown figure {
+    margin: 1em 0.5rem;
+  }
 }
 
 .markdown hr {
