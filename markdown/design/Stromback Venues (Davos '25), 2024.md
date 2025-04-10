@@ -1,3 +1,5 @@
+![_AI Summit, Davos 2025_](/public/photos/stromback/ai-summit-panel-2025.png)
+
 # Stromback Venues/World Economic Forum Davos 2025
 
 > **November** - **December 2024**

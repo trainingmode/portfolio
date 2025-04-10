@@ -114,10 +114,17 @@
   top: -0.5em;
 }
 
+.markdown figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .markdown img {
   border-style: none;
   max-width: 100%;
   box-sizing: content-box;
+  border-radius: 0.65rem;
 }
 
 .markdown code,
@@ -321,7 +328,8 @@
   margin-bottom: 10px;
 }
 
-.markdown blockquote {
+.markdown blockquote,
+.markdown figcaption {
   margin: 0;
   padding: 0 1em;
   color: #59636e;
