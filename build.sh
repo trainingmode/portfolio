@@ -146,7 +146,7 @@ while read -r filepath; do
   layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
   layout="${layout//\{\{TITLE\}\}/$title}"
   layout="${layout//\{\{DESCRIPTION\}\}/$description}"
-  layout="${layout//\{\{MARKDOWN\}\}/$body}"
+  layout="${layout//\{\{MARKDOWN\}\}/"$body"}"
   layout="${layout//\{\{URL\}\}/$url}"
 
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
