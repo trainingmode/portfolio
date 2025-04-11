@@ -226,9 +226,16 @@ while read -r directory; do
     # Trim the Directory Name from the Directory Path
     directory_path=$(dirname "$directory_path")
   done
-  echo "CRUMBS: ${crumbs[@]}"HTML_DIRECTORY_CRUMB
 
-  body="${HTML_DIRECTORY//\{\{CRUMBS\}\}/${crumbs[@]}}"
+  # Check if Directory Template Exists in Relative Directory Inside templates/
+  directory_template_path="templates/$directory_relative/directory.frag.html"
+  if [ -f "$directory_template_path" ]; then
+    directory_template=$(<"$directory_template_path")
+  else
+    directory_template="$HTML_DIRECTORY"
+  fi
+
+  body="${directory_template//\{\{CRUMBS\}\}/${crumbs[@]}}"
   body="${body//\{\{ARTICLES\}\}/$articles}"
 
   # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
