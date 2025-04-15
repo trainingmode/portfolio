@@ -1,6 +1,6 @@
-![_AI Summit, Davos 2025_](/public/photos/stromback/ai-summit-panel-2025.png)
+![_Stromback Venues @ Davos 2025, **2024**_](/public/photos/stromback/stromback-davos.png)
 
-# Stromback Venues/World Economic Forum Davos 2025
+# Stromback Venues, World Economic Forum 2025
 
 > **November** - **December 2024**
 
@@ -10,11 +10,11 @@
 
 After my initial meetings with the clients, one requirement emerged: _design for the uber-wealthy & heads-of-state_.
 
-**Stromback Venues** provides venue leasing in **Davos, Switzerland** during the [World Economic Forum](https://www.weforum.org/).
+**Stromback Venues** provides venue leasing in **Davos, Switzerland** during the [World Economic Forum](https://www.weforum.org/ "The World Economic Forum").
 
 Decks were shown to business & political leaders, including **Elon Musk**, **BlackRock COO**, and **US government officials**.
 
-Decks were used in closing _**`25m`** **in leases**_ for the week of [WEF 2025](https://www.stromback.com/davos).
+Decks were used in closing _**`25m`** **in leases**_ for the week of [WEF 2025](https://www.stromback.com/davos "Stromback – Davos Experiences").
 
 I was contracted to provide:
 
@@ -63,6 +63,8 @@ I determined a simple goal: tell visual stories that excite viewers & incentiviz
 I was solely responsible for producing the main event deck, presented to prospective customers.
 
 A modern, refined, "_ultra-premium_" look was chosen to capture the emergence of generative AI across global markets.
+
+Certain slides blended a modern look with venue-specific branding, capturing their essence while maintaining overall cohesion.
 
 - Custom **deck slides** were designed in _Figma_.
 - Slide content was produced based on an outline document (bullet-points) provided by the clients.
