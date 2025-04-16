@@ -52,7 +52,7 @@ serve &
 
 # Build Ignore List
 
-ssg_ignore=(-i "$OUTPUT_DIRECTORY" -i "*.sh" -i "~tmp.*.md" -i ".git/*")
+ssg_ignore=(-i "$OUTPUT_DIRECTORY" -i "*.sh" -i "~tmp.*.md" -i ".git/" -i ".git/**")
 if [ -f "$IGNORE_FILE" ]; then
   while IFS= read -r pattern || [ -n "$pattern" ]; do
     ssg_ignore+=( -i "$pattern" )
