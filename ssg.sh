@@ -32,6 +32,8 @@ DEV_SERVER_PORT="${1}"
 INPUT_DIRECTORY="${2:-markdown}"
 OUTPUT_DIRECTORY="${3:-projects}"
 
+IGNORE_FILE="${4:-.ssgignore}"
+
 build() {
   echo "🪏🤠 BUILDING: $INPUT_DIRECTORY/ → $OUTPUT_DIRECTORY/"
   start_time=$(date +%s%N)
@@ -48,8 +50,19 @@ serve() {
 build
 serve &
 
+# Build Ignore List
+
+ssg_ignore=(-i "$OUTPUT_DIRECTORY" -i "*.sh" -i "~tmp.*.md" -i ".git/")
+if [ -f "$IGNORE_FILE" ]; then
+  while IFS= read -r pattern || [ -n "$pattern" ]; do
+    ssg_ignore+=( -i "$pattern" )
+  done < "$IGNORE_FILE"
+fi
+
+# Watch for Changes
+
 while IFS= read -r filepath; do
   echo "🔍🤠 OBSERVED CHANGE: $filepath"
   build
   echo "🌀🤠 Reload your browser to see changes."
-done < <(chokidar "$WATCH_FOLDER" -i "$OUTPUT_DIRECTORY" -i "*.sh" -i "~tmp.*.md" --initial false)
+done < <(chokidar "$WATCH_FOLDER" "${ssg_ignore[@]}" --initial false)
