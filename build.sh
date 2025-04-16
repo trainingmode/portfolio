@@ -138,6 +138,19 @@ HTML_IFRAME=$(tr -d '\n' < "$HTML_IFRAME_FILE") # Strip Newlines for sed RegEx R
 HTML_IFRAME="${HTML_IFRAME//\{\{IFRAME_HEIGHT\}\}/\\1}"
 HTML_IFRAME="${HTML_IFRAME//\{\{IFRAME_SRC\}\}/\\2}"
 
+HTML_IMG_COMPARISON_FILE="${13:-templates/img-compare.frag.html}"
+if [ ! -f "$HTML_IMG_COMPARISON_FILE" ]; then
+  echo "ERROR: Image comparison template '$HTML_IMG_COMPARISON_FILE' does not exist."
+  exit 1
+fi
+HTML_IMG_COMPARISON=$(tr -d '\n' < "${HTML_IMG_COMPARISON_FILE}") # Strip Newlines for sed RegEx Replacement
+HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//&/\\&}" # Escape All & Ampersands for sed RegEx Replacement
+# Substitute {{IMG_COMPARE_ALTX}} & {{IMG_COMPARE_SRCX}} in the Image Comparison HTML Template for the sed RegEx Replacement
+HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_ALT1\}\}/\\1}"
+HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_SRC1\}\}/\\2}"
+HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_ALT2\}\}/\\3}"
+HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_SRC2\}\}/\\4}"
+
 # Purge Build Folder
 
 if [ "$PURGE_BUILD_FOLDER" = true ]; then
@@ -207,6 +220,9 @@ while read -r filepath; do
   # Preprocess Embedded iFrames @[height](url)
   preprocessed=$(mktemp ~tmp.XXXXXX.md)
   sed -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$filepath" > "$preprocessed"
+
+  # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
+  sed -i "" -E "N;s|%\[([^]]+)\]\(([^)]+)\)\n%\[([^]]+)\]\(([^)]+)\)|${HTML_IMG_COMPARISON}|g" "$preprocessed"
 
   # Process the Markdown Article
   body=$(pandoc "$preprocessed")
