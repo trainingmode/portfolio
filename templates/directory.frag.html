@@ -4,7 +4,19 @@
     <a href="/" class="truncate"><pre>portfolio/</pre></a>
     {{CRUMBS}}
   </div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm items-end">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm items-end empty:hidden"
+  >
+    {{PINNED_ARTICLES}}
+  </div>
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm items-end empty:hidden"
+  >
+    {{PARENT_DIRECTORY}}{{FOLDERS}}
+  </div>
+  <div
+    class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm items-end empty:hidden"
+  >
     {{ARTICLES}}
   </div>
 </div>
