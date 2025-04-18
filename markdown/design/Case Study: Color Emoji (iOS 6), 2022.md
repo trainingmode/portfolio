@@ -1,4 +1,4 @@
-![_iOS 6-style Emoji Grid, **2022**_](/public/photos/spaceboy3000/ios6-emoji-grid.png)
+![_iOS 6-style Emoji Grid, **2022**_](/public/photos/spaceboy3000/ios6-emoji-grid.png "Emoji Grid, Alfred R. Duarte 2022")
 
 # Case Study: Apple Color Emoji (iOS 6.0)
 
@@ -30,7 +30,7 @@ Recently, I had just completed a similar [case study on pushing the limits of ve
 
 ## Secrets of Emoji Design
 
-![_[Sun](https://emojipedia.org/apple/ios-6.0/sun "Sun on Apple iOS 6.0 – Emojipedia") & [Surprised](https://emojipedia.org/apple/ios-6.0/face-with-open-mouth "Surprised Face with Open Mouth on Apple iOS 6.0 – Emojipedia") Emoji Overlap, **Apple Color Emoji (iOS 6.0) 2012**_](/public/photos/spaceboy3000/emoji-overlap-sun-surprised.png)
+![_[Sun](https://emojipedia.org/apple/ios-6.0/sun "Sun on Apple iOS 6.0 – Emojipedia") & [Surprised](https://emojipedia.org/apple/ios-6.0/face-with-open-mouth "Surprised Face with Open Mouth on Apple iOS 6.0 – Emojipedia") Emoji Overlap, **Apple Color Emoji (iOS 6.0) 2012**_](/public/photos/spaceboy3000/emoji-overlap-sun-surprised.png "Sun & Surprised Emoji Overlap, Apple 2012")
 
 _Which came first_–the **_sun_** or the **_surprised face_**?
 
@@ -44,7 +44,7 @@ While I can't unmask specifics around my techniques, I can share about the princ
 
 Apple designers carry a strong understanding of _physical-based_ **light** & **scene composition**.
 
-![](/public/photos/spaceboy3000/emoji-scene-composition.png)
+![](/public/photos/spaceboy3000/emoji-scene-composition.png "Emoji Scene Composition Diagram, Alfred R. Duarte 2025")
 
 Emoji take on _studio-quality lighting_, likely from a **3-point lighting setup** (not pictured).
 
@@ -74,7 +74,7 @@ As previously mentioned, emoji were originally digital paintings. Objects don't 
 
 With that said, their emoji are still highly compositional, with mostly-geometric shapes used to build objects.
 
-![_Sun Emoji Vector & Outlines Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-sun.png)
+![_Sun Emoji Vector & Outlines Dissection, **2025**_](/public/photos/spaceboy3000/emoji-dissection-sun.png "Sun Emoji Dissection, Alfred R. Duarte 2025")
 
 **Apple** designers likely **painted onto flat shapes** to create depth and simulate light. They likely used a combination of **layer effects** as well as the trusty **brush tool** to create the final look.
 
@@ -90,7 +90,7 @@ In typical **Apple** style, much focus is placed on **edge definition**. **Edges
 
 **Bodies** cast shadow and fill light-space for a sense of _volume_.
 
-![_Sun Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-sun.png)
+![_Sun Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-sun.png "Sun Emoji Close-up, Alfred R. Duarte 2022")
 
 ### Blending & Gradients
 
@@ -98,7 +98,7 @@ The key to achieving the classic **Apple** emoji look is **blending**.
 
 Understanding how [physical light sources interact](#a-word-on-the-physical-properties-of-light) with materials and with one another is key.
 
-![_Fire Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-fire.png)
+![_Fire Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-fire.png "Fire Emoji Close-up, Alfred R. Duarte 2022")
 
 **Strong composition** lays the foundation for vibrant _blending_ work.
 
@@ -106,7 +106,7 @@ The classic approach of using a **base**, with **layers of shading** to create _
 
 Take extra care of how you shape **edges** and **faces** against the scene lighting.
 
-![_Fire Emoji Base Gradient & Shading Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-fire.png)
+![_Fire Emoji Base Gradient & Shading Dissection, **2025**_](/public/photos/spaceboy3000/emoji-dissection-fire.png "Fire Emoji Base Gradient & Shading Dissection, Alfred R. Duarte 2025")
 
 ## Anatomy of Emoji
 
@@ -120,7 +120,7 @@ Emoji can be broken into two main parts: **face** & **expression**.
 
 The **face** is the foundation for all emotive emoji.
 
-![](/public/photos/spaceboy3000/emoji-face-anatomy.png)
+![](/public/photos/spaceboy3000/emoji-face-anatomy.png "Emoji Face Anatomy Diagram, Alfred R. Duarte 2025")
 
 The emoji **face** is split into `5` layers:
 
@@ -138,7 +138,7 @@ For the original set, the only time the **face** changes form is for the [😱 *
 
 **Expressions** are built on top of the **face** anatomy.
 
-![](/public/photos/spaceboy3000/emoji-anatomy.png)
+![](/public/photos/spaceboy3000/emoji-anatomy.png "Emoji Expression Anatomy Diagram, Alfred R. Duarte 2025")
 
 An emoji **expression** consists of `5` layers:
 
@@ -150,7 +150,7 @@ An emoji **expression** consists of `5` layers:
 
 **Expressions** reuse a set of _anatomy_, and combine other emoji _anatomy_ to create unique **expressions**. Many _eyebrows_, _eyes_, & _mouths_ are shared across multiple emoji.
 
-![_Selection of Emoji with Reused Anatomy, **2022**_](/public/photos/spaceboy3000/emoji-closeup-reused-anatomy.png)
+![_Selection of Emoji with Reused Anatomy, **2022**_](/public/photos/spaceboy3000/emoji-closeup-reused-anatomy.png "Selection of Emoji with Reused Anatomy, Alfred R. Duarte 2022")
 
 ## Dissection & Outlines
 
@@ -158,11 +158,11 @@ My technique for creating these emoji is purely **vector-based**.
 
 Everything is built out of **shape layers** with **gradients**. There are **_no_** _layer effects_ or _masks_ used in this project.
 
-![_Smiling Face Emoji Vector+Outlines & Outlines Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-smiling.png)
+![_Smiling Face Emoji Vector+Outlines & Outlines Dissection, **2025**_](/public/photos/spaceboy3000/emoji-dissection-smiling.png "Smiling Face Emoji Dissection, Alfred R. Duarte 2025")
 
 I didn't use any brush-tricks or vectorization tools. Everything was either built from **geometric shapes** or by using the **pen tool**.
 
-![_Hundred Points Emoji Outlines, **2022**_](/public/photos/spaceboy3000/emoji-outlines-hundred.png)
+![_Hundred Points Emoji Outlines, **2025**_](/public/photos/spaceboy3000/emoji-outlines-hundred.png "Hundred Points Emoji Outlines, Alfred R. Duarte 2025")
 
 There may be inconsistencies in the vertex placements on the outlines above due to the technique used to render the vertices. I split the line into individual paths, then used `open square` **line-ends** to create the vertices.
 
@@ -172,21 +172,21 @@ Below are some close-up comparisons of my emoji with **Apple**'s iOS 6.0 emoji.
 
 A small reminder that my emoji are **vector-based** and **Apple**'s are **pixel-based**.
 
-![](/public/photos/spaceboy3000/emoji-comparison-alien.png)
+![](/public/photos/spaceboy3000/emoji-comparison-alien.png "Alien Emoji Comparison; Apple 2012, Alfred R. Duarte 2022")
 
-![](/public/photos/spaceboy3000/emoji-comparison-crying.png)
+![](/public/photos/spaceboy3000/emoji-comparison-crying.png "Crying Emoji Comparison; Apple 2012, Alfred R. Duarte 2022")
 
-![](/public/photos/spaceboy3000/emoji-comparison-angry.png)
+![](/public/photos/spaceboy3000/emoji-comparison-angry.png "Enraged Emoji Comparison; Apple 2012, Alfred R. Duarte 2022")
 
-![](/public/photos/spaceboy3000/emoji-comparison-finger.png)
+![](/public/photos/spaceboy3000/emoji-comparison-finger.png "Index Pointing Up Emoji Comparison; Apple 2012, Alfred R. Duarte 2022")
 
-![](/public/photos/spaceboy3000/emoji-comparison-party.png)
+![](/public/photos/spaceboy3000/emoji-comparison-party.png "Party Popper Emoji Comparison; Apple 2012, Alfred R. Duarte 2022")
 
-![_Ghost Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-ghost.png)
+![_Ghost Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-ghost.png "Ghost Emoji Close-up, Alfred R. Duarte 2022")
 
-![_Bomb Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-bomb.png)
+![_Bomb Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-bomb.png "Bomb Emoji Close-up, Alfred R. Duarte 2022")
 
-![_Smiling Face with Sunglasses Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-sunglasses.png)
+![_Smiling Face with Sunglasses Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-sunglasses.png "Smiling Face with Sunglasses Emoji Close-up, Alfred R. Duarte 2022")
 
 ## Side-by-Side Comparison
 

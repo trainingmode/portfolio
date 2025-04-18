@@ -1,4 +1,4 @@
-![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg)
+![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg "The Centaurs AI Summit, World Economic Forum, Davos, Switzerland, 2025")
 
 # The Centaurs AI Summit, World Economic Forum 2025
 
@@ -59,7 +59,7 @@ Focus was placed on capturing a striking elegance, rather than an over-the-top p
 
 ## Branding
 
-![_The Centaurs AI Logo Icon, **2024**_](/public/photos/stromback/centaur-ai.png)
+![_The Centaurs AI Logo Icon, **2024**_](/public/photos/stromback/centaur-ai.png "The Centaurs AI Logo Icon, Alfred R. Duarte 2024")
 
 - Branding elements, including a **logo icon** & **wordmark**, were produced for the event & podcast.
 - Drawing on the clients' existing assets and concept of the Centaur, introduced by Chess legend Gary Kasparov–revolving around the synergy of human and artificial intelligence.

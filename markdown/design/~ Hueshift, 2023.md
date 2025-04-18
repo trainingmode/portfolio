@@ -4,7 +4,17 @@
 
 > **March 2023** - **April 2023**
 
-### **Check it out 🎨 🖼️**
+### `⚠️` **_`This article is under construction.`_**
+
+- [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
+
+## Inspiration
+
+Inspiration for the palette board came from those wall of swatches inside real-world paint stores.
+
+![_Swatch Board, **GPT-4o 2025**_](/public/photos/misc/swatch-board.png "an image of a wall of swatches at a paint store, iphone shot")
+
+## Try Hueshift.io 🎨 🖼️
 
 Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io) (_best viewed in a separate tab_).
 
@@ -17,3 +27,5 @@ Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io) (_best 
 - Click **`Upgrade to Pro`** to unlock the **Full Version** of the app (it's free).
 
 @[115%](https://beta.hueshift.io/)
+
+a
