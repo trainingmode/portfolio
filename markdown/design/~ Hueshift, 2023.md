@@ -8,11 +8,11 @@
 
 - [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
 
-## Inspiration
+## Interface Design
 
 Inspiration for the palette board came from those wall of swatches inside real-world paint stores.
 
-![_Swatch Board, **GPT-4o 2025**_](/public/photos/misc/swatch-board.png "an image of a wall of swatches at a paint store, iphone shot")
+![_Wall of Swatches, **GPT-4o 2025**_](/public/photos/misc/swatch-board.png "an image of a wall of swatches at a paint store, iphone shot")
 
 ## Try Hueshift.io 🎨 🖼️
 

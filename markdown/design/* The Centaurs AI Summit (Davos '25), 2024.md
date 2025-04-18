@@ -1,4 +1,4 @@
-![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg "The Centaurs AI Summit, World Economic Forum, Davos, Switzerland, 2025")
+![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg)
 
 # The Centaurs AI Summit, World Economic Forum 2025
 
