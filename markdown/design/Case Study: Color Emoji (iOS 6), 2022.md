@@ -4,9 +4,7 @@
 
 > **June 2022**
 
-### `⚠️` **_`This article is under construction.`_**
-
-### **_`Book a`[`meeting`](# "Calendly – Alfred R. Duarte")`to view the .afdesign files.` [`➔`](# "Calendly – Alfred R. Duarte")_**
+### `📚` **_`Book a `[`meeting`](# "Calendly – Alfred R. Duarte")` to view the .afdesign files.` [`➔`](# "Calendly – Alfred R. Duarte")_**
 
 - [**Secrets of Emoji Design**](#secrets-of-emoji-design)
 - [**Anatomy of Emoji**](#anatomy-of-emoji)
@@ -24,7 +22,7 @@ Recently, I had just completed a similar [case study on pushing the limits of ve
 
 **_All of the emoji I created in this project are purely vector-based._**
 
-> _**Disclaimer**: I am **not affiliated** with Apple. Emoji reference images are **unmodified** and used for educational purposes only._
+> _**Disclaimer**: I am **not affiliated** with Apple. Emoji referenced in comparisons are **unmodified** and used for educational purposes only. Close-ups & breakdowns are all my own work._
 
 #### Tools used:
 
@@ -50,7 +48,25 @@ Apple designers carry a strong understanding of _physical-based_ **light** & **s
 
 Emoji take on _studio-quality lighting_, likely from a **3-point lighting setup** (not pictured).
 
-A strong **light source** seems to be positioned vertically above the emoji subject, casting a strong _highlight_ on objects. Fill & back lighting are used to create a sense of depth, reducing contrasting shadows while maintaining vibrancy.
+A strong **light source** seems to be positioned vertically above the emoji, casting a strong _highlight_ on subjects. **Fill** & **back lighting** are used to create a sense of depth, reducing contrasting shadows while maintaining vibrancy.
+
+#### **_A Word on the Physical Properties of Light_**
+
+The **light spectrum** is a range of _wavelengths_.
+
+These are broken into `3` categories:
+
+- **Infrared** wavelengths, low energy, longer than red;
+- **Visible** wavelengths, medium energy, between red and blue;
+- **Ultraviolet** wavelengths, high energy, shorter than blue.
+
+Notice the colors: **red** & **blue**.
+
+When you shift colors, imagine the wavelengths of light.
+
+You're shifting more 🔴 **red**, or more 🔵 **blue**.
+
+🔴 **Red** is lower energy and _darker_. 🔵 **Blue** is higher energy and _brighter_.
 
 ### Object Composition
 
@@ -58,7 +74,7 @@ As previously mentioned, emoji were originally digital paintings. Objects don't 
 
 With that said, their emoji are still highly compositional, with mostly-geometric shapes used to build objects.
 
-![](/public/photos/spaceboy3000/emoji-dissection-sun.png)
+![_Sun Emoji Vector & Outlines Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-sun.png)
 
 **Apple** designers likely **painted onto flat shapes** to create depth and simulate light. They likely used a combination of **layer effects** as well as the trusty **brush tool** to create the final look.
 
@@ -70,7 +86,7 @@ In typical **Apple** style, much focus is placed on **edge definition**. **Edges
 
 **Edges** & **faces** catch light to build _definition_.
 
-**Faces** mold form and express _physicality_, like material-based properties.
+**Faces** mold form and express _physicality_. These are material-based properties, like _specular_, _diffuse_, _ambient_; to portray things like _roughness_, _glossyness_, etc.
 
 **Bodies** cast shadow and fill light-space for a sense of _volume_.
 
@@ -80,25 +96,81 @@ In typical **Apple** style, much focus is placed on **edge definition**. **Edges
 
 The key to achieving the classic **Apple** emoji look is **blending**.
 
+Understanding how [physical light sources interact](#a-word-on-the-physical-properties-of-light) with materials and with one another is key.
+
+![_Fire Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-fire.png)
+
+**Strong composition** lays the foundation for vibrant _blending_ work.
+
+The classic approach of using a **base**, with **layers of shading** to create _depth_ is how you produce strong results.
+
+Take extra care of how you shape **edges** and **faces** against the scene lighting.
+
+![_Fire Emoji Base Gradient & Shading Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-fire.png)
+
 ## Anatomy of Emoji
 
 Emoji rely heavily on strong principles of **light** & **blending**.
 
-Lines take shape and mold form into the face base. Gradients capture depth from the light cast on the face surface.
+**Lines** take _shape_ and mold _form_ into the face base. **Gradients** capture depth from the light cast on the face surface.
 
-![](/public/photos/spaceboy3000/emoji-anatomy.png)
+Emoji can be broken into two main parts: **face** & **expression**.
+
+### Emoji Face Anatomy
+
+The **face** is the foundation for all emotive emoji.
 
 ![](/public/photos/spaceboy3000/emoji-face-anatomy.png)
 
+The emoji **face** is split into `5` layers:
+
+1. **Highlight**
+2. **Flush**
+3. **Border**
+4. **Base**
+5. **Shadow**
+
+This anatomy is identical for all emotive emoji. This includes the [😡 **Enraged Face**](https://emojipedia.org/apple/ios-6.0/pouting-face "Enraged Face on Apple iOS 6.0 – Emojipedia") emoji, which takes on a full-face **flush**. The **base** & **border** are only recolored for the two [😈 **Smiling Face with Horns**](https://emojipedia.org/apple/ios-6.0/smiling-face-with-horns "Smiling Face with Horns on Apple iOS 6.0 – Emojipedia") & [👿 **Angry Face with Horns**](https://emojipedia.org/apple/ios-6.0/angry-face-with-horns "Angry Face with Horns on Apple iOS 6.0 – Emojipedia") devil emoji.
+
+For the original set, the only time the **face** changes form is for the [😱 **Face Screaming in Fear**](https://emojipedia.org/apple/ios-6.0/face-screaming-in-fear "Face Screaming in Fear on Apple iOS 6.0 – Emojipedia") emoji. It takes the shape of the [👽 **Alien**](https://emojipedia.org/apple/ios-6.0/alien "Alien on Apple iOS 6.0 – Emojipedia") emoji, however, its anatomy remains the same.
+
+### Emoji Expression Anatomy
+
+**Expressions** are built on top of the **face** anatomy.
+
+![](/public/photos/spaceboy3000/emoji-anatomy.png)
+
+An emoji **expression** consists of `5` layers:
+
+1. **Accessories**
+2. **Eyebrows**
+3. **Eyes**
+4. **Mouth**
+5. **Face**
+
+**Expressions** reuse a set of _anatomy_, and combine other emoji _anatomy_ to create unique **expressions**. Many _eyebrows_, _eyes_, & _mouths_ are shared across multiple emoji.
+
+![_Selection of Emoji with Reused Anatomy, **2022**_](/public/photos/spaceboy3000/emoji-closeup-reused-anatomy.png)
+
 ## Dissection & Outlines
 
-![](/public/photos/spaceboy3000/emoji-dissection-smiling.png)
+My technique for creating these emoji is purely **vector-based**.
 
-![](/public/photos/spaceboy3000/emoji-outlines-hundred.png)
+Everything is built out of **shape layers** with **gradients**. There are **_no_** _layer effects_ or _masks_ used in this project.
 
-There may be inconsistencies in the vertex placements on the outlines due to the technique used to render the vertices. I split the line into individual paths, then used `open square` **line-ends** to create the vertices.
+![_Smiling Face Emoji Vector+Outlines & Outlines Dissection, **2022**_](/public/photos/spaceboy3000/emoji-dissection-smiling.png)
+
+I didn't use any brush-tricks or vectorization tools. Everything was either built from **geometric shapes** or by using the **pen tool**.
+
+![_Hundred Points Emoji Outlines, **2022**_](/public/photos/spaceboy3000/emoji-outlines-hundred.png)
+
+There may be inconsistencies in the vertex placements on the outlines above due to the technique used to render the vertices. I split the line into individual paths, then used `open square` **line-ends** to create the vertices.
 
 ## Comparisons & Close-ups
+
+Below are some close-up comparisons of my emoji with **Apple**'s iOS 6.0 emoji.
+
+A small reminder that my emoji are **vector-based** and **Apple**'s are **pixel-based**.
 
 ![](/public/photos/spaceboy3000/emoji-comparison-alien.png)
 
@@ -110,7 +182,11 @@ There may be inconsistencies in the vertex placements on the outlines due to the
 
 ![](/public/photos/spaceboy3000/emoji-comparison-party.png)
 
-![](/public/photos/spaceboy3000/emoji-closeup-sunglasses.png)
+![_Ghost Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-ghost.png)
+
+![_Bomb Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-bomb.png)
+
+![_Smiling Face with Sunglasses Emoji Close-up, **2022**_](/public/photos/spaceboy3000/emoji-closeup-sunglasses.png)
 
 ## Side-by-Side Comparison
 
@@ -129,8 +205,20 @@ Looking back at them now, I see a few small things besides shading differences:
 
 _Soo_ close! 😄
 
-The sizes of the original Apple 😩 & 😫 emoji are slightly larger than all others for some reason–likely to accommodate their larger mouths. I left mine intentionally all an identical size.
+The sizes of the original **Apple** 😩 & 😫 emoji are slightly larger than all others for some reason–likely to accommodate their larger mouths. I left mine intentionally all an identical size.
+
+In all, this was a fun project! My goal wasn't to perfectly recreate the original emoji, just to see how far pure-vector could go. In the end, I learned a lot from **Apple**'s emoji design and got to see how far I could push my vector & gradient skills. 🖼️
 
 ## Resources
 
-- [Apple Color Emoji (iOS 6.0), _Emojipedia_](https://emojipedia.org/apple/ios-6.0 "Apple Color Emoji (iOS 6.0) – Emojipedia")
+- [**Apple Color Emoji (iOS 6.0)**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0 "Apple Color Emoji (iOS 6.0) – Emojipedia")
+
+##### Apple Color Emoji (iOS 6.0) Referenced
+
+- [☀️ **Sun**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/sun "Sun on Apple iOS 6.0 – Emojipedia")
+- [😮 **Face with Open Mouth**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/face-with-open-mouth "Face with Open Mouth on Apple iOS 6.0 – Emojipedia")
+- [👽 **Alien**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/alien "Alien on Apple iOS 6.0 – Emojipedia")
+- [😭 **Loudly Crying Face**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/loudly-crying-face "Loudly Crying Face on Apple iOS 6.0 – Emojipedia")
+- [😡 **Enraged Face**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/pouting-face "Pouting Face on Apple iOS 6.0 – Emojipedia")
+- [☝️ **Index Pointing Up**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/index-pointing-up "Index Pointing Up on Apple iOS 6.0 – Emojipedia")
+- [🎉 **Party Popper**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/party-popper "Party Popper on Apple iOS 6.0 – Emojipedia")
