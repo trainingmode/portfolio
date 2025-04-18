@@ -2,16 +2,34 @@
 
 # Hueshift (Design)
 
-> **March 2023** - **April 2023**
+> **March** - **April 2023**
 
 ### `⚠️` **_`This article is under construction.`_**
 
 - [**Interface Design**](#interface-design)
 - [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
 
+![_254 Spectrum Made with Hueshift, **2025**_](/public/photos/bloomhue/254-hueshift-spectrum.png "254 Spectrum, Hueshift, Alfred R. Duarte 2025")
+
+Often in design, you'll need to take a [color palette](https://en.wikipedia.org/wiki/Color_scheme "Color scheme – Wikipedia") and define a [set of light to dark steps](https://en.wikipedia.org/wiki/Color_scheme#Quantitative_schemes "Quantitative schemes – Wikipedia") for each color.
+
+![_Warm Palette Extended with Hueshift, **2025**_](/public/photos/bloomhue/palette-to-hueshift-perspective.png "Extended Warm Palette Spectrum, Hueshift, Alfred R. Duarte 2025")
+
+In interface design, these values can be used to create depth and dimension. A single color with a lighter and darker step can be overlaid to
+
+and a predicatble pattern to how colors increase and decrease in lightness and darkness.
+
+![_Graph – Analog Designs UI Styles 1, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles 1, Alfred R. Duarte 2023")
+
+![_Hueshift Compact Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-compact-closeup.png "Hueshift Compact Palette Board, Alfred R. Duarte 2023")
+
+![_Hueshift Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-closeup.png "Hueshift Palette Board, Alfred R. Duarte 2023")
+
+![_Hueshift Drag & Drop Swatch on Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board-drag-drop-swatch.png "Hueshift Drag & Drop Swatch on Palette Board, Alfred R. Duarte 2023")
+
 ## Interface Design
 
-**Hueshift** takes on an interface that is fully _form_ over _function_.
+**Hueshift** takes on an interface that is purposefully _form_ over _function_.
 
 In a world where UI is reduced to a single chat box, I wanted to take a different approach.
 
