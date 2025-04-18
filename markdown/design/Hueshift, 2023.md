@@ -6,11 +6,18 @@
 
 ### `⚠️` **_`This article is under construction.`_**
 
+- [**Interface Design**](#interface-design)
 - [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
 
 ## Interface Design
 
-Inspiration for the palette board came from those wall of swatches inside real-world paint stores.
+**Hueshift** takes on an interface that is fully _form_ over _function_.
+
+In a world where UI is reduced to a single chat box, I wanted to take a different approach.
+
+### Inspiration
+
+Inspiration for the **palette board** came from those wall of swatches inside real-world paint stores.
 
 ![_Wall of Swatches, **GPT-4o 2025**_](/public/photos/misc/swatch-board.png "an image of a wall of swatches at a paint store, iphone shot")
 
@@ -27,5 +34,3 @@ Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io) (_best 
 - Click **`Upgrade to Pro`** to unlock the **Full Version** of the app (it's free).
 
 @[115%](https://beta.hueshift.io/)
-
-a

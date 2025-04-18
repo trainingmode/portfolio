@@ -1,12 +1,14 @@
 <a
   href="{{ARTICLE_HREF}}"
-  class="flex flex-col grow h-full gap-2 visited:text-neutral-600 justify-end"
+  class="group/article flex flex-col grow h-full gap-2 visited:text-neutral-600 justify-end"
 >
-  <img
-    src="{{ARTICLE_IMAGE}}"
-    alt="{{ARTICLE_TITLE}}"
-    class="w-full h-40 object-cover rounded-md"
-  />
+  <div class="w-full h-40 overflow-hidden rounded-md">
+    <img
+      src="{{ARTICLE_IMAGE}}"
+      alt="{{ARTICLE_TITLE}}"
+      class="size-full object-cover group-hover/article:scale-[101%] transition-all duration-300"
+    />
+  </div>
   <div class="flex gap-2 items-center whitespace-nowrap">
     <svg
       xmlns="http://www.w3.org/2000/svg"

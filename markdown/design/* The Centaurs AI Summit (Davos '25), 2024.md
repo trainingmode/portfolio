@@ -8,7 +8,7 @@
 - [**Branding**](#branding)
 - [**Graphics**](#graphics)
 
-[Ollivier Oullier](https://www.weforum.org/people/olivier-oullier/), PHD (founder/CEO of [Inclusive Brains](https://www.allianz-trade.com/en_global/news-insights/news/prometheus.html)) is a neuroscientist, AI entrepreneur and investor. He was hosting a multi-speaker summit through his organization, [The Centaurs](https://thecentaurs.ai/ "The Centaurs AI SUMMIT – Davos 2025 Edition"), on day 1 of the [World Economic Forum in Davos](https://www.weforum.org/ "The World Economic Forum"). Their new podcast, [The Centaurs AI](https://www.instagram.com/thecentaursai/ "The Centaurs AI Summit & Podcast Instagram"), launched during the summit.
+[Ollivier Oullier](https://www.weforum.org/people/olivier-oullier/), PHD (founder/CEO of [Inclusive Brains](https://www.allianz-trade.com/en_global/news-insights/news/prometheus.html)) is a neuroscientist, AI entrepreneur and investor. He was hosting a multi-speaker summit through his organization, [The Centaurs](https://thecentaurs.ai/ "The Centaurs AI SUMMIT – Davos 2025 Edition"), on day 1 of the [World Economic Forum in Davos](https://www.weforum.org/ "The World Economic Forum"). Their new podcast, [The Centaurs AI Podcast](https://www.instagram.com/thecentaursai/ "The Centaurs AI Summit & Podcast Instagram"), launched during the summit.
 
 I provided the **pitch deck** & **event schedules**. These materials were sent to attendees prior to the event and were used during the summit.
 
@@ -49,7 +49,9 @@ I produced the **main event deck** & **scheduling** given to attendees.
 
 An adventurous, bold look was chosen to capture the new frontiers provided by emerging AI technologies.
 
-Focus was placed on capturing a striking elegance, rather than an over-the-top presence. A black base, with periwinkle accents & deep-violet undertones evoked a sense of adventure & mystery.
+Focus was placed on capturing a striking elegance, rather than an over-the-top presence.
+
+A black base, with periwinkle accents & deep-violet undertones evoked a sense of adventure & mystery. This motif was carried through the deck and all other assets produced for this project.
 
 - Custom **deck slides** were designed in _Figma_.
 - Slide content was produced based on an outline document (bullet-points) provided by the clients.
