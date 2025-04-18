@@ -8,9 +8,9 @@
 - [**Branding**](#branding)
 - [**Graphics**](#graphics)
 
-**Ollivier Oullier**, PHD (founder/CEO of _Inclusive Brains_) is a neuroscientist, AI entrepreneur and investor. He was hosting a multi-speaker summit through his organization, [The Centaurs](https://thecentaurs.ai/ "The Centaurs AI SUMMIT – Davos 2025 Edition"). Their new podcast, [The Centaurs AI](https://www.instagram.com/thecentaursai/ "The Centaurs AI Summit & Podcast Instagram"), launched during the summit.
+[Ollivier Oullier](https://www.weforum.org/people/olivier-oullier/), PHD (founder/CEO of [Inclusive Brains](https://www.allianz-trade.com/en_global/news-insights/news/prometheus.html)) is a neuroscientist, AI entrepreneur and investor. He was hosting a multi-speaker summit through his organization, [The Centaurs](https://thecentaurs.ai/ "The Centaurs AI SUMMIT – Davos 2025 Edition"), on day 1 of the [World Economic Forum in Davos](https://www.weforum.org/ "The World Economic Forum"). Their new podcast, [The Centaurs AI](https://www.instagram.com/thecentaursai/ "The Centaurs AI Summit & Podcast Instagram"), launched during the summit.
 
-I provided the pitch deck & event schedules. These materials were sent to attendees prior to the event and were used during the summit.
+I provided the **pitch deck** & **event schedules**. These materials were sent to attendees prior to the event and were used during the summit.
 
 I was contracted to provide:
 
@@ -23,9 +23,9 @@ I was contracted to provide:
 
 > _This project can be seen as an extension of my work with [Stromback Venues](</projects/design/Stromback%20Venues%20(Davos%20'25),%202024/> "Stromback Venues (Davos '25), 2024")._
 
-For this project, the clients wanted a hyper-modern, forward-thinking aesthetic. _Luxury = refinement_.
+For this project, the clients wanted a _hyper-modern_, _forward-thinking_ aesthetic. _Luxury = refinement_.
 
-Simplicity & bold contrast were heavily employed to offer stark and captivating visual for viewers.
+**Simplicity** & **bold contrast** were heavily employed to offer stark and captivating visuals for viewers, with a sense of _futuristic mystic_.
 
 I continued my goal from past deck commissions: **tell visual stories while maximizing readability**.
 
@@ -45,7 +45,7 @@ Completed materials were sent to a team in Portugal for further asset creation; 
 
 ## Slides
 
-I produced the main event deck & scheduling given to attendees.
+I produced the **main event deck** & **scheduling** given to attendees.
 
 An adventurous, bold look was chosen to capture the new frontiers provided by emerging AI technologies.
 

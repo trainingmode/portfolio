@@ -1,6 +1,7 @@
 /**
   sindresorhus/github-markdown-css
   https://github.com/sindresorhus/github-markdown-css
+  Edits by Alfred R. Duarte
 */
 
 /* light */
@@ -296,6 +297,12 @@
   margin-bottom: 1rem;
   font-weight: 500;
   line-height: 1.25;
+}
+
+.markdown h1,
+.markdown h2 {
+  margin-top: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .markdown h2 {
