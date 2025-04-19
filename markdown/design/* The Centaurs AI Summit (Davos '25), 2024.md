@@ -28,7 +28,7 @@ I was contracted to provide:
 
 For this project, the clients wanted a _hyper-modern_, _forward-thinking_ aesthetic. _Luxury = refinement_.
 
-**Simplicity** & **bold contrast** were heavily employed to offer stark and captivating visuals for viewers, with a sense of _futuristic mystic_.
+**Simplicity** & **bold contrast** were heavily employed to offer stark and captivating visuals for viewers, with a sense of _futuristic mystique_.
 
 I continued my goal from past deck commissions: **tell visual stories while maximizing readability**.
 
