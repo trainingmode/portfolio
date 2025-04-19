@@ -22,7 +22,7 @@ I produced a sprawling `20in` x `200in` poster detailing techniques ranging from
 
 I've split the poster into **`4`** sections to make it easier to include in this article.
 
-The techniques discussed are **generalized** and based on **physical principles** (even though these are cartoons). Most techniques can be easily adapted to other styles.
+Techniques discussed are _generalized_ and based on **physical principles** (even though these are cartoons). Most techniques can be easily adapted to other styles.
 
 #### Tools used:
 
