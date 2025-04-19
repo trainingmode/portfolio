@@ -125,11 +125,13 @@ Click the **`Palettes ⬇️`** button to download a `palette.json` file of all 
 
 With **Hueshift Pro**, you can edit the colors used to influence the **model** that generates _harmonious colors_.
 
-![_Hueshift Model Selector, **2025**_](/public/photos/bloomhue/hueshift-models.png "Hueshift Model Selector, Alfred R. Duarte 2025")
+![_Hueshift Model Selector, **2023**_](/public/photos/bloomhue/hueshift-models.png "Hueshift Model Selector, Alfred R. Duarte 2023")
 
 If you feel like shades generated are "missing something", you can add or remove colors to influence the **model** to generate entirely new shades and palettes.
 
-**Hueshift** ships with **_`98`_** pre-defined **color models**, with `21` **color models** enabled by default. It also ships with **_`19`_** **greytone models**, with `5` **greytone models** enabled by default.
+**Hueshift** ships with **_`98`_** pre-defined **color models**, with `21` **color models** enabled by default.
+
+It also ships with **_`19`_** **greytone models**, with `5` **greytone models** enabled by default.
 
 ## User Experience & Testing
 
@@ -162,11 +164,13 @@ I also received feedback from basically everyone for one feature:
 
 While this was out of the project scope, it's a great suggestion for a future release.
 
+### Conclusions
+
 In all, most found the process mostly intuitive and easy to navigate. However, no designers really mentioned they'll actually use the tool. The honest feedback I received was picking colors manually in-app was just quicker and easier than using a totally separate tool.
 
 With that said, my marketing friends were very excited about its potential, but it was still just a bit too hands-on for them.
 
-I would like to revist this project and incorporate the feedback I received. I think making the process even more streamlined would help increase the tool's usability and get people to actually adopt it.
+I would like to revisit this project and incorporate the feedback I received. I think making the process even more streamlined would help increase the tool's usability and get people to actually adopt it.
 
 ## Try Hueshift.io 🎨 🖼️
 

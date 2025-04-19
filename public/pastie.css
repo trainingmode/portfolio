@@ -82,6 +82,7 @@ code span.st,
 code span.ss {
   color: var(--color-string-500);
   background-color: var(--color-string-50);
+  border-radius: 0.25rem;
 }
 /* code span.st {
   color: #0044dd;
