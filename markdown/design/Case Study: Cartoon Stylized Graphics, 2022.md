@@ -4,8 +4,6 @@
 
 > **November 2022**
 
-### `⚠️` **_`This article is under construction.`_**
-
 ### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your characters.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 1. [**General**](#general)
