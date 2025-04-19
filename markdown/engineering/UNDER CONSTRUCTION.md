@@ -2,7 +2,7 @@
 
 ### `⚠️` **_`This section is currently under construction.`_**
 
-Please check back soon.
+Please check back soon. I'm writing as fast as I can.
 
 \- _Alfred_
 

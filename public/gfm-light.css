@@ -779,8 +779,8 @@
   font-size: 85%;
   line-height: 1.45;
   color: #1f2328;
-  background-color: #f6f8fa;
-  border-radius: 6px;
+  background-color: #f7f7f7; /*#f6f8fa*/
+  border-radius: 0.5rem; /*6px*/
 }
 
 .markdown pre code,

@@ -4,6 +4,8 @@
 
 > **March** - **April 2023**
 
+> _**Note**: For an engineering perspective on this project, please see [here](/projects/engineering/UNDER%20CONSTRUCTION/)._
+
 ### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 1. [**Purpose**](#purpose)
