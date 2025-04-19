@@ -44,6 +44,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="/public/gfm-light.css" />
+    <link rel="stylesheet" href="/public/pastie.css" />
     <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body class="min-h-screen flex flex-col">
@@ -78,12 +79,6 @@
       <blockquote>
         <p><strong>March</strong> - <strong>April 2023</strong></p>
       </blockquote>
-      <h3 id="this-article-is-under-construction.">
-        <code>⚠️</code>
-        <strong
-          ><em><code>This article is under construction.</code></em></strong
-        >
-      </h3>
       <h3 id="book-a-meeting-to-discuss-your-project.">
         <code>📚</code>
         <strong
@@ -95,14 +90,22 @@
           ></strong
         >
       </h3>
-      <ul>
+      <ol type="1">
+        <li>
+          <a href="#purpose"><strong>Purpose</strong></a>
+        </li>
         <li>
           <a href="#interface-design"><strong>Interface Design</strong></a>
         </li>
         <li>
+          <a href="#user-experience-testing"
+            ><strong>User Experience &amp; Testing</strong></a
+          >
+        </li>
+        <li>
           <a href="#try-hueshift.io"><strong>Try Hueshift.io 🎨 🖼️</strong></a>
         </li>
-      </ul>
+      </ol>
       <figure>
         <img
           src="/public/photos/bloomhue/254-hueshift-spectrum.png"
@@ -161,8 +164,9 @@
         </figcaption>
       </figure>
       <p>
-        It helps you layer related information in a predictable pattern to how
-        colors increase &amp; decrease in lightness &amp; darkness.
+        It helps you <strong>layer related information</strong> in a predictable
+        pattern to how colors <strong>increase &amp; decrease</strong> in
+        <strong>lightness &amp; darkness</strong>.
       </p>
       <p>
         Just one color can touch a range of situations, with a clear separation
@@ -179,8 +183,28 @@
         </figcaption>
       </figure>
       <p>
-        This predictability can be especially useful when creating subtle
-        shading with a natural feel, while maintaining vibrant readability.
+        This predictability can be especially useful when creating
+        <strong>light &amp; dark themes</strong>. It’s easier to balance your
+        main <em>accent</em> shade against your <em>background</em> &amp;
+        <em>foreground</em> colors when you have steps that feel natural in
+        distance.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/bloomhue/hueshift-example-light-dark-theme.png"
+          title="Light &amp; Dark Themes with 222 Hueshift Palette, Alfred R. Duarte 2025"
+          alt="Light &amp; Dark Themes with 222 Hueshift Palette, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em
+            >Light &amp; Dark Themes with 222 Hueshift Palette,
+            <strong>2025</strong></em
+          >
+        </figcaption>
+      </figure>
+      <p>
+        It’s also useful when creating subtle shading with a natural feel, while
+        maintaining vibrant readability.
       </p>
       <figure>
         <img
@@ -192,6 +216,27 @@
           <em>Graph – Analog Designs UI Styles I, <strong>2023</strong></em>
         </figcaption>
       </figure>
+      <p>
+        I created <strong>Hueshift</strong> as a tool to automate this process.
+        It uses a
+        <a
+          href="/projects/engineering/UNDER%20CONSTRUCTION/"
+          title="UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio"
+          >two-stage machine learning process</a
+        >
+        to help you:
+      </p>
+      <ul>
+        <li>
+          <strong>Choose interesting colors that complement each other.</strong>
+        </li>
+        <li>
+          <strong
+            >Automatically generate a set of light to dark shades for each
+            color.</strong
+          >
+        </li>
+      </ul>
       <p>
         <strong
           ><em
@@ -216,6 +261,31 @@
           Diagrams)
         </li>
       </ul>
+      <h2 id="purpose">Purpose</h2>
+      <p>
+        What I found lacking in similar tools are the methods of generating
+        <strong>harmonious colors</strong>.
+      </p>
+      <p>
+        Most tools are limited to either
+        <a
+          href="https://en.wikipedia.org/wiki/Color_scheme#Harmonious_schemes"
+          title="Harmonious schemes – Color scheme – Wikipedia"
+          >mathematical methods</a
+        >, or <em>manual selection</em>.
+      </p>
+      <p>
+        I wanted to create a tool that bridged the gap between mathematical
+        precision and the organic artistry of human-selection.
+      </p>
+      <p>
+        <strong>Hueshift</strong> recursively generates harmonious colors
+        starting from the <strong>base hue</strong>.
+      </p>
+      <p>
+        This method allows for a wider range of generated palettes, with colors
+        that still feel naturally harmonious.
+      </p>
       <h2 id="interface-design">Interface Design</h2>
       <p>
         <strong>Hueshift</strong> takes on an interface that is purposefully
@@ -252,7 +322,7 @@
       <figure>
         <img
           src="/public/photos/bloomhue/hueshift-board-compact-closeup.png"
-          title="Hueshift Compact Palette Board, Alfred R. Duarte 2023"
+          title="Hueshift Compact Palette Board Close-up, Alfred R. Duarte 2023"
           alt="Hueshift Compact Palette Board Close-up, 2023"
         />
         <figcaption aria-hidden="true">
@@ -261,16 +331,16 @@
           >
         </figcaption>
       </figure>
-      <figure>
-        <img
-          src="/public/photos/bloomhue/hueshift-board-closeup.png"
-          title="Hueshift Palette Board, Alfred R. Duarte 2023"
-          alt="Hueshift Palette Board Close-up, 2023"
-        />
-        <figcaption aria-hidden="true">
-          <em>Hueshift Palette Board Close-up, <strong>2023</strong></em>
-        </figcaption>
-      </figure>
+      <h3 id="features">Features</h3>
+      <p><strong>Hueshift</strong> is highly interactive.</p>
+      <p>
+        You can click to copy any <strong>shade</strong> as a
+        <strong>hex code</strong>.
+      </p>
+      <p>
+        You can <strong>drag &amp; drop</strong> rows of swatches to reorder
+        them or toss them out.
+      </p>
       <figure>
         <img
           src="/public/photos/bloomhue/hueshift-board-drag-drop-swatch.png"
@@ -284,6 +354,193 @@
           >
         </figcaption>
       </figure>
+      <p>
+        Using the <strong>sliders</strong>, you can adjust the
+        <strong>hue</strong> of the <strong>base color</strong>. You can also
+        adjust palette-wide <strong>lightness &amp; saturation</strong>.
+      </p>
+      <p>
+        You can generate up to
+        <strong><code>8</code> harmonious color swatches</strong> in a single
+        palette.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/bloomhue/hueshift-sliders.png"
+          title="Hueshift Sliders, Alfred R. Duarte 2023"
+          alt="Hueshift Sliders, 2023"
+        />
+        <figcaption aria-hidden="true">
+          <em>Hueshift Sliders, <strong>2023</strong></em>
+        </figcaption>
+      </figure>
+      <p>
+        Enable <strong>Greytone</strong> to generate a
+        <strong>greyscale</strong> palette.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/bloomhue/hueshift-greytone-palette.png"
+          title="Hueshift Greytone Palette, Alfred R. Duarte 2025"
+          alt="Hueshift Greytone Palette, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em>Hueshift Greytone Palette, <strong>2025</strong></em>
+        </figcaption>
+      </figure>
+      <p>
+        You can copy rows of swatches as <strong>JSON</strong>, or copy the
+        entire palette as <strong>JSON</strong>.
+      </p>
+      <p>
+        Click the <strong><code>Palettes ⬇️</code></strong> button to download a
+        <code>palette.json</code> file of all your starred palettes.
+      </p>
+      <div class="sourceCode" id="cb1">
+        <pre
+          class="sourceCode json"
+        ><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;50&quot;</span><span class="fu">:</span> <span class="st">&quot;#f2fdfc&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;100&quot;</span><span class="fu">:</span> <span class="st">&quot;#cbfbf6&quot;</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;200&quot;</span><span class="fu">:</span> <span class="st">&quot;#98f6ef&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;300&quot;</span><span class="fu">:</span> <span class="st">&quot;#5deae6&quot;</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;400&quot;</span><span class="fu">:</span> <span class="st">&quot;#2bd4d2&quot;</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;500&quot;</span><span class="fu">:</span> <span class="st">&quot;#14b6b8&quot;</span><span class="fu">,</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;600&quot;</span><span class="fu">:</span> <span class="st">&quot;#0d9196&quot;</span><span class="fu">,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;700&quot;</span><span class="fu">:</span> <span class="st">&quot;#0f7175&quot;</span><span class="fu">,</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;800&quot;</span><span class="fu">:</span> <span class="st">&quot;#115a5f&quot;</span><span class="fu">,</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;900&quot;</span><span class="fu">:</span> <span class="st">&quot;#134b4e&quot;</span><span class="fu">,</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;950&quot;</span><span class="fu">:</span> <span class="st">&quot;#042a2f&quot;</span><span class="fu">,</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;hue&quot;</span><span class="fu">:</span> <span class="dv">180</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre>
+      </div>
+      <p>
+        With <strong>Hueshift Pro</strong>, you can edit the colors used to
+        influence the <strong>model</strong> that generates
+        <em>harmonious colors</em>.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/bloomhue/hueshift-models.png"
+          title="Hueshift Model Selector, Alfred R. Duarte 2025"
+          alt="Hueshift Model Selector, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em>Hueshift Model Selector, <strong>2025</strong></em>
+        </figcaption>
+      </figure>
+      <p>
+        If you feel like shades generated are “missing something”, you can add
+        or remove colors to influence the <strong>model</strong> to generate
+        entirely new shades and palettes.
+      </p>
+      <p>
+        <strong>Hueshift</strong> ships with
+        <strong
+          ><em><code>98</code></em></strong
+        >
+        pre-defined <strong>color models</strong>, with <code>21</code>
+        <strong>color models</strong>
+        enabled by default. It also ships with
+        <strong
+          ><em><code>19</code></em></strong
+        >
+        <strong>greytone models</strong>, with <code>5</code>
+        <strong>greytone models</strong> enabled by default.
+      </p>
+      <h2 id="user-experience-testing">User Experience &amp; Testing</h2>
+      <p>
+        I conducted light <strong>user testing</strong> with some designer &amp;
+        marketing friends to see how they used <strong>Hueshift</strong> and
+        their thoughts on the process provided by the tool.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/bloomhue/hueshift-board-closeup.png"
+          title="Hueshift Palette Board Close-up, Alfred R. Duarte 2023"
+          alt="Hueshift Palette Board Close-up, 2023"
+        />
+        <figcaption aria-hidden="true">
+          <em>Hueshift Palette Board Close-up, <strong>2023</strong></em>
+        </figcaption>
+      </figure>
+      <h3 id="testing-process">Testing Process</h3>
+      <p>
+        Feedback was collected through various forms, mainly
+        <strong>text messaging</strong> and <strong>Discord</strong>. With a
+        small test group, I wanted to meet people where they were.
+      </p>
+      <p>
+        I sent around a survey as text that people could easily reply to rather
+        than ask them to fill out a form. I provided an open space for
+        suggestions &amp; comments.
+      </p>
+      <p>
+        I sent them a succinct set of targeted questions to understand their
+        usage patterns:
+      </p>
+      <ol type="1">
+        <li>
+          <strong
+            >Did you produce any palettes that you used, or would use in a
+            project?</strong
+          >
+        </li>
+        <li>
+          <strong
+            >Was there any point you said, “<em
+              >I hope/wonder if Hueshift could do this?</em
+            >” What were trying to do?</strong
+          >
+        </li>
+        <li>
+          <strong
+            >What did you find cumbersome about the process or
+            interface?</strong
+          >
+        </li>
+        <li>
+          <strong
+            >What reasons hold you back from using Hueshift in your
+            workflow?</strong
+          >
+        </li>
+      </ol>
+      <h3 id="feedback-summary">Feedback Summary</h3>
+      <blockquote>
+        <p><em>“…really fun to play with!”</em></p>
+      </blockquote>
+      <p>
+        Through this research, the feature for
+        <strong
+          >dragging a row of swatches out of the palette to remove it</strong
+        >
+        surfaced. Many people didn’t understand how to get rid of swatches that
+        they didn’t want, and just wanted to “toss them out”.
+      </p>
+      <p>I also received feedback from basically everyone for one feature:</p>
+      <blockquote>
+        <p><em>“Can I generate a palette from an image?”</em></p>
+      </blockquote>
+      <p>
+        While this was out of the project scope, it’s a great suggestion for a
+        future release.
+      </p>
+      <p>
+        In all, most found the process mostly intuitive and easy to navigate.
+        However, no designers really mentioned they’ll actually use the tool.
+        The honest feedback I received was picking colors manually in-app was
+        just quicker and easier than using a totally separate tool.
+      </p>
+      <p>
+        With that said, my marketing friends were very excited about its
+        potential, but it was still just a bit too hands-on for them.
+      </p>
+      <p>
+        I would like to revist this project and incorporate the feedback I
+        received. I think making the process even more streamlined would help
+        increase the tool’s usability and get people to actually adopt it.
+      </p>
       <h2 id="try-hueshift.io">Try Hueshift.io 🎨 🖼️</h2>
       <p>
         Embedded below ⬇️ or at

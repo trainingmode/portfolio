@@ -1,0 +1,124 @@
+/**
+ * Pastie CSS
+ * 
+ * Translated from:
+ * https://github.com/richleland/pygments-css/blob/master/pastie.css
+ * 
+ * Using the reference CSS:
+ * https://github.com/tajmone/pandoc-goodies/blob/master/skylighting/css/built-in-styles/pygments.css
+ *
+ * Modifications by Alfred R. Duarte
+ */
+
+.sourceCode {
+  --color-gray: #888888;
+
+  /* Hueshift 282; 50 & 600 */
+  --color-string-50: #fff0f0; /*#fbf5ff*/
+  --color-string-500: #dd2200; /*#a127d3*/
+
+  --color-red-600: #cc0000;
+
+  --color-blue-600: #0000dd;
+  --color-blue-900: #003388;
+
+  --color-slate-400: #0066bb;
+  --color-slate-700: #336699;
+
+  --color-raspberry-700: #bb0066;
+
+  --color-keyword-700: #008800;
+
+  --color-error-100: #e3d2d2;
+  --color-error-700: #a61717;
+
+  --font-weight: semibold;
+}
+
+/* .sourceLine {
+  background-color: #ffffcc;
+} */
+/* div.sourceCode {
+  background: #ffffff;
+} */
+
+code span.co {
+  color: var(--color-gray);
+}
+code span.ch {
+  color: var(--color-gray);
+}
+
+code span.pp {
+  color: var(--color-red-600);
+  font-weight: var(--font-weight);
+}
+/* code span.pp {
+  color: var(--color-gray);
+} */
+
+code span.er {
+  color: var(--color-error-700);
+  background-color: var(--color-erro-100);
+}
+
+code span.kw {
+  color: var(--color-keyword-700);
+  font-weight: var(--font-weight);
+}
+code span.dt {
+  color: var(--color-gray);
+  font-weight: var(--font-weight);
+}
+
+code span.dv,
+code span.fl,
+code span.bn {
+  color: var(--color-blue-600);
+  font-weight: var(--font-weight);
+}
+
+code span.st,
+code span.ss {
+  color: var(--color-string-500);
+  background-color: var(--color-string-50);
+}
+/* code span.st {
+  color: #0044dd;
+} */
+
+code span.at {
+  color: var(--color-slate-700);
+}
+code span.bu {
+  color: var(--color-blue-900);
+  code span.ot {
+    color: var(--color-raspberry-700);
+    font-weight: var(--font-weight);
+  }
+  /* code span.op {
+  } */
+}
+
+code span.fu,
+code span.nf,
+code span.fm {
+  color: var(--color-slate-400);
+  font-weight: var(--font-weight);
+}
+
+code span.va,
+code span.vs,
+code span.vc,
+code span.vg,
+code span.vi,
+code span.vm {
+  color: var(--color-slate-700);
+}
+
+code span.op {
+  color: var(--color-keyword-700);
+}
+
+/* code span.ot {
+} */

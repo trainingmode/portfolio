@@ -59,8 +59,8 @@ I determined a simple goal: tell visual stories that excite viewers & incentiviz
 
 - [Figma](https://www.figma.com/)
 - [Google Slides](https://workspace.google.com/products/slides/)
-- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) (screen-print preparation)
-- [Google Drive](https://workspace.google.com/products/drive/) (team collaboration)
+- [Adobe Illustrator](https://www.adobe.com/products/illustrator.html) (Screen-print Preparation)
+- [Google Drive](https://workspace.google.com/products/drive/) (Team Collaboration)
 
 ## Slides
 

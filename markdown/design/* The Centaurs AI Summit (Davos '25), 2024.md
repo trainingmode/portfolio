@@ -50,9 +50,15 @@ Completed materials were sent to a team in Portugal for further asset creation; 
 
 - [Figma](https://www.figma.com/)
 - [Google Slides](https://workspace.google.com/products/slides/)
-- [Google Drive](https://workspace.google.com/products/drive/) (team collaboration)
+- [Google Drive](https://workspace.google.com/products/drive/) (Team Collaboration)
 
 ## Motif
+
+We've all been there: you design a strong motif with simple-enough patterns, send off guidelines & mockups to your client's team, and they return with... well, something else entirely.
+
+This project was incredibly fast-paced, involved multiple stakeholders' input, was under a tight deadline–and the client's team was based in Portugal while I was based in Los Angeles.
+
+I wanted to create a motif that could _truly_ be **easily adapted to different contexts**, ensuring cohesion under these extreme constraints.
 
 ![_The Centaurs AI Summit Motif & Breakdown, **2024** & **2025**_](/public/photos/stromback/ai-summit-motif-2025.png "The Centaurs AI Summit Motif, Alfred R. Duarte, 2024 & 2025")
 
