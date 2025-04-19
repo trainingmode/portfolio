@@ -6,6 +6,8 @@
 
 ### `⚠️` **_`This article is under construction.`_**
 
+### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+
 - [**Interface Design**](#interface-design)
 - [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
 
@@ -15,17 +17,31 @@ Often in design, you'll need to take a [color palette](https://en.wikipedia.org/
 
 ![_Warm Palette Extended with Hueshift, **2025**_](/public/photos/bloomhue/palette-to-hueshift-perspective.png "Extended Warm Palette Spectrum, Hueshift, Alfred R. Duarte 2025")
 
-In interface design, these values can be used to create depth and dimension. A single color with a lighter and darker step can be overlaid to
+In **interface design**, these values can be used to create _depth_ and _dimension_.
 
-and a predicatble pattern to how colors increase and decrease in lightness and darkness.
+One color with a **lighter** and **darker** step can be overlaid to produce elements with a monochrome, "_single color_" look.
 
-![_Graph – Analog Designs UI Styles 1, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles 1, Alfred R. Duarte 2023")
+![_Confirmed Label with 131 Hueshift Palette, **2025**_](/public/photos/bloomhue/hueshift-example-confirmed-label.png "Confirmed Label with 131 Hueshift Palette, Alfred R. Duarte 2025")
 
-![_Hueshift Compact Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-compact-closeup.png "Hueshift Compact Palette Board, Alfred R. Duarte 2023")
+It helps you layer related information in a predictable pattern to how colors increase & decrease in lightness & darkness.
 
-![_Hueshift Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-closeup.png "Hueshift Palette Board, Alfred R. Duarte 2023")
+Just one color can touch a range of situations, with a clear separation of information.
 
-![_Hueshift Drag & Drop Swatch on Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board-drag-drop-swatch.png "Hueshift Drag & Drop Swatch on Palette Board, Alfred R. Duarte 2023")
+![_Grid of Cards with 29 Hueshift Palette, **2025**_](/public/photos/bloomhue/29-hueshift-palette-overlay.png "Grid of Cards with 29 Hueshift Palette, Alfred R. Duarte 2025")
+
+This predictability can be especially useful when creating subtle shading with a natural feel, while maintaining vibrant readability.
+
+![_Graph – Analog Designs UI Styles I, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles I, Alfred R. Duarte 2023")
+
+**_There are no high-fidelity mockups for this project. Hueshift was designed & built directly in React._**
+
+#### Tools used:
+
+- [VS Code](https://code.visualstudio.com/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Affinity Designer](https://affinity.serif.com/en-us/designer/) (Figure Diagrams & Example References)
+- [Hueshift](https://hueshift.io/) (Color Palettes for Figure Diagrams)
 
 ## Interface Design
 
@@ -33,15 +49,25 @@ and a predicatble pattern to how colors increase and decrease in lightness and d
 
 In a world where UI is reduced to a single chat box, I wanted to take a different approach.
 
+I wanted to imagine an interface that is as **engaging & artistically inspiring** as it is **functional to use**.
+
 ### Inspiration
 
 Inspiration for the **palette board** came from those wall of swatches inside real-world paint stores.
 
 ![_Wall of Swatches, **GPT-4o 2025**_](/public/photos/misc/swatch-board.png "an image of a wall of swatches at a paint store, iphone shot")
 
+The **palette board** attempts to capture the dynamic nature of a real-world swatch wall in a paint store.
+
+![_Hueshift Compact Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-compact-closeup.png "Hueshift Compact Palette Board, Alfred R. Duarte 2023")
+
+![_Hueshift Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-closeup.png "Hueshift Palette Board, Alfred R. Duarte 2023")
+
+![_Swatch Drag & Drop on Hueshift Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board-drag-drop-swatch.png "Swatch Drag & Drop on Hueshift Palette Board, Alfred R. Duarte 2023")
+
 ## Try Hueshift.io 🎨 🖼️
 
-Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io) (_best viewed in a separate tab_).
+Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io "Hueshift.io") (_best viewed in a separate tab_).
 
 #### Tips:
 

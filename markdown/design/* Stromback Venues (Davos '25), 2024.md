@@ -4,9 +4,11 @@
 
 > **November** - **December 2024**
 
-- [**Slides**](#slides)
-- [**Graphics**](#graphics)
-- [**Branding**](#branding)
+### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+
+1. [**Slides**](#slides)
+2. [**Graphics**](#graphics)
+3. [**Branding**](#branding)
 
 After my initial meetings with the clients, one requirement emerged: _design for the uber-wealthy & heads-of-state_.
 
@@ -23,6 +25,8 @@ I was contracted to provide:
 - **Decks/presentation slides**
 - **Lay the groundwork & systems for asset creation**
 - **Render high-quality graphics for print/display** (_shown on **CNBC** coverage_)
+
+> _This project extends into a second project with [The Centaurs AI](</projects/design/The%20Centaurs%20AI%20Summit%20(Davos%20'25),%202024/> "The Centaurs AI Summit (Davos '25), 2024")._
 
 Clients came with a strong sense of how they wanted the customer to feel. My role was to interpret their vision—translating vibes into compelling concepts.
 

@@ -4,13 +4,13 @@
 
 > **June 2022**
 
-### `📚` **_`Book a `[`meeting`](# "Calendly – Alfred R. Duarte")` to view the .afdesign files.` [`➔`](# "Calendly – Alfred R. Duarte")_**
+### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to view the .afdesign files.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
-- [**Secrets of Emoji Design**](#secrets-of-emoji-design)
-- [**Anatomy of Emoji**](#anatomy-of-emoji)
-- [**Dissection & Outlines**](#dissection-outlines)
-- [**Comparisons & Close-ups**](#comparisons-close-ups)
-- [**Side-by-Side Comparison**](#side-by-side-comparison)
+1. [**Secrets of Emoji Design**](#secrets-of-emoji-design)
+2. [**Anatomy of Emoji**](#anatomy-of-emoji)
+3. [**Dissection & Outlines**](#dissection-outlines)
+4. [**Comparisons & Close-ups**](#comparisons-close-ups)
+5. [**Side-by-Side Comparison**](#side-by-side-comparison)
 
 I've always loved **Apple**'s [icon design](https://developer.apple.com/design/human-interface-guidelines/icons "Apple Human Interface Guidelines: Icons"). Their depth and precision is truly inspiring.
 
@@ -18,7 +18,7 @@ The set of original **iOS 6.0** emoji are timeless & iconic. Their style set the
 
 I wanted to take a look and see how the original emoji were made. If you try to blow emoji up to a large size, you'll find they're just images. The [original designers have shared](https://blog.emojipedia.org/who-created-the-original-apple-emoji-set/ "Who Created The Original Apple Emoji Set? – Emojipedia") that they were digital paintings, but I wanted to see what I could do using vector alone.
 
-Recently, I had just completed a similar [case study on pushing the limits of vector shapes & gradients for UI design](#). That project equipped me with very delicate _shading_ & _composition_ techniques using only vector. I wanted to see how those same techniques could apply to the depth & detail of emoji design.
+Recently, I had just completed a similar [case study on pushing the limits of vector shapes & gradients for UI design](/projects/engineering/UNDER%20CONSTRUCTION/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio"). That project equipped me with very delicate _shading_ & _composition_ techniques using only vector. I wanted to see how those same techniques could apply to the depth & detail of emoji design.
 
 **_All of the emoji I created in this project are purely vector-based._**
 
