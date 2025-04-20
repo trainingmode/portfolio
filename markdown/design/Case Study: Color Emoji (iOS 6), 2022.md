@@ -24,6 +24,26 @@ Recently, I had just completed a similar [case study on pushing the limits of ve
 
 > _**Disclaimer**: I am **not affiliated** with Apple. Emoji referenced in comparisons are **unmodified** and used for educational purposes only. Close-ups & breakdowns are all my own work._
 
+#### Assets produced:
+
+**`56`** **Expressions**
+
+- **`5`** **Heads**
+- **`33`** **Eyes**
+- **`18`** **Eyebrows**
+- **`29`** **Mouths**
+  - **`3`** **Teeth**
+  - **`3`** **Tongues**
+  - **`2`** **Cheek Blushes**
+  - **`1`** **Chin**
+- **`12`** **Accessories**
+
+**`21`** **Bonus**
+
+- **`4`** **People**
+- **`1`** **Heart**
+- **`16`** **Symbols**
+
 #### Tools used:
 
 - [Affinity Designer](https://affinity.serif.com/en-us/designer/)
