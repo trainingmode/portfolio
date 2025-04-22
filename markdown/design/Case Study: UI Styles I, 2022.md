@@ -4,8 +4,6 @@
 
 > **October** - **December 2022**
 
-### `⚠️` **_`This article is under construction.`_**
-
 1. **[Purpose](#purpose)**
 2. **[Process](#process)**
 3. **[Fantasy Plugins](#fantasy-plugins)**
