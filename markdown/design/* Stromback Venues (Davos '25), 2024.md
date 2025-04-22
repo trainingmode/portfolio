@@ -1,10 +1,8 @@
-![_Stromback Venues @ Davos 2025, **2024**_](/public/photos/stromback/stromback-davos.png)
+![_Stromback Venues @ Davos 2025, **2024**_](/public/photos/stromback/stromback-davos.png "Stromback Venues, Davos 2025 Title Card, Alfred R. Duarte 2024")
 
 # Stromback Venues, World Economic Forum 2025
 
 > **November** - **December 2024**
-
-### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 1. [**Slides**](#slides)
 2. [**Graphics**](#graphics)
@@ -91,3 +89,9 @@ Certain slides blended a modern look with venue-specific branding, capturing the
 - Full concept boards were produced in _Figma_; research conducted through various **first-party sites** & **in-season winter catalogs**.
 - Logo concepts were mocked in _Figma_.
 - Iterations and final render were produced in _Figma_.
+
+---
+
+#### [`🏔️`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+
+.

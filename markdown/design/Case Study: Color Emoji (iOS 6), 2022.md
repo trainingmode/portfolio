@@ -1,10 +1,8 @@
-![_iOS 6-style Emoji Grid, **2022**_](/public/photos/spaceboy3000/ios6-emoji-grid.png)
+![_iOS 6-style Emoji Grid, **2022**_](/public/photos/spaceboy3000/ios6-emoji-grid.png "Emoji Grid, Alfred R. Duarte 2022")
 
 # Case Study: Apple Color Emoji (iOS 6.0)
 
 > **June 2022**
-
-### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to view the .afdesign files.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 1. [**Secrets of Emoji Design**](#secrets-of-emoji-design)
 2. [**Anatomy of Emoji**](#anatomy-of-emoji)
@@ -242,3 +240,7 @@ In all, this was a fun project! My goal wasn't to perfectly recreate the origina
 - [😡 **Enraged Face**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/pouting-face "Pouting Face on Apple iOS 6.0 – Emojipedia")
 - [☝️ **Index Pointing Up**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/index-pointing-up "Index Pointing Up on Apple iOS 6.0 – Emojipedia")
 - [🎉 **Party Popper**, _Emojipedia_](https://emojipedia.org/apple/ios-6.0/party-popper "Party Popper on Apple iOS 6.0 – Emojipedia")
+
+---
+
+#### [`📚`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to view the .afdesign files.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**

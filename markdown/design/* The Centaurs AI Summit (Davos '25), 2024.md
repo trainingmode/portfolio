@@ -1,10 +1,8 @@
-![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg)
+![_The Centaurs AI Summit, **Davos 2025**_](/public/photos/stromback/ai-summit-panel-2025.jpg "The Centaurs AI Summit, World Economic Forum 2025")
 
 # The Centaurs AI Summit, World Economic Forum 2025
 
 > **December 2024**
-
-### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 1. [**Motif**](#motif)
 2. [**Slides**](#slides)
@@ -97,3 +95,9 @@ I produced the **main event deck** & **scheduling** given to attendees.
 - Style matched the event aesthetic I created for the deck & branding.
 - **Concepts & final renders** were produced in _Figma_.
 - Graphics were **handed off for additional asset creation** to a team in Portugal.
+
+---
+
+#### [`🧠`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+
+.

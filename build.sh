@@ -22,7 +22,7 @@ DEFAULT_META_IMAGE="/public/og-image.png"
 DEFAULT_ARTICLE_IMAGE=""
 
 INPUT_DIRECTORY="${1:-markdown}"
-OUTPUT_DIRECTORY="${2:-projects}"
+OUTPUT_DIRECTORY="${2:-build}"
 
 if [ ! -d "$INPUT_DIRECTORY" ]; then
   echo "ERROR: Input directory '$INPUT_DIRECTORY' does not exist."
@@ -202,7 +202,9 @@ while read -r filepath; do
   description="${first_line:0:160}"
   # Use First Line as Hero Image if Starts with ![
   if [ "${first_line:0:2}" = "![" ]; then
-    meta_image=$(sed -n 's/.*](\(.*\))/\1/p' <<< "$first_line") # Extract the URL Between the )[ and ] Character Sequences
+    read meta_image meta_title < <(
+      sed -n -n 's/.*](\([^ ]*\) "\([^"]*\)").*/\1 \2/p' <<< "$first_line"  # Extract the URL & Title Between the )[, ", and "] Character Sequences
+    )
     # Extract the Second Non-Empty Line as the Description
     description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
     # Store Extracted Article Image for Directory Item

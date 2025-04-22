@@ -1,12 +1,10 @@
-![_Hueshift Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board.png)
+![_Hueshift Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board.png "Hueshift Palette Board, Alfred R. Duarte 2023")
 
 # Hueshift (Design)
 
 > **March** - **April 2023**
 
-> _**Note**: For an engineering perspective on this project, please see [here](/projects/engineering/UNDER%20CONSTRUCTION/)._
-
-### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+> _**Note**: For an engineering perspective on this project, please see [here](/projects/engineering/UNDER%20CONSTRUCTION/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Purpose**](#purpose)
 2. [**Interface Design**](#interface-design)
@@ -37,7 +35,7 @@ This predictability can be especially useful when creating **light & dark themes
 
 It's also useful when creating subtle shading with a natural feel, while maintaining vibrant readability.
 
-![_Graph – Analog Designs UI Styles I, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles I, Alfred R. Duarte 2023")
+![_Graph – Analog Designs UI Styles Ⅱ, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles Ⅱ, Alfred R. Duarte 2023")
 
 I created **Hueshift** as a tool to automate this process. It uses a [two-stage machine learning process](/projects/engineering/UNDER%20CONSTRUCTION/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio") to help you:
 
@@ -187,5 +185,9 @@ Embedded below ⬇️ or at [beta.hueshift.io](https://beta.hueshift.io "Hueshif
 - Click **`Upgrade to Pro`** to unlock the **Full Version** of the app (it's free).
 
 @[115%](https://beta.hueshift.io/)
+
+---
+
+#### [`📚`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 .

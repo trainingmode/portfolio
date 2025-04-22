@@ -1,16 +1,14 @@
-![_Flying Whale, **2022**_](/public/photos/spaceboy3000/flying-whale.png)
+![_Flying Whale, **2022**_](/public/photos/spaceboy3000/flying-whale.png "Flying Whale, Alfred R. Duarte 2022")
 
 # Case Study: Cartoon Stylized Graphics
 
 > **November 2022**
 
-### `📚` **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your characters.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
-
 1. [**General**](#general)
 2. [**Curves/Pen Tool**](#curves-pen-tool)
 3. [**Colors/Gradients**](#colors-gradients)
 4. [**Shading**](#shading)
-5. [**Mockups**](#mockups)
+5. [**Samples**](#samples)
 
 During _Fall 2022_, I was tasked with **mocking up a series of character designs** for a children's sticker subscription box.
 
@@ -44,14 +42,18 @@ Techniques discussed are _generalized_ and based on **physical principles** (eve
 
 ![_Shading Concepts – Cartoon Stylized Graphics Poster, **2022**_](/public/photos/spaceboy3000/cartoon-stylized-graphics-shading.png "Shading Concepts – Cartoon Stylized Graphics Poster, Alfred R. Duarte 2022")
 
-## Mockups
+## Samples
 
-Below are some discarded mockups that never made it to production.
+Below are some discarded samples that never made it to production.
 
-![_Día de los Muertos Holiday Card Mockup, **2022**_](/public/photos/spaceboy3000/ddlm-holiday-card.png "Día de los Muertos Holiday Card, Alfred R. Duarte 2022")
+![_Día de los Muertos Holiday Card Sample, **2022**_](/public/photos/spaceboy3000/ddlm-holiday-card.png "Día de los Muertos Holiday Card, Alfred R. Duarte 2022")
 
-![_Girl Singing into Closed Hand Mockup, **2022**_](/public/photos/spaceboy3000/sister-22-bday.png "Girl Singing into Closed Hand, Alfred R. Duarte 2022")
+![_Girl Singing into Closed Hand Sample, **2022**_](/public/photos/spaceboy3000/sister-22-bday.png "Girl Singing into Closed Hand, Alfred R. Duarte 2022")
 
-![_Turtle Cruising a Lazy River Mockup, **2022**_](/public/photos/spaceboy3000/turtle-lazy-river.png "Turtle Cruising a Lazy River, Alfred R. Duarte 2022")
+![_Turtle Cruising a Lazy River Sample, **2022**_](/public/photos/spaceboy3000/turtle-lazy-river.png "Turtle Cruising a Lazy River, Alfred R. Duarte 2022")
+
+---
+
+#### [`🎨`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your characters.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
 
 .
