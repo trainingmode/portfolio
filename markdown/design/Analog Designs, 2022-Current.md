@@ -4,8 +4,6 @@
 
 > **2022 – Current**
 
-### `⚠️` **_`This article is under construction.`_**
-
 > _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see [here](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Branding**](#branding)
