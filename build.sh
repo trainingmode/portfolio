@@ -168,6 +168,11 @@ declare -A hidden_articles
 mkdir -p "$OUTPUT_DIRECTORY"
 
 while read -r filepath; do
+  # Determine if the Article is Skipped
+  if [ "$(basename "${filepath}" | cut -c1)" = "_" ]; then
+    continue
+  fi
+
   # Determine if the Article is Hidden
   if [ "$(basename "${filepath}" | cut -c1)" = "~" ]; then
     filename_cleansed=$(basename "$filepath" | sed 's/^[~ ]*//')
