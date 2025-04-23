@@ -2,9 +2,11 @@
 
 # Static Site Generator
 
-> **2025**
+> **April 2025**
 
 ### `⚠️` **_`This article is under construction.`_**
+
+### _GitHub_: **[`trainingmode/portfolio`](https://github.com/trainingmode/portfolio "Alfred R. Duarte Portfolio GitHub")**
 
 My portfolio site is built with a custom static site generator.
 

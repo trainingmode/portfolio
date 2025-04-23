@@ -14,6 +14,6 @@ Utilizing my **strong design foundation** & **diverse technical background**, I 
 
 ---
 
-🌊
+🌊 🎹 💻
 
 .
