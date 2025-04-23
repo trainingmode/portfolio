@@ -22,7 +22,7 @@ I was contracted to provide:
 - **Lay the groundwork & systems for asset creation**
 - **Render high-quality graphics for display** (_shown on **CNBC** coverage_)
 
-> _This project can be seen as an extension of my work with [Stromback Venues](</portfolio/design/Stromback%20Venues%20(Davos%20'25),%202024/> "Stromback Venues (Davos '25), 2024 | Alfred R. Duarte | Portfolio")._
+> _This project can be seen as an extension of my work with [Stromback Venues](</portfolio/design/Stromback Venues (Davos '25), 2024/> "Stromback Venues (Davos '25), 2024 | Alfred R. Duarte | Portfolio")._
 
 For this project, the clients wanted a _hyper-modern_, _forward-thinking_ aesthetic. _Luxury = refinement_.
 

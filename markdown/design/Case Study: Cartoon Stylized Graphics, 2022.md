@@ -16,7 +16,7 @@ The client wanted a **cartoon-stylized look**, with fun, friendly characters. Th
 
 After completing the project, I wanted to document my learnings & process.
 
-I produced a sprawling `20in` x `200in` poster detailing techniques ranging from **tooling** to **shading**, geared towards replicating the style in vector tools like **Affinity Designer**.
+I produced a sprawling `20in` x `200in` poster detailing techniques ranging from **tooling** to **shading**, geared towards replicating the style in vector tools like **Adobe Illustrator**.
 
 I've split the poster into **`4`** sections to make it easier to include in this article.
 

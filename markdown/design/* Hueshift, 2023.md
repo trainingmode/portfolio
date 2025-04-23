@@ -4,7 +4,7 @@
 
 > **March** - **April 2023**
 
-> _**Note**: For an engineering perspective on this project, please see [here](/portfolio/engineering/UNDER%20CONSTRUCTION/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
+> _**Note**: For an engineering perspective on this project, please see [here](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Purpose**](#purpose)
 2. [**Interface Design**](#interface-design)
@@ -37,7 +37,7 @@ It's also useful when creating subtle shading with a natural feel, while maintai
 
 ![_Graph – Analog Designs UI Styles Ⅱ, **2023**_](/public/photos/analog-designs/analog-designs-uistyles1-graph.png "Graph – Analog Designs UI Styles Ⅱ, Alfred R. Duarte 2023")
 
-I created **Hueshift** as a tool to automate this process. It uses a [two-stage machine learning process](/portfolio/engineering/UNDER%20CONSTRUCTION/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio") to help you:
+I created **Hueshift** as a tool to automate this process. It uses a [two-stage machine learning process](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio") to help you:
 
 - **Choose interesting colors that complement each other.**
 - **Automatically generate a set of light to dark shades for each color.**
