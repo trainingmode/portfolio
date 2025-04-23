@@ -30,7 +30,7 @@ DEV_SERVER_SCRIPT="./server.sh"
 DEV_SERVER_PORT="${1}"
 
 INPUT_DIRECTORY="${2:-markdown}"
-OUTPUT_DIRECTORY="${3:-projects}"
+OUTPUT_DIRECTORY="${3:-portfolio}"
 
 IGNORE_FILE="${4:-.ssgignore}"
 
