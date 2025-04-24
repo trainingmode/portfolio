@@ -21,6 +21,13 @@
   --color-primary: #e40b5a; /* #0969da */
 }
 
+@media (max-width: 767px) {
+  .markdown {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}
+
 .markdown .octicon {
   display: inline-block;
   fill: currentColor;

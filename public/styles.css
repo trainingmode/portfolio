@@ -1,3 +1,7 @@
+:root {
+  --color-primary: #ff0055; /* #0969da */
+}
+
 body {
   padding-left: 2rem;
   padding-right: 2rem;

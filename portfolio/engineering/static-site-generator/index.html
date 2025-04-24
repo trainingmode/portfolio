@@ -64,17 +64,17 @@
         ><span class="tracking-[-0.05em]">ed</span
         ><span class="text-3xl">.</span>
       </a>
-      <div class="flex gap-4 text-sm text-neutral-500 tracking-[0.02em]">
+      <div class="flex gap-4 md:text-sm text-neutral-500 tracking-[0.0075em]">
         <a
           href="/portfolio/design"
           title="Design | Alfred R. Duarte | Portfolio"
-          class="hover:text-black transition-all duration-300"
+          class="hover:text-black hover:font-medium transition-all duration-300"
           >Design</a
         >
         <a
           href="/portfolio/engineering"
           title="Engineering | Alfred R. Duarte | Portfolio"
-          class="hover:text-black transition-all duration-300"
+          class="hover:text-black hover:font-medium transition-all duration-300"
           >Engineering</a
         >
       </div>
@@ -116,7 +116,102 @@
           ></strong
         >
       </h3>
+      <ol type="1">
+        <li>
+          <a href="#workflow"><strong>Workflow</strong></a>
+        </li>
+        <li>
+          <a href="#template-system"><strong>Template System</strong></a>
+        </li>
+      </ol>
       <p>My portfolio site is built with a custom static site generator.</p>
+      <p>
+        Built on the <strong><code>Directory</code></strong> →
+        <strong><code>Article</code></strong> folder structure concept. Similar
+        to other Static Site Generators like
+        <a
+          href="https://jekyllrb.com/"
+          title="Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs"
+          >Jekyll</a
+        >
+        or
+        <a
+          href="https://www.gatsbyjs.com/"
+          title="The Best React-Based Framework | Gatsby"
+          >Gatsby</a
+        >.
+      </p>
+      <p>
+        For this project, I mixed <strong>pure HTML</strong> with
+        <strong>Tailwind CSS</strong> (via CDN) for the template system.
+        Generated sites are pretty lightweight, with only the Tailwind CDN
+        dependency.
+      </p>
+      <p>
+        Internally, <strong>articles</strong> are converted using
+        <strong>Pandoc</strong>. While <strong>Markdown</strong> is preferred,
+        Pandoc will
+        <a
+          href="https://pandoc.org/MANUAL.html#specifying-formats"
+          title="Specifying formats – Pandoc – Pandoc User’s Guide"
+          >convert all files to HTML by default</a
+        >. You could write articles in any markup format that
+        <strong>Pandoc</strong> supports.
+      </p>
+      <p>
+        I wrote a set of internal <strong>plugins</strong> to preprocess special
+        Markdown syntax, like <strong>embedded iFrames</strong> and
+        <strong>image comparisons</strong>.
+      </p>
+      <p>
+        I’ve previously developed a
+        <a
+          href="https://alfred.ad/portfolio/engineering/under-construction/"
+          title="UNDER CONSTRUCTION"
+          >full-fledged SSG</a
+        >, with a
+        <a href="https://commonmark.org/" title="CommonMark">CommonMark</a>
+        parser from scratch, but I just needed a quick implementation to quickly
+        get my site running.
+      </p>
+      <p>
+        What I’ve learned from previous projects is to reduce or avoid
+        complexity. I would have just written pure HTML, but that makes for a
+        horrible experience writing articles.
+      </p>
+      <h4 id="tools-used">Tools used:</h4>
+      <ul>
+        <li><a href="https://www.cursor.com/">Cursor</a></li>
+        <li><a href="https://pandoc.org/">Pandoc</a></li>
+        <li>
+          <a href="https://www.gnu.org/software/bash/manual/bash.html"
+            >Bash 5</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/vercel/serve">Vercel serve</a> (dev
+          server)
+        </li>
+        <li><a href="https://github.com/paulmillr/chokidar">Chokidar</a></li>
+        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+        <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
+      </ul>
+      <h1 id="workflow">Workflow</h1>
+      <p>
+        The <strong>static site generator</strong> is a set of bash scripts.
+      </p>
+      <p>I had a neatly organized folder of Markdown articles.</p>
+      <p>
+        I had an accompanying folder of HTML templates–organized in an
+        indentical structure–that I wanted .
+      </p>
+      <h2 id="builder">Builder</h2>
+      <h2 id="development-server">Development Server</h2>
+      <h2 id="auto-rebuilder-watcher">Auto-Rebuilder &amp; Watcher</h2>
+      <h1 id="template-system">Template System</h1>
+      <h2 id="layouts">Layouts</h2>
+      <h2 id="features">Features</h2>
+      <h2 id="tag-replacements">Tag Replacements</h2>
       <hr />
       <h4 id="book-a-meeting-to-discuss-your-project.">
         <a href="mailto:alfred.r.duarte@gmail.com"><code>🧑🏽‍💻</code></a>
@@ -129,6 +224,7 @@
           ></strong
         >
       </h4>
+      <p>.</p>
     </main>
   </body>
   <footer class="mt-auto mb-1.5 pt-1.5 w-full">

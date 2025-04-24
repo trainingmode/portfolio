@@ -3,7 +3,7 @@
 # chmod +x build.sh
 # ./build.sh
 
-# > Note: Requires Bash 4.
+# > Note: Requires Bash >4.
 # >> brew install bash
 
 # > Note: Requires pandoc.
@@ -235,6 +235,7 @@ while read -r filepath; do
 
   # Preprocess Embedded iFrames @[height](url)
   preprocessed=$(mktemp ~tmp.XXXXXX.md)
+  # Syntax: @[height](url)
   sed -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$filepath" > "$preprocessed"
 
   # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
