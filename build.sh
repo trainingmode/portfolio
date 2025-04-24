@@ -16,6 +16,7 @@ PAGE_TITLE_SUFFIX=" | Alfred R. Duarte | Portfolio"
 
 PRETTIER_ENABLED=true
 PURGE_BUILD_FOLDER=true
+SLUGIFY_ENABLED=true
 
 DOMAIN="https://alfred.ad"
 DEFAULT_META_IMAGE="/public/og-image.png"
@@ -194,9 +195,15 @@ while read -r filepath; do
 
   path_relative="${filepath_cleansed#$INPUT_DIRECTORY/}"
   slug="${path_relative%.md}"
+  title=$(basename "${slug}")
+  if [ "$SLUGIFY_ENABLED" = true ]; then
+    slug=${slug,,} # Convert to Lowercase
+    slug=${slug//[^a-z0-9\/]/-} # Replace Non-Alphanumeric (+ Non-Forwardslash) Characters with Hyphens
+    slug=$(echo "$slug" | tr -s '-') # Replace Multiple Consecutive Hyphens with a Single Hyphen
+    slug=${slug##-}; slug=${slug%%-} # Remove Leading & Trailing Hyphens
+  fi
   output_directory="$OUTPUT_DIRECTORY/${slug}"
   output_path="$output_directory/index.html"
-  title=$(basename "${slug}")
   page_title="$title$PAGE_TITLE_SUFFIX"
 
   # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
@@ -220,7 +227,9 @@ while read -r filepath; do
   # Mark the Article as Hidden if its Original Filename Started with ~
   hidden_articles["$output_directory"]="$hidden"
   # Mark the Article as Pinned if its Original Filename Started with *
-  pinned_articles["$output_directory"]="$pinned"
+  if [ "$pinned" = true ]; then
+    pinned_articles["$output_directory"]="$title"
+  fi
 
   mkdir -p "$output_directory"
 
@@ -259,7 +268,7 @@ while read -r filepath; do
     prettier --write "$output_path"
   fi
 
-  article_lut["$output_directory"]=true
+  article_lut["$output_directory"]="$title"
   echo "🔨🤠 GENERATED: $output_path"
 done < <(find "$INPUT_DIRECTORY" -name "*.md")
 
@@ -293,12 +302,14 @@ while read -r directory; do
     fi
 
     # Determine the Listing Template to Apply
-    if [ "${pinned_articles["${subdirectory%/}"]}" = true ]; then
+    if [ -n "${pinned_articles["${subdirectory%/}"]}" ]; then
+      slug="${pinned_articles["${subdirectory%/}"]}"
       folder_listing=false
       pinned_listing=true
       default_listing_template="$HTML_DIRECTORY_PINNED_ARTICLE"
       listing_template_path="templates/$directory_relative/listing-pinned.frag.html"
-    elif [ "${article_lut["${subdirectory%/}"]}" = true ]; then
+    elif [ -n "${article_lut["${subdirectory%/}"]}" ]; then
+      slug="${article_lut["${subdirectory%/}"]}"
       folder_listing=false
       pinned_listing=false
       default_listing_template="$HTML_DIRECTORY_ARTICLE"

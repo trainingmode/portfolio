@@ -4,7 +4,7 @@
 
 > **2022 – Current**
 
-> _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see [here](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
+> _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see [here](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Branding**](#branding)
 2. [**Design System**](#design-system)
@@ -83,11 +83,11 @@ Using these principles, I designed the **logo icon** motif.
 
 ## Design System
 
-I've written a [companion article](</portfolio/design/Case Study: UI Styles I, 2022/> "Case Study: UI Styles I, 2022 | Alfred R. Duarte | Portfolio") with a detailed breakdown on the **design system** I developed.
+I've written a [companion article](/portfolio/design/case-study-ui-styles-i-2022/ "Case Study: UI Styles I, 2022 | Alfred R. Duarte | Portfolio") with a detailed breakdown on the **design system** I developed.
 
 ## UI Engine
 
-For more on the **OpenGL 2.1** (not ES2.1–_the 19 year old 2.1_) **graphics pipeline framework**, **graphics engine**, & **UI framework** I developed, please see [this article](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio").
+For more on the **OpenGL 2.1** (not ES2.1–_the 19 year old 2.1_) **graphics pipeline framework**, **graphics engine**, & **UI framework** I developed, please see [this article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio").
 
 ## Diode
 

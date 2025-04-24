@@ -16,7 +16,7 @@ The set of original **iOS 6.0** emoji are timeless & iconic. Their style set the
 
 I wanted to take a look and see how the original emoji were made. If you try to blow emoji up to a large size, you'll find they're just images. The [original designers have shared](https://blog.emojipedia.org/who-created-the-original-apple-emoji-set/ "Who Created The Original Apple Emoji Set? – Emojipedia") that they were digital paintings, but I wanted to see what I could do using vector alone.
 
-Recently, I had just completed a similar [case study on pushing the limits of vector shapes & gradients for UI design](</portfolio/engineering/UNDER CONSTRUCTION/> "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio"). That project equipped me with very delicate _shading_ & _composition_ techniques using only vector. I wanted to see how those same techniques could apply to the depth & detail of emoji design.
+Recently, I had just completed a similar [case study on pushing the limits of vector shapes & gradients for UI design](/portfolio/design/case-study-ui-styles-i-2022/ "Case Study: UI Styles I, 2022 | Alfred R. Duarte | Portfolio"). That project equipped me with very delicate _shading_ & _composition_ techniques using only vector. I wanted to see how those same techniques could apply to the depth & detail of emoji design.
 
 **_All of the emoji I created in this project are purely vector-based._**
 
