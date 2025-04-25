@@ -12,13 +12,20 @@
     />
   </div>
   <div
-    class="-translate-x-[0.5rem] md:-translate-x-[0.75rem] flex gap-2 md:gap-2.5 items-center whitespace-nowrap"
+    class="-translate-x-[0.5rem] md:-translate-x-[0.75rem] flex gap-2 md:gap-2.5 whitespace-nowrap"
   >
-    <div class="indicator size-1 bg-current rounded-full shrink-0"></div>
-    <h2
-      class="group-hover/article:font-medium transition-all duration-500 text-[0.95rem] text-neutral-800 truncate"
-    >
-      {{ARTICLE_TITLE}}
-    </h2>
+    <div class="indicator size-1 bg-current rounded-full shrink-0 mt-2"></div>
+    <div class="flex flex-col gap-0.5 max-w-[calc(100%-0.5rem)]">
+      <h2
+        class="group-hover/article:font-semibold font-medium transition-all duration-500 text-[0.95rem] text-neutral-800 truncate"
+      >
+        {{ARTICLE_TITLE}}
+      </h2>
+      <h3
+        class="group-hover/article:font-medium text-xs text-neutral-500 transition-all duration-500"
+      >
+        Design
+      </h3>
+    </div>
   </div>
 </a>
