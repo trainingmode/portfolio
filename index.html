@@ -6,7 +6,7 @@
     <title>Alfred R. Duarte | Portfolio</title>
     <meta
       name="description"
-      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & entrepreneur."
+      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & leader."
     />
     <meta name="author" content="Alfred R. Duarte" />
     <link
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Alfred R. Duarte | Portfolio" />
     <meta
       property="og:description"
-      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & entrepreneur."
+      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & leader."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://alfred.ad" />
@@ -27,7 +27,7 @@
     <meta name="twitter:title" content="Alfred R. Duarte | Portfolio" />
     <meta
       name="twitter:description"
-      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & entrepreneur."
+      content="Alfred R. Duarte is a multi-disciplinary creative, engineer, & leader."
     />
     <meta name="twitter:image" content="/public/og-image.png" />
 
@@ -35,12 +35,15 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="/public/gfm-light.css" />
     <link rel="stylesheet" href="/public/styles.css" />
   </head>
   <body class="min-h-screen flex flex-col" onclick="this.unfocus()">
     <nav class="pt-1.5 flex flex-wrap justify-between items-center">
-      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+      <a
+        href="/"
+        title="Alfred R. Duarte | Portfolio Home"
+        class="text-[1.65rem] uppercase tracking-[-0.015em]"
+      >
         <span class="text-3xl">Λ</span
         ><span class="tracking-[-0.035em]">lf</span
         ><span class="tracking-[-0.035em]">r</span
@@ -70,11 +73,13 @@
         Multi-disciplinary
         <a
           href="/portfolio/design"
+          title="Design | Alfred R. Duarte | Portfolio"
           class="text-neutral-800 border border-white hover:border-black hover:bg-black ring-white ring-inset ring-[10rem] rounded hover:rounded-lg hover:underline focus:underline hover:text-white outline-white hover:ring-0 hover:px-2 hover:py-1 transition-all duration-[350ms]"
           >creative</a
         >,
         <a
           href="/portfolio/engineering"
+          title="Engineering | Alfred R. Duarte | Portfolio"
           class="text-neutral-800 border border-white hover:border-black hover:bg-black ring-white ring-inset ring-[10rem] rounded hover:rounded-lg hover:underline focus:underline hover:text-white outline-white hover:ring-0 hover:px-2 hover:py-1 transition-all duration-[350ms]"
           >engineer</a
         >, & <span class="text-neutral-800">leader</span>.
@@ -84,9 +89,10 @@
       >
         <div
           tabindex="0"
-          class="relative group/contact border rounded-lg px-2 py-1 w-fit bg-black ring-inset ring-white ring-[10rem] hover:ring-0 hover:text-white hover:border-transparent transition-all duration-500"
+          class="relative group/contact border border-neutral-200 rounded-lg px-2 py-1 w-fit hover:bg-black ring-inset ring-white ring-[10rem] hover:ring-0 hover:text-white hover:border-transparent transition-all duration-500"
         >
           <span
+            aria-hidden="true"
             class="select-none inline-block max-w-0 opacity-0 group-hover/contact:pr-[1.25rem] group-hover/contact:opacity-100 transition-all duration-500"
             >👋🏼</span
           >
@@ -95,6 +101,7 @@
             class="group-focus-within/contact:pointer-events-auto pointer-events-none group-focus-within/contact:opacity-100 opacity-0 flex gap-1.5 text-neutral-700 md:text-xs font-medium ring-[0.5px] ring-inset ring-white border-[0.5px] border-neutral-400/65 p-1 flex-col justify-center items-center rounded-lg absolute top-10 md:top-8 left-0 w-full h-24 md:h-16 bg-neutral-100 shadow-lg transition-all duration-300 group-focus-within/contact:duration-0"
           >
             <a
+              aria-label="Message me with your email client"
               href="mailto:alfred.r.duarte@gmail.com"
               class="grow w-full hover:bg-[var(--color-primary)] hover:text-white active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] flex items-center pl-2"
               >Message</a
@@ -103,6 +110,7 @@
               class="w-[calc(100%-1rem)] mx-auto h-[0.5px] border-neutral-200"
             />
             <button
+              aria-label="Copy my email address to your clipboard"
               onclick="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
               ontouchend="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
               class="grow w-full hover:bg-[var(--color-primary)] hover:text-white md:active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] cursor-pointer text-left pl-2"
@@ -113,9 +121,10 @@
         </div>
         <a
           href="/about"
-          class="group/about border rounded-lg px-2 py-1 w-fit bg-black ring-inset ring-white ring-[10rem] hover:ring-0 hover:text-white hover:border-transparent transition-all duration-500"
+          class="group/about border border-neutral-200 rounded-lg px-2 py-1 w-fit hover:bg-black ring-inset ring-white ring-[10rem] hover:ring-0 hover:text-white hover:border-transparent transition-all duration-500"
         >
           <span
+            aria-hidden="true"
             class="select-none inline-block -mr-[0.125rem] max-w-0 opacity-0 group-hover/about:mr-0 group-hover/about:pr-[1.25rem] group-hover/about:opacity-100 transition-all duration-500"
             >🌊</span
           >
@@ -148,10 +157,11 @@
     <p class="text-center text-[0.65rem] text-neutral-500 cursor-default">
       Materials on this site produced by
       <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 -
+      <span id="footer-year"></span><noscript>2025</noscript>.
       <script>
-        document.write(new Date().getFullYear() + ".");
+        document.getElementById("footer-year").textContent =
+          new Date().getFullYear();
       </script>
-      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>

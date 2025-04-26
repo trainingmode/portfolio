@@ -14,6 +14,8 @@ Utilizing my **strong design foundation** & **diverse technical background**, I 
 
 ---
 
+Good design is equal parts artistry & usability.
+
 🌊 🎹 💻
 
 .

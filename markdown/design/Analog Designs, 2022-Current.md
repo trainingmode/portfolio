@@ -1,10 +1,12 @@
 ![_Analog Designs Echo Logo Icon, **2022**_](/public/photos/analog-designs/analog-designs-echo-logo.png "Analog Designs Echo Logo Icon, Alfred R. Duarte 2022")
 
+> Design & Product
+
 # Analog Designs
 
 > **2022 – Current**
 
-> _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see [here](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
+> _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see the [companion article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Branding**](#branding)
 2. [**Design System**](#design-system)

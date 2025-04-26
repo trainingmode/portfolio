@@ -1,5 +1,7 @@
 ![_Hueshift Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board.png "Hueshift Palette Board, Alfred R. Duarte 2023")
 
+> Design & Product
+
 # Hueshift
 
 > **March** - **April 2023**

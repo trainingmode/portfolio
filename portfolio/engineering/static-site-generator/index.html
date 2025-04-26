@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Static Site Generator | Alfred R. Duarte | Portfolio</title>
-    <meta name="description" content="# Static Site Generator" />
+    <meta name="description" content="Engineering" />
     <meta name="author" content="Alfred R. Duarte" />
     <meta
       name="generator"
@@ -19,7 +19,7 @@
       property="og:title"
       content="Static Site Generator | Alfred R. Duarte | Portfolio"
     />
-    <meta property="og:description" content="# Static Site Generator" />
+    <meta property="og:description" content="Engineering" />
     <meta property="article:author" content="Alfred R. Duarte" />
     <meta property="og:type" content="article" />
     <meta
@@ -36,7 +36,7 @@
       name="twitter:title"
       content="Static Site Generator | Alfred R. Duarte | Portfolio"
     />
-    <meta name="twitter:description" content="# Static Site Generator" />
+    <meta name="twitter:description" content="Engineering" />
     <meta name="twitter:creator" content="@trainingmodedev" />
     <meta
       name="twitter:image"
@@ -57,7 +57,11 @@
   </head>
   <body class="min-h-screen flex flex-col">
     <nav class="pt-1.5 flex flex-wrap justify-between items-center">
-      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+      <a
+        href="/"
+        title="Alfred R. Duarte | Portfolio Home"
+        class="text-[1.65rem] uppercase tracking-[-0.015em]"
+      >
         <span class="text-3xl">Λ</span
         ><span class="tracking-[-0.035em]">lf</span
         ><span class="tracking-[-0.035em]">r</span
@@ -96,6 +100,9 @@
           <em>Static Site Generator Terminal Output, <strong>2025</strong></em>
         </figcaption>
       </figure>
+      <blockquote>
+        <p>Engineering</p>
+      </blockquote>
       <h1 id="static-site-generator">Static Site Generator</h1>
       <blockquote>
         <p><strong>April 2025</strong></p>
@@ -188,7 +195,7 @@
         <pre
           class="sourceCode html"
         ><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">write</span>(<span class="kw">new</span> <span class="bu">Date</span>()<span class="op">.</span><span class="fu">getFullYear</span>() <span class="op">+</span> <span class="st">&quot;.&quot;</span>)<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;footer-year&quot;</span>)<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">.</span><span class="fu">getFullYear</span>()<span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre>
       </div>
       <p><strong>Clipboard copy</strong> (home page email CTA)</p>
@@ -250,10 +257,11 @@
     <p class="text-center text-[0.65rem] text-neutral-500 cursor-default">
       Materials on this site produced by
       <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 -
+      <span id="footer-year"></span><noscript>2025</noscript>.
       <script>
-        document.write(new Date().getFullYear() + ".");
+        document.getElementById("footer-year").textContent =
+          new Date().getFullYear();
       </script>
-      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>

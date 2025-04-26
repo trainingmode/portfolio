@@ -1,6 +1,8 @@
 ![_UI 1 – Analog Designs UI Styles Ⅰ, **2022**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui1-preview.png "UI 1 – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022")
 
-# Case Study: Analog Designs UI Styles Ⅰ
+> Case Study — Design
+
+# Render–Optimized Skeumorphic UI
 
 > **October** - **December 2022**
 

@@ -1,5 +1,7 @@
 ![_Static Site Generator Terminal Output, **2025**_](/public/photos/misc/ssg-terminal-output.png "Static Site Generator Terminal Output, Alfred R. Duarte 2025")
 
+> Engineering
+
 # Static Site Generator
 
 > **April 2025**
@@ -31,7 +33,7 @@ There are only **`2`** lines of inline JavaScript on the site:
 
 ```html
 <script>
-  document.write(new Date().getFullYear() + ".");
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
 </script>
 ```
 

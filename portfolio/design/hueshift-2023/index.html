@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hueshift, 2023 | Alfred R. Duarte | Portfolio</title>
-    <meta name="description" content="# Hueshift" />
+    <meta name="description" content="Design & Product" />
     <meta name="author" content="Alfred R. Duarte" />
     <meta
       name="generator"
@@ -19,7 +19,7 @@
       property="og:title"
       content="Hueshift, 2023 | Alfred R. Duarte | Portfolio"
     />
-    <meta property="og:description" content="# Hueshift" />
+    <meta property="og:description" content="Design & Product" />
     <meta property="article:author" content="Alfred R. Duarte" />
     <meta property="og:type" content="article" />
     <meta
@@ -36,7 +36,7 @@
       name="twitter:title"
       content="Hueshift, 2023 | Alfred R. Duarte | Portfolio"
     />
-    <meta name="twitter:description" content="# Hueshift" />
+    <meta name="twitter:description" content="Design & Product" />
     <meta name="twitter:creator" content="@trainingmodedev" />
     <meta
       name="twitter:image"
@@ -57,7 +57,11 @@
   </head>
   <body class="min-h-screen flex flex-col">
     <nav class="pt-1.5 flex flex-wrap justify-between items-center">
-      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+      <a
+        href="/"
+        title="Alfred R. Duarte | Portfolio Home"
+        class="text-[1.65rem] uppercase tracking-[-0.015em]"
+      >
         <span class="text-3xl">Λ</span
         ><span class="tracking-[-0.035em]">lf</span
         ><span class="tracking-[-0.035em]">r</span
@@ -96,6 +100,9 @@
           <em>Hueshift Palette Board, <strong>2023</strong></em>
         </figcaption>
       </figure>
+      <blockquote>
+        <p>Design &amp; Product</p>
+      </blockquote>
       <h1 id="hueshift">Hueshift</h1>
       <blockquote>
         <p><strong>March</strong> - <strong>April 2023</strong></p>
@@ -619,6 +626,7 @@
         <iframe
           src="https://beta.hueshift.io/"
           class="absolute top-0 left-0 h-full w-full border-none"
+          title="Embedded frame for https://beta.hueshift.io/"
           loading="lazy"
           allowfullscreen
         >
@@ -642,10 +650,11 @@
     <p class="text-center text-[0.65rem] text-neutral-500 cursor-default">
       Materials on this site produced by
       <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 -
+      <span id="footer-year"></span><noscript>2025</noscript>.
       <script>
-        document.write(new Date().getFullYear() + ".");
+        document.getElementById("footer-year").textContent =
+          new Date().getFullYear();
       </script>
-      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>

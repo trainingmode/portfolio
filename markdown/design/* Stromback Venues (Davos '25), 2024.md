@@ -1,5 +1,7 @@
 ![_Stromback Venues @ Davos 2025, **2024**_](/public/photos/stromback/stromback-davos.png "Stromback Venues, Davos 2025 Title Card, Alfred R. Duarte 2024")
 
+> Design
+
 # Stromback Venues, World Economic Forum 2025
 
 > **November** - **December 2024**

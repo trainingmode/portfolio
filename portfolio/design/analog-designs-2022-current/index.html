@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analog Designs, 2022-Current | Alfred R. Duarte | Portfolio</title>
-    <meta name="description" content="# Analog Designs" />
+    <meta name="description" content="Design & Product" />
     <meta name="author" content="Alfred R. Duarte" />
     <meta
       name="generator"
@@ -19,7 +19,7 @@
       property="og:title"
       content="Analog Designs, 2022-Current | Alfred R. Duarte | Portfolio"
     />
-    <meta property="og:description" content="# Analog Designs" />
+    <meta property="og:description" content="Design & Product" />
     <meta property="article:author" content="Alfred R. Duarte" />
     <meta property="og:type" content="article" />
     <meta
@@ -36,7 +36,7 @@
       name="twitter:title"
       content="Analog Designs, 2022-Current | Alfred R. Duarte | Portfolio"
     />
-    <meta name="twitter:description" content="# Analog Designs" />
+    <meta name="twitter:description" content="Design & Product" />
     <meta name="twitter:creator" content="@trainingmodedev" />
     <meta
       name="twitter:image"
@@ -57,7 +57,11 @@
   </head>
   <body class="min-h-screen flex flex-col">
     <nav class="pt-1.5 flex flex-wrap justify-between items-center">
-      <a href="/" class="text-[1.65rem] uppercase tracking-[-0.015em]">
+      <a
+        href="/"
+        title="Alfred R. Duarte | Portfolio Home"
+        class="text-[1.65rem] uppercase tracking-[-0.015em]"
+      >
         <span class="text-3xl">Λ</span
         ><span class="tracking-[-0.035em]">lf</span
         ><span class="tracking-[-0.035em]">r</span
@@ -96,6 +100,9 @@
           <em>Analog Designs Echo Logo Icon, <strong>2022</strong></em>
         </figcaption>
       </figure>
+      <blockquote>
+        <p>Design &amp; Product</p>
+      </blockquote>
       <h1 id="analog-designs">Analog Designs</h1>
       <blockquote>
         <p><strong>2022 – Current</strong></p>
@@ -105,11 +112,11 @@
           <em
             ><strong>Note</strong>: These are one-half of my responsibilities at
             <strong>Analog Designs</strong>. For my engineering
-            responsibilities, please see
+            responsibilities, please see the
             <a
               href="/portfolio/engineering/under-construction/"
               title="UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio"
-              >here</a
+              >companion article</a
             >.</em
           >
         </p>
@@ -458,10 +465,11 @@
     <p class="text-center text-[0.65rem] text-neutral-500 cursor-default">
       Materials on this site produced by
       <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 -
+      <span id="footer-year"></span><noscript>2025</noscript>.
       <script>
-        document.write(new Date().getFullYear() + ".");
+        document.getElementById("footer-year").textContent =
+          new Date().getFullYear();
       </script>
-      <noscript>2025.</noscript>
     </p>
   </footer>
 </html>

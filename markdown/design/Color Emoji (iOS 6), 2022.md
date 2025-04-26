@@ -1,6 +1,8 @@
 ![_iOS 6-style Emoji Grid, **2022**_](/public/photos/spaceboy3000/ios6-emoji-grid.png "Emoji Grid, Alfred R. Duarte 2022")
 
-# Case Study: Apple Color Emoji (iOS 6.0)
+> Case Study — Design
+
+# Color Emoji (iOS 6.0)
 
 > **June 2022**
 

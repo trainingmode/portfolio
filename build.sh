@@ -163,6 +163,7 @@ fi
 
 declare -A article_lut
 declare -A article_images
+declare -A article_descriptions
 declare -A pinned_articles
 declare -A hidden_articles
 
@@ -217,10 +218,16 @@ while read -r filepath; do
     read meta_image meta_title < <(
       sed -n -n 's/.*](\([^ ]*\) "\([^"]*\)").*/\1 \2/p' <<< "$first_line"  # Extract the URL & Title Between the )[, ", and "] Character Sequences
     )
-    # Extract the Second Non-Empty Line as the Description
-    description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
     # Store Extracted Article Image for Directory Item
     article_images["$output_directory"]="$meta_image"
+    # Extract the Second Non-Empty Line as the Description
+    description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160) # tail Gets the Second Non-Empty Line (why would they call it that...)
+    # Sanitize the Description (& Prevent Reinjection)
+    description="${description//&/\\&}"
+    # Trim Leading Markdown Block Characters (#, >)
+    description="${description#[\#> ] }"
+    # Store Extracted Article Description for Directory Item
+    article_descriptions["$output_directory"]="$description"
   else
     meta_image="$DEFAULT_META_IMAGE"
   fi
@@ -286,6 +293,7 @@ while read -r directory; do
 
   directory_relative="${directory#$OUTPUT_DIRECTORY/}"
   page_title="${directory_relative}${PAGE_TITLE_SUFFIX}"
+  url="$DOMAIN/$OUTPUT_DIRECTORY/$directory_relative"
 
   folder_links=""
   article_links=""
@@ -300,6 +308,11 @@ while read -r directory; do
     article_image="${article_images["${subdirectory%/}"]}"
     if [ -z "$article_image" ]; then
       article_image="$DEFAULT_ARTICLE_IMAGE"
+    fi
+
+    article_description="${article_descriptions["${subdirectory%/}"]}"
+    if [ -z "$article_description" ]; then
+      article_description="$directory_relative"
     fi
 
     # Determine the Listing Template to Apply
@@ -330,7 +343,10 @@ while read -r directory; do
 
     directory_item="${listing_template//\{\{ARTICLE_HREF\}\}/$href}"
     directory_item="${directory_item//\{\{ARTICLE_TITLE\}\}/$slug}"
+    directory_item="${directory_item//\{\{ARTICLE_DESCRIPTION\}\}/$article_description}"
     directory_item="${directory_item//\{\{ARTICLE_IMAGE\}\}/$article_image}"
+    # Sanitize the Directory Item (& Prevent Reinjection)
+    directory_item="${directory_item//&/\\&}"
 
     if [ "${hidden_articles["${subdirectory%/}"]}" = true ]; then
       hidden_article_links+="$directory_item"
@@ -387,6 +403,8 @@ while read -r directory; do
   body="${body//\{\{PARENT_DIRECTORY\}\}/$parent_listing}"
   body="${body//\{\{FOLDERS\}\}/$folders_listing}"
   body="${body//\{\{HIDDEN_ARTICLES\}\}/$hidden_articles}"
+  # Sanitize the Body (& Prevent Reinjection)
+  body="${body//&/\\&}"
 
   # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
   layout=$(echo "${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}")
@@ -397,7 +415,7 @@ while read -r directory; do
 
   layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
   layout="${layout//\{\{DESCRIPTION\}\}/Directory index for $directory_relative}"
-  layout="${layout//\{\{URL\}\}/$directory_relative}"
+  layout="${layout//\{\{URL\}\}/$url}"
 
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
   layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"

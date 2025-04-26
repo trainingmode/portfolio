@@ -1,6 +1,8 @@
 ![_Flying Whale, **2022**_](/public/photos/spaceboy3000/flying-whale.png "Flying Whale, Alfred R. Duarte 2022")
 
-# Case Study: Cartoon Stylized Graphics
+> Case Study — Design
+
+# Cartoon Stylized Graphics
 
 > **November 2022**
 
