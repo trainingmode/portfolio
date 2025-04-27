@@ -2,6 +2,12 @@
   --color-primary: #ff0055; /* #0969da */
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   padding-left: 2rem;
   padding-right: 2rem;
