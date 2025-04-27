@@ -136,6 +136,61 @@
       </ol>
       <p>My portfolio site is built with a custom static site generator.</p>
       <p>
+        Markdown <strong>articles</strong> &amp; folder
+        <strong>directories</strong> are rendered into
+        <strong>HTML</strong> templates.
+      </p>
+      <p>
+        I needed a simple system to write articles and generate a site that was
+        effortless to maintain. My core focus was writing articles and designing
+        a site that was <strong>100%</strong> accessible.
+      </p>
+      <p>
+        What I’ve learned from previous projects is to reduce or avoid
+        complexity. I would have just written pure HTML, but that makes for a
+        horrible experience writing articles.
+      </p>
+      <p>
+        There is only
+        <strong
+          ><em><code>1</code></em></strong
+        >
+        line of inline JavaScript on this site. It’s on the home page CTA,
+        needed to copy my email to your clipboard and close the context menu:
+      </p>
+      <div class="sourceCode" id="cb1">
+        <pre
+          class="sourceCode javascript"
+        ><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;navigator.clipboard.writeText(&#39;alfred.r.duarte@gmail.com&#39;);document.activeElement.blur()&quot;</span><span class="op">;</span></span></code></pre>
+      </div>
+      <p>Everything else is just CSS &amp; Tailwind.</p>
+      <video autoplay muted loop playsinline width="1400" class="rounded-lg">
+        <source
+          src="/public/media/alfred-portfolio-lighthouse-metrics.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <h4 id="tools-used">Tools used:</h4>
+      <ul>
+        <li><a href="https://www.cursor.com/">Cursor</a></li>
+        <li><a href="https://pandoc.org/">Pandoc</a></li>
+        <li>
+          <a href="https://www.gnu.org/software/bash/manual/bash.html"
+            >Bash 5</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/vercel/serve">Vercel serve</a> (dev
+          server)
+        </li>
+        <li><a href="https://github.com/paulmillr/chokidar">Chokidar</a></li>
+        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+        <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
+      </ul>
+      <h1 id="overview">Overview</h1>
+      <p>
         Built on the <strong><code>Directory</code></strong> →
         <strong><code>Article</code></strong> folder structure concept. Similar
         to other Static Site Generators like
@@ -154,7 +209,7 @@
       <p>
         For this project, I mixed <strong>pure HTML</strong> with
         <strong>Tailwind CSS</strong> (via CDN) for the template system.
-        Generated sites are pretty lightweight, with only the Tailwind CDN
+        Generated sites are extremely lightweight, with only the Tailwind CDN
         dependency.
       </p>
       <p>
@@ -173,50 +228,6 @@
         Markdown syntax, like <strong>embedded iFrames</strong> and
         <strong>image comparisons</strong>.
       </p>
-      <p>
-        I’ve previously developed a
-        <a
-          href="https://alfred.ad/portfolio/engineering/under-construction/"
-          title="UNDER CONSTRUCTION"
-          >full-fledged SSG</a
-        >, with a
-        <a href="https://commonmark.org/" title="CommonMark">CommonMark</a>
-        parser from scratch, but I just needed a quick implementation to quickly
-        get my site running.
-      </p>
-      <p>
-        What I’ve learned from previous projects is to reduce or avoid
-        complexity. I would have just written pure HTML, but that makes for a
-        horrible experience writing articles.
-      </p>
-      <p>
-        There is only <strong><code>1</code></strong> line of inline JavaScript
-        on this site, on the home page CTA:
-      </p>
-      <div class="sourceCode" id="cb1">
-        <pre
-          class="sourceCode javascript"
-        ><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;navigator.clipboard.writeText(&#39;alfred.r.duarte@gmail.com&#39;);document.activeElement.blur()&quot;</span><span class="op">;</span></span></code></pre>
-      </div>
-      <p>Everything else is just CSS &amp; Tailwind.</p>
-      <h4 id="tools-used">Tools used:</h4>
-      <ul>
-        <li><a href="https://www.cursor.com/">Cursor</a></li>
-        <li><a href="https://pandoc.org/">Pandoc</a></li>
-        <li>
-          <a href="https://www.gnu.org/software/bash/manual/bash.html"
-            >Bash 5</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/vercel/serve">Vercel serve</a> (dev
-          server)
-        </li>
-        <li><a href="https://github.com/paulmillr/chokidar">Chokidar</a></li>
-        <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
-        <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
-      </ul>
       <h1 id="workflow">Workflow</h1>
       <p>
         The <strong>static site generator</strong> is a set of bash scripts.

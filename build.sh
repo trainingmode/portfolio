@@ -63,6 +63,7 @@ HTML_DIRECTORY_PINNED_ARTICLE_FILENAME="listing-pinned.frag.html"
 HTML_DIRECTORY_FOLDER_FILENAME="listing-folder.frag.html"
 HTML_IFRAME_FILENAME="iframe.frag.html"
 HTML_IMG_COMPARISON_FILENAME="img-compare.frag.html"
+HTML_VIDEO_FILENAME="video.frag.html"
 
 HTML_LAYOUT_FILE="${TEMPLATE_DIRECTORY}/${HTML_LAYOUT_FILENAME}"
 if [ ! -f "$HTML_LAYOUT_FILE" ]; then
@@ -186,6 +187,18 @@ HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_SRC1\}\}/\\2}"
 HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_ALT2\}\}/\\3}"
 HTML_IMG_COMPARISON="${HTML_IMG_COMPARISON//\{\{IMG_COMPARE_SRC2\}\}/\\4}"
 
+HTML_VIDEO_FILE="${TEMPLATE_DIRECTORY}/${HTML_VIDEO_FILENAME}"
+if [ ! -f "$HTML_VIDEO_FILE" ]; then
+  echo "ERROR: Video template '$HTML_VIDEO_FILE' does not exist."
+  exit 1
+fi
+HTML_VIDEO=$(tr -d '\n' < "$HTML_VIDEO_FILE") # Strip Newlines for sed RegEx Replacement
+HTML_VIDEO="${HTML_VIDEO//&/\\&}" # Escape All & Ampersands for sed RegEx Replacement
+# Substitute {{VIDEO_ATTRIBUTES}}, {{VIDEO_SOURCE}}, & {{VIDEO_TYPE}} in the Video HTML Template for the sed RegEx Replacement
+HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_ATTRIBUTES\}\}/\\1}"
+HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_SOURCE\}\}/\\2}"
+HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_TYPE\}\}/\\3}"
+
 # Purge Build Folder
 
 if [ "$PURGE_BUILD_FOLDER" = true ]; then
@@ -281,6 +294,9 @@ while read -r filepath; do
 
   # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
   sed -i "" -E "N;s|%\[([^]]+)\]\(([^)]+)\)\n%\[([^]]+)\]\(([^)]+)\)|${HTML_IMG_COMPARISON}|g" "$preprocessed"
+
+  # Preprocess Embedded Videos ~[attributes](url "type")
+  sed -i "" -E "s|~\[([^]]+)\]\(([^)]+) \"([^)]+)\"\)|$HTML_VIDEO|g" "$preprocessed"
 
   # Process the Markdown Article
   body=$(pandoc "$preprocessed")

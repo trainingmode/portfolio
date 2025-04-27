@@ -400,6 +400,18 @@ _Example:_
 %[After](/image2.png)
 ```
 
+### `~[attributes](link "type")` **Video**
+
+Videos can be embedded directly inside articles using a link, video attributes, and a media type.
+
+The `video.frag.html` **Video Component HTML Template** is used to render the parsed video.
+
+_Example:_
+
+```
+~[autoplay muted loop playsinline width="1080"](/video.mp4 "video/mp4")
+```
+
 ## Article Listing Special Symbols
 
 You can prefix special symbols to the start of the filename of an **`Article`** to change its rendering behavior.
@@ -583,6 +595,22 @@ The image comparison template is used to render the **`%[alt](link)` Image Compa
 - `{{ IMG_COMPARE_SRC2 }}`
 
   The `src` attribute for the second image in the comparison.
+
+### `video.frag.html`
+
+The video template is used to render the **`~[attributes](link "type")` Video** component.
+
+- `{{ VIDEO_ATTRIBUTES }}`
+
+  The attributes for the video.
+
+- `{{ VIDEO_SOURCE }}`
+
+  The `src` attribute of the video.
+
+- `{{ VIDEO_TYPE }}`
+
+  The `type` attribute of the video.
 
 ## Directory Templates
 
