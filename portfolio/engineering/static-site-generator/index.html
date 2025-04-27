@@ -37,12 +37,12 @@
       content="Static Site Generator | Alfred R. Duarte | Portfolio"
     />
     <meta name="twitter:description" content="Engineering" />
-    <meta name="twitter:creator" content="@trainingmodedev" />
+    <meta name="twitter:creator" content="{{TWITTER_HANDLE}}" />
     <meta
       name="twitter:image"
       content="https://alfred.ad/public/photos/misc/ssg-terminal-output.png"
     />
-    <meta name="twitter:site" content="@trainingmodedev" />
+    <meta name="twitter:site" content="{{TWITTER_HANDLE}}" />
 
     <link
       rel="canonical"
@@ -130,6 +130,9 @@
         <li>
           <a href="#template-system"><strong>Template System</strong></a>
         </li>
+        <li>
+          <a href="#lighthouse-metrics"><strong>Lighthouse Metrics</strong></a>
+        </li>
       </ol>
       <p>My portfolio site is built with a custom static site generator.</p>
       <p>
@@ -187,25 +190,16 @@
         horrible experience writing articles.
       </p>
       <p>
-        There are only <strong><code>2</code></strong> lines of inline
-        JavaScript on the site:
+        There is only <strong><code>1</code></strong> line of inline JavaScript
+        on this site, on the home page CTA:
       </p>
-      <p><strong>Footer year auto-updater</strong></p>
       <div class="sourceCode" id="cb1">
         <pre
-          class="sourceCode html"
-        ><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;footer-year&quot;</span>)<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="kw">new</span> <span class="bu">Date</span>()<span class="op">.</span><span class="fu">getFullYear</span>()<span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre>
-      </div>
-      <p><strong>Clipboard copy</strong> (home page email CTA)</p>
-      <div class="sourceCode" id="cb2">
-        <pre
           class="sourceCode javascript"
-        ><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;navigator.clipboard.writeText(&#39;alfred.r.duarte@gmail.com&#39;);document.activeElement.blur()&quot;</span><span class="op">;</span></span></code></pre>
+        ><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;navigator.clipboard.writeText(&#39;alfred.r.duarte@gmail.com&#39;);document.activeElement.blur()&quot;</span><span class="op">;</span></span></code></pre>
       </div>
-      <p>Everything else is just CSS.</p>
+      <p>Everything else is just CSS &amp; Tailwind.</p>
       <h4 id="tools-used">Tools used:</h4>
       <ul>
         <li><a href="https://www.cursor.com/">Cursor</a></li>
@@ -251,17 +245,13 @@
           ></strong
         >
       </h4>
+      <p>.</p>
     </main>
   </body>
   <footer class="mt-auto mb-1.5 pt-10 w-full">
     <p class="text-center text-[0.65rem] text-neutral-500 cursor-default">
       Materials on this site produced by
-      <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 -
-      <span id="footer-year"></span><noscript>2025</noscript>.
-      <script>
-        document.getElementById("footer-year").textContent =
-          new Date().getFullYear();
-      </script>
+      <span class="text-neutral-800">Alfred R. Duarte</span>, 2020 - 2025.
     </p>
   </footer>
 </html>

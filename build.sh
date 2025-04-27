@@ -6,31 +6,65 @@
 # > Note: Requires Bash >4.
 # >> brew install bash
 
-# > Note: Requires pandoc.
+# > Note: Requires Pandoc.
 # >> brew install pandoc
 
 # > Note: Formatting requires Prettier global install.
 # >> sudo npm install -g prettier
 
-PAGE_TITLE_SUFFIX=" | Alfred R. Duarte | Portfolio"
-
-PRETTIER_ENABLED=true
-PURGE_BUILD_FOLDER=true
-SLUGIFY_ENABLED=true
-
-DOMAIN="https://alfred.ad"
-DEFAULT_META_IMAGE="/public/og-image.png"
-DEFAULT_ARTICLE_IMAGE=""
-
-INPUT_DIRECTORY="${1:-markdown}"
-OUTPUT_DIRECTORY="${2:-build}"
+CONFIG_FILE="${1:-ssg.config}"
+INPUT_DIRECTORY="${2:-markdown}"
+OUTPUT_DIRECTORY="${3:-build}"
+TEMPLATE_DIRECTORY="${4:-templates}"
 
 if [ ! -d "$INPUT_DIRECTORY" ]; then
   echo "ERROR: Input directory '$INPUT_DIRECTORY' does not exist."
   exit 1
 fi
 
-HTML_LAYOUT_FILE="${3:-templates/layout.frag.html}"
+if [ ! -f "$CONFIG_FILE" ]; then
+  echo "🧐 CONFIG: No config file found. Creating a default config..."
+
+  cat <<EOF > "$CONFIG_FILE"
+# SASHA — Configuration
+
+# — Site Settings —
+DOMAIN="https://alfred.ad"
+PAGE_TITLE_SUFFIX=" | SASHA | Static Site Generator"
+AUTHOR="SASHA"
+X_HANDLE="@trainingmodedev"
+
+# — Build Settings —
+PRETTIER_ENABLED=true
+PURGE_BUILD_FOLDER=true
+SLUGIFY_ENABLED=true
+
+# — Default Images —
+DEFAULT_META_IMAGE="/public/og-image.png"
+DEFAULT_ARTICLE_IMAGE=""
+
+# — Development Server —
+PORT=3000
+EOF
+
+  echo "✍️🤠 CONFIG: $CONFIG_FILE has been created. Edit the config to setup your site."
+fi
+source "$CONFIG_FILE"
+
+# HTML Template Fragment Filenames
+HTML_LAYOUT_FILENAME="layout.frag.html"
+HTML_HEAD_FILENAME="head.frag.html"
+HTML_BODY_FILENAME="body.frag.html"
+HTML_FOOTER_FILENAME="footer.frag.html"
+HTML_DIRECTORY_FILENAME="directory.frag.html"
+HTML_DIRECTORY_CRUMB_FILENAME="directory-crumb.frag.html"
+HTML_DIRECTORY_ARTICLE_FILENAME="listing-article.frag.html"
+HTML_DIRECTORY_PINNED_ARTICLE_FILENAME="listing-pinned.frag.html"
+HTML_DIRECTORY_FOLDER_FILENAME="listing-folder.frag.html"
+HTML_IFRAME_FILENAME="iframe.frag.html"
+HTML_IMG_COMPARISON_FILENAME="img-compare.frag.html"
+
+HTML_LAYOUT_FILE="${TEMPLATE_DIRECTORY}/${HTML_LAYOUT_FILENAME}"
 if [ ! -f "$HTML_LAYOUT_FILE" ]; then
   echo "ERROR: Layout template '$HTML_LAYOUT_FILE' does not exist."
   exit 1
@@ -41,7 +75,7 @@ if [ -z "$HTML_LAYOUT" ]; then
   exit 1
 fi
 
-HTML_HEAD_FILE="${4:-templates/head.frag.html}"
+HTML_HEAD_FILE="${TEMPLATE_DIRECTORY}/${HTML_HEAD_FILENAME}"
 if [ ! -f "$HTML_HEAD_FILE" ]; then
   echo "ERROR: Head template '$HTML_HEAD_FILE' does not exist."
   exit 1
@@ -52,7 +86,7 @@ if [ -z "$HTML_HEAD" ]; then
   exit 1
 fi
 
-HTML_BODY_FILE="${5:-templates/body.frag.html}"
+HTML_BODY_FILE="${TEMPLATE_DIRECTORY}/${HTML_BODY_FILENAME}"
 if [ ! -f "$HTML_BODY_FILE" ]; then
   echo "ERROR: Body template '$HTML_BODY_FILE' does not exist."
   exit 1
@@ -63,7 +97,7 @@ if [ -z "$HTML_BODY" ]; then
   exit 1
 fi
 
-HTML_FOOTER_FILE="${6:-templates/footer.frag.html}"
+HTML_FOOTER_FILE="${TEMPLATE_DIRECTORY}/${HTML_FOOTER_FILENAME}"
 if [ ! -f "$HTML_FOOTER_FILE" ]; then
   echo "ERROR: Footer template '$HTML_FOOTER_FILE' does not exist."
   exit 1
@@ -74,7 +108,7 @@ if [ -z "$HTML_FOOTER" ]; then
   exit 1
 fi
 
-HTML_DIRECTORY_FILE="${7:-templates/directory.frag.html}"
+HTML_DIRECTORY_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_FILENAME}"
 if [ ! -f "$HTML_DIRECTORY_FILE" ]; then
   echo "ERROR: Directory template '$HTML_DIRECTORY_FILE' does not exist."
   exit 1
@@ -85,7 +119,7 @@ if [ -z "$HTML_DIRECTORY" ]; then
   exit 1
 fi
 
-HTML_DIRECTORY_CRUMB_FILE="${8:-templates/directory-crumb.frag.html}"
+HTML_DIRECTORY_CRUMB_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_CRUMB_FILENAME}"
 if [ ! -f "$HTML_DIRECTORY_CRUMB_FILE" ]; then
   echo "ERROR: Directory crumb template '$HTML_DIRECTORY_CRUMB_FILE' does not exist."
   exit 1
@@ -96,7 +130,7 @@ if [ -z "$HTML_DIRECTORY_CRUMB" ]; then
   exit 1
 fi
 
-HTML_DIRECTORY_ARTICLE_FILE="${9:-templates/listing-article.frag.html}"
+HTML_DIRECTORY_ARTICLE_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_ARTICLE_FILENAME}"
 if [ ! -f "$HTML_DIRECTORY_ARTICLE_FILE" ]; then
   echo "ERROR: Directory article listing template '$HTML_DIRECTORY_ARTICLE_FILE' does not exist."
   exit 1
@@ -107,7 +141,7 @@ if [ -z "$HTML_DIRECTORY_ARTICLE" ]; then
   exit 1
 fi
 
-HTML_DIRECTORY_PINNED_ARTICLE_FILE="${10:-templates/listing-pinned.frag.html}"
+HTML_DIRECTORY_PINNED_ARTICLE_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_PINNED_ARTICLE_FILENAME}"
 if [ ! -f "$HTML_DIRECTORY_PINNED_ARTICLE_FILE" ]; then
   echo "ERROR: Directory pinned article listing template '$HTML_DIRECTORY_PINNED_ARTICLE_FILE' does not exist."
   exit 1
@@ -118,7 +152,7 @@ if [ -z "$HTML_DIRECTORY_PINNED_ARTICLE" ]; then
   exit 1
 fi
 
-HTML_DIRECTORY_FOLDER_FILE="${11:-templates/listing-folder.frag.html}"
+HTML_DIRECTORY_FOLDER_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_FOLDER_FILENAME}"
 if [ ! -f "$HTML_DIRECTORY_FOLDER_FILE" ]; then
   echo "ERROR: Directory folder listing template '$HTML_DIRECTORY_FOLDER_FILE' does not exist."
   exit 1
@@ -129,7 +163,7 @@ if [ -z "$HTML_DIRECTORY_FOLDER" ]; then
   exit 1
 fi
 
-HTML_IFRAME_FILE="${12:-templates/iframe.frag.html}"
+HTML_IFRAME_FILE="${TEMPLATE_DIRECTORY}/${HTML_IFRAME_FILENAME}"
 if [ ! -f "$HTML_IFRAME_FILE" ]; then
   echo "ERROR: IFrame template '$HTML_IFRAME_FILE' does not exist."
   exit 1
@@ -139,7 +173,7 @@ HTML_IFRAME=$(tr -d '\n' < "$HTML_IFRAME_FILE") # Strip Newlines for sed RegEx R
 HTML_IFRAME="${HTML_IFRAME//\{\{IFRAME_HEIGHT\}\}/\\1}"
 HTML_IFRAME="${HTML_IFRAME//\{\{IFRAME_SRC\}\}/\\2}"
 
-HTML_IMG_COMPARISON_FILE="${13:-templates/img-compare.frag.html}"
+HTML_IMG_COMPARISON_FILE="${TEMPLATE_DIRECTORY}/${HTML_IMG_COMPARISON_FILENAME}"
 if [ ! -f "$HTML_IMG_COMPARISON_FILE" ]; then
   echo "ERROR: Image comparison template '$HTML_IMG_COMPARISON_FILE' does not exist."
   exit 1
@@ -261,6 +295,8 @@ while read -r filepath; do
 
   layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
   layout="${layout//\{\{TITLE\}\}/$title}"
+  layout="${layout//\{\{AUTHOR\}\}/$AUTHOR}"
+  layout="${layout//\{\{X_HANDLE\}\}/$X_HANDLE}"
   layout="${layout//\{\{DESCRIPTION\}\}/$description}"
   layout="${layout//\{\{MARKDOWN\}\}/"$body"}"
   layout="${layout//\{\{URL\}\}/$url}"
@@ -321,18 +357,18 @@ while read -r directory; do
       folder_listing=false
       pinned_listing=true
       default_listing_template="$HTML_DIRECTORY_PINNED_ARTICLE"
-      listing_template_path="templates/$directory_relative/listing-pinned.frag.html"
+      listing_template_path="templates/$directory_relative/$HTML_DIRECTORY_PINNED_ARTICLE_FILENAME"
     elif [ -n "${article_lut["${subdirectory%/}"]}" ]; then
       slug="${article_lut["${subdirectory%/}"]}"
       folder_listing=false
       pinned_listing=false
       default_listing_template="$HTML_DIRECTORY_ARTICLE"
-      listing_template_path="templates/$directory_relative/listing-article.frag.html"
+      listing_template_path="templates/$directory_relative/$HTML_DIRECTORY_ARTICLE_FILENAME"
     else
       folder_listing=true
       pinned_listing=false
       default_listing_template="$HTML_DIRECTORY_FOLDER"
-      listing_template_path="templates/$directory_relative/listing-folder.frag.html"
+      listing_template_path="templates/$directory_relative/$HTML_DIRECTORY_FOLDER_FILENAME"
     fi
 
     if [ -f "$listing_template_path" ]; then
@@ -390,7 +426,7 @@ while read -r directory; do
   done
 
   # Check if Directory Template Exists in Relative Directory Inside templates/
-  directory_template_path="templates/$directory_relative/directory.frag.html"
+  directory_template_path="templates/$directory_relative/$HTML_DIRECTORY_FILENAME"
   if [ -f "$directory_template_path" ]; then
     directory_template=$(<"$directory_template_path")
   else
@@ -414,6 +450,8 @@ while read -r directory; do
   layout="${layout//\{\{FOOTER\}\}/$HTML_FOOTER}"
 
   layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
+  layout="${layout//\{\{AUTHOR\}\}/$AUTHOR}"
+  layout="${layout//\{\{X_HANDLE\}\}/$X_HANDLE}"
   layout="${layout//\{\{DESCRIPTION\}\}/Directory index for $directory_relative}"
   layout="${layout//\{\{URL\}\}/$url}"
 

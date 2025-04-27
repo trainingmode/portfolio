@@ -2,7 +2,7 @@
 
 #########################################
 ####                                 ####
-####  SSG (SAUSAGE)                  ####
+####  SASHA — Static Site Generator  ####
 ####  Alfred R. Duarte               ####
 ####                                 ####
 #########################################
@@ -16,6 +16,9 @@
 # chmod +x ssg.sh build.sh server.sh
 # ./ssg.sh
 
+# > Note: Requires Bash >4 & Pandoc.
+# >> brew install bash pandoc
+
 # > Note: Requires chokidar-cli global install.
 # >> sudo npm install -g chokidar-cli
 
@@ -27,23 +30,23 @@ WATCH_FOLDER="."
 BUILD_SCRIPT="./build.sh"
 DEV_SERVER_SCRIPT="./server.sh"
 
-DEV_SERVER_PORT="${1}"
-
+CONFIG_FILE="${1:-ssg.config}"
 INPUT_DIRECTORY="${2:-markdown}"
 OUTPUT_DIRECTORY="${3:-portfolio}"
-
-IGNORE_FILE="${4:-.ssgignore}"
+TEMPLATE_DIRECTORY="${4:-templates}"
+IGNORE_FILE="${5:-.ssgignore}"
 
 build() {
   echo "🪏🤠 BUILDING: $INPUT_DIRECTORY/ → $OUTPUT_DIRECTORY/"
   start_time=$(date +%s%N)
-  $BUILD_SCRIPT "$INPUT_DIRECTORY" "$OUTPUT_DIRECTORY"
+  $BUILD_SCRIPT "$CONFIG_FILE" "$INPUT_DIRECTORY" "$OUTPUT_DIRECTORY" "$TEMPLATE_DIRECTORY"
   duration=$(($(date +%s%N) - start_time))
   echo "🤠🎉 BUILD $OUTPUT_DIRECTORY/ COMPLETED in $((duration / 1000000)) ms."
 }
 
 serve() {
-  $DEV_SERVER_SCRIPT "$DEV_SERVER_PORT" &
+  source "$CONFIG_FILE"
+  $DEV_SERVER_SCRIPT "$PORT" &
   echo "🐴🤠 RUNNING DEV SERVER: $!"
 }
 

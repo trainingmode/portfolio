@@ -12,6 +12,7 @@
 
 1. [**Workflow**](#workflow)
 2. [**Template System**](#template-system)
+3. [**Lighthouse Metrics**](#lighthouse-metrics)
 
 My portfolio site is built with a custom static site generator.
 
@@ -27,24 +28,14 @@ I've previously developed a [full-fledged SSG](https://alfred.ad/portfolio/engin
 
 What I've learned from previous projects is to reduce or avoid complexity. I would have just written pure HTML, but that makes for a horrible experience writing articles.
 
-There are only **`2`** lines of inline JavaScript on the site:
-
-**Footer year auto-updater**
-
-```html
-<script>
-  document.getElementById("footer-year").textContent = new Date().getFullYear();
-</script>
-```
-
-**Clipboard copy** (home page email CTA)
+There is only **`1`** line of inline JavaScript on this site, on the home page CTA:
 
 ```javascript
 onclick =
   "navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()";
 ```
 
-Everything else is just CSS.
+Everything else is just CSS & Tailwind.
 
 #### Tools used:
 
