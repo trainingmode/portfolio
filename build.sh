@@ -61,6 +61,7 @@ HTML_DIRECTORY_CRUMB_FILENAME="directory-crumb.frag.html"
 HTML_DIRECTORY_ARTICLE_FILENAME="listing-article.frag.html"
 HTML_DIRECTORY_PINNED_ARTICLE_FILENAME="listing-pinned.frag.html"
 HTML_DIRECTORY_FOLDER_FILENAME="listing-folder.frag.html"
+HTML_DOWNLOAD_BUTTON_FILENAME="download-button.frag.html"
 HTML_IFRAME_FILENAME="iframe.frag.html"
 HTML_IMG_COMPARISON_FILENAME="img-compare.frag.html"
 HTML_VIDEO_FILENAME="video.frag.html"
@@ -163,6 +164,23 @@ if [ -z "$HTML_DIRECTORY_FOLDER" ]; then
   echo "ERROR: Directory folder listing template is empty."
   exit 1
 fi
+
+HTML_DOWNLOAD_BUTTON_FILE="${TEMPLATE_DIRECTORY}/${HTML_DOWNLOAD_BUTTON_FILENAME}"
+if [ ! -f "$HTML_DOWNLOAD_BUTTON_FILE" ]; then
+  echo "ERROR: Download button template '$HTML_DOWNLOAD_BUTTON_FILE' does not exist."
+  exit 1
+fi
+HTML_DOWNLOAD_BUTTON=$(<"$HTML_DOWNLOAD_BUTTON_FILE")
+if [ -z "$HTML_DOWNLOAD_BUTTON" ]; then
+  echo "ERROR: Download button template is empty."
+  exit 1
+fi
+HTML_DOWNLOAD_BUTTON=$(tr -d '\n' < "$HTML_DOWNLOAD_BUTTON_FILE") # Strip Newlines for sed RegEx Replacement
+HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//&/\\&}" # Escape All & Ampersands for sed RegEx Replacement
+# Substitute {{DOWNLOAD_BUTTON_ALT}}, {{DOWNLOAD_BUTTON_SRC}}, & {{DOWNLOAD_BUTTON_TITLE}} in the Download Button HTML Template for the sed RegEx Replacement
+HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_ALT\}\}/\\1}"
+HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_SRC\}\}/\\2}"
+HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_TITLE\}\}/\\3}"
 
 HTML_IFRAME_FILE="${TEMPLATE_DIRECTORY}/${HTML_IFRAME_FILENAME}"
 if [ ! -f "$HTML_IFRAME_FILE" ]; then
@@ -291,6 +309,9 @@ while read -r filepath; do
   preprocessed=$(mktemp ~tmp.XXXXXX.md)
   # Syntax: @[height](url)
   sed -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$filepath" > "$preprocessed"
+
+  # Preprocess Download Links +[alt](url "title")
+  sed -i "" -E 's|\+\[([^]]+)\]\(([^ ]+) "([^"]+)"\)|'"$HTML_DOWNLOAD_BUTTON"'|g' "$preprocessed"
 
   # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
   sed -i "" -E "N;s|%\[([^]]+)\]\(([^)]+)\)\n%\[([^]]+)\]\(([^)]+)\)|${HTML_IMG_COMPARISON}|g" "$preprocessed"

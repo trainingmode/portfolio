@@ -63,7 +63,7 @@
   display: none !important;
 }
 
-.markdown a {
+.markdown a:not([download]) {
   background-color: transparent;
   color: var(--color-primary);
   text-decoration: none;
@@ -206,7 +206,7 @@
   font: inherit;
 }
 
-.markdown a:hover {
+.markdown a:not([download]):hover {
   text-decoration: underline;
 }
 
@@ -245,7 +245,7 @@
   cursor: pointer;
 }
 
-.markdown a:focus,
+.markdown a:not([download]):focus,
 .markdown [role="button"]:focus,
 .markdown input[type="radio"]:focus,
 .markdown input[type="checkbox"]:focus {
@@ -254,14 +254,14 @@
   box-shadow: none;
 }
 
-.markdown a:focus:not(:focus-visible),
+.markdown a:not([download]):focus:not(:focus-visible),
 .markdown [role="button"]:focus:not(:focus-visible),
 .markdown input[type="radio"]:focus:not(:focus-visible),
 .markdown input[type="checkbox"]:focus:not(:focus-visible) {
   outline: solid 1px transparent;
 }
 
-.markdown a:focus-visible,
+.markdown a:not([download]):focus-visible,
 .markdown [role="button"]:focus-visible,
 .markdown input[type="radio"]:focus-visible,
 .markdown input[type="checkbox"]:focus-visible {
@@ -270,8 +270,8 @@
   box-shadow: none;
 }
 
-.markdown a:not([class]):focus,
-.markdown a:not([class]):focus-visible,
+.markdown a:not([download]):not([class]):focus,
+.markdown a:not([download]):not([class]):focus-visible,
 .markdown input[type="radio"]:focus,
 .markdown input[type="radio"]:focus-visible,
 .markdown input[type="checkbox"]:focus,
@@ -1024,7 +1024,7 @@
 .markdown [role="tabpanel"][tabindex="0"]:focus:not(:focus-visible),
 .markdown button:focus:not(:focus-visible),
 .markdown summary:focus:not(:focus-visible),
-.markdown a:focus:not(:focus-visible) {
+.markdown a:not([download]):focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
