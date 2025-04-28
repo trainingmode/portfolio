@@ -604,6 +604,8 @@ The download button template is used to render the **`+[alt](url "title")` Downl
 
   The `title` attribute of the download link.
 
+  This is used for the text displayed when hovering over the link.
+
 ### `email-button.frag.html`
 
 The email button template is used to render the **`[alt](mailto:link "title")` Email Link** component.
