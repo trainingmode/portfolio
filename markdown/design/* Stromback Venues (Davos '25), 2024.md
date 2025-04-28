@@ -94,6 +94,6 @@ Certain slides blended a modern look with venue-specific branding, capturing the
 
 ---
 
-#### [`🏔️` **_`Book a meeting to discuss your project.` `➔`_**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
+#### `🏔️` **_[`Book a meeting`](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte") `to discuss your project.` `➔`_**
 
 .

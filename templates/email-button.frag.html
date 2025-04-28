@@ -4,10 +4,10 @@ class="relative group/contact border border-neutral-200 rounded-lg px-2 py-1 w-f
   class="select-none inline-block max-w-0 opacity-0 group-hover/contact:pr-[1.25rem] group-hover/contact:opacity-100 transition-all duration-500">👋🏼</span>
 {{EMAIL_BUTTON_ALT}}
 <span
-  class="group-focus-within/contact:pointer-events-auto pointer-events-none group-focus-within/contact:opacity-100 opacity-0 flex gap-1.5 text-neutral-700 md:text-xs font-medium ring-[0.5px] ring-inset ring-white border-[0.5px] border-neutral-400/65 p-1 flex-col justify-center items-center rounded-lg absolute top-10 md:top-8 left-0 w-full h-24 md:h-16 bg-neutral-100 shadow-lg transition-all duration-300 group-focus-within/contact:duration-0">
+  class="not-italic group-focus-within/contact:pointer-events-auto pointer-events-none group-focus-within/contact:opacity-100 opacity-0 flex gap-1.5 text-neutral-700 md:text-xs font-medium ring-[0.5px] ring-inset ring-white border-[0.5px] border-neutral-400/65 p-1 flex-col justify-center items-center rounded-lg absolute top-10 md:top-8 left-0 w-full h-24 md:h-16 bg-neutral-100 shadow-lg transition-all duration-300 group-focus-within/contact:duration-0">
   <a aria-label="Message me with your email client" href="mailto:{{EMAIL_BUTTON_SRC}}"
-    class="truncate grow w-full hover:bg-[var(--color-primary)] hover:text-white active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] flex items-center pl-2">Message</a>
-  <!-- <hr class="w-[calc(100%-1rem)] mx-auto h-[0.5px] border-neutral-200" /> -->
+    class="ssg-comp truncate grow w-full hover:bg-[var(--color-primary)] hover:text-white active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] flex items-center pl-2">Message</a>
+  <span class="block w-[calc(100%-1rem)] mx-auto h-[0.5px] border-t border-neutral-200"></span>
   <button aria-label="Copy my email address to your clipboard"
     onclick="navigator.clipboard.writeText('{{EMAIL_BUTTON_SRC}}');document.activeElement.blur()"
     ontouchend="navigator.clipboard.writeText('{{EMAIL_BUTTON_SRC}}');document.activeElement.blur()"

@@ -236,6 +236,9 @@ HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_ATTRIBUTES\}\}/\\1}"
 HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_SOURCE\}\}/\\2}"
 HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_TYPE\}\}/\\3}"
 
+# Remove Leftover Temp Files
+rm -f ~tmp.XXXXXX*
+
 # Purge Build Folder
 
 if [ "$PURGE_BUILD_FOLDER" = true ]; then

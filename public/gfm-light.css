@@ -63,7 +63,7 @@
   display: none !important;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]) {
+.markdown a:not(.ssg-comp) {
   background-color: transparent;
   color: var(--color-primary);
   text-decoration: none;
@@ -150,7 +150,7 @@
   }
 }
 
-.markdown hr {
+.markdown hr:not(.ssg-comp) {
   box-sizing: content-box;
   overflow: hidden;
   background: transparent;
@@ -206,7 +206,7 @@
   font: inherit;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]):hover {
+.markdown a:not(.ssg-comp):hover {
   text-decoration: underline;
 }
 
@@ -215,12 +215,12 @@
   opacity: 1;
 }
 
-.markdown hr::before {
+.markdown hr:not(.ssg-comp)::before {
   display: table;
   content: "";
 }
 
-.markdown hr::after {
+.markdown hr:not(.ssg-comp)::after {
   display: table;
   clear: both;
   content: "";
@@ -245,7 +245,7 @@
   cursor: pointer;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]):focus,
+.markdown a:not(.ssg-comp):focus,
 .markdown [role="button"]:focus,
 .markdown input[type="radio"]:focus,
 .markdown input[type="checkbox"]:focus {
@@ -254,14 +254,14 @@
   box-shadow: none;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]):focus:not(:focus-visible),
+.markdown a:not(.ssg-comp):focus:not(:focus-visible),
 .markdown [role="button"]:focus:not(:focus-visible),
 .markdown input[type="radio"]:focus:not(:focus-visible),
 .markdown input[type="checkbox"]:focus:not(:focus-visible) {
   outline: solid 1px transparent;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]):not([href^="mailto:"]):focus-visible,
+.markdown a:not(.ssg-comp):focus-visible,
 .markdown [role="button"]:focus-visible,
 .markdown input[type="radio"]:focus-visible,
 .markdown input[type="checkbox"]:focus-visible {
@@ -270,8 +270,8 @@
   box-shadow: none;
 }
 
-.markdown a:not([download]):not([href^="mailto:"]):not([class]):focus,
-.markdown a:not([download]):not([href^="mailto:"]):not([class]):focus-visible,
+.markdown a:not(.ssg-comp):not([class]):focus,
+.markdown a:not(.ssg-comp):not([class]):focus-visible,
 .markdown input[type="radio"]:focus,
 .markdown input[type="radio"]:focus-visible,
 .markdown input[type="checkbox"]:focus,
@@ -1024,7 +1024,7 @@
 .markdown [role="tabpanel"][tabindex="0"]:focus:not(:focus-visible),
 .markdown button:focus:not(:focus-visible),
 .markdown summary:focus:not(:focus-visible),
-.markdown a:not([download]):not([href^="mailto:"]):focus:not(:focus-visible) {
+.markdown a:not(.ssg-comp):focus:not(:focus-visible) {
   outline: none;
   box-shadow: none;
 }
