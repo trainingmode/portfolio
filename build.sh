@@ -62,6 +62,7 @@ HTML_DIRECTORY_ARTICLE_FILENAME="listing-article.frag.html"
 HTML_DIRECTORY_PINNED_ARTICLE_FILENAME="listing-pinned.frag.html"
 HTML_DIRECTORY_FOLDER_FILENAME="listing-folder.frag.html"
 HTML_DOWNLOAD_BUTTON_FILENAME="download-button.frag.html"
+HTML_EMAIL_BUTTON_FILENAME="email-button.frag.html"
 HTML_IFRAME_FILENAME="iframe.frag.html"
 HTML_IMG_COMPARISON_FILENAME="img-compare.frag.html"
 HTML_VIDEO_FILENAME="video.frag.html"
@@ -181,6 +182,24 @@ HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//&/\\&}" # Escape All & Ampersands 
 HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_ALT\}\}/\\1}"
 HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_SRC\}\}/\\2}"
 HTML_DOWNLOAD_BUTTON="${HTML_DOWNLOAD_BUTTON//\{\{DOWNLOAD_BUTTON_TITLE\}\}/\\3}"
+
+HTML_EMAIL_BUTTON_FILE="${TEMPLATE_DIRECTORY}/${HTML_EMAIL_BUTTON_FILENAME}"
+if [ ! -f "$HTML_EMAIL_BUTTON_FILE" ]; then
+  echo "ERROR: Email button template '$HTML_EMAIL_BUTTON_FILE' does not exist."
+  exit 1
+fi
+HTML_EMAIL_BUTTON=$(<"$HTML_EMAIL_BUTTON_FILE")
+if [ -z "$HTML_EMAIL_BUTTON" ]; then
+  echo "ERROR: Email button template is empty."
+  echo "Proceeding with default email link output."
+fi
+HTML_EMAIL_BUTTON=$(tr -d '\n' < "$HTML_EMAIL_BUTTON_FILE") # Strip Newlines for sed RegEx Replacement
+HTML_EMAIL_BUTTON="${HTML_EMAIL_BUTTON//&/\\&}" # Escape All & Ampersands for sed RegEx Replacement
+# Substitute {{EMAIL_BUTTON_SRC}}, {{EMAIL_BUTTON_ALT}}, & {{EMAIL_BUTTON_TITLE}} in the Email Button HTML Template for the sed RegEx Replacement
+HTML_EMAIL_BUTTON="${HTML_EMAIL_BUTTON//\{\{EMAIL_BUTTON_ALT\}\}/\\1}"
+HTML_EMAIL_BUTTON="${HTML_EMAIL_BUTTON//\{\{EMAIL_BUTTON_SRC\}\}/\\2}"
+HTML_EMAIL_BUTTON="${HTML_EMAIL_BUTTON//\{\{EMAIL_BUTTON_TITLE\}\}/\\3}"
+
 
 HTML_IFRAME_FILE="${TEMPLATE_DIRECTORY}/${HTML_IFRAME_FILENAME}"
 if [ ! -f "$HTML_IFRAME_FILE" ]; then
@@ -312,6 +331,9 @@ while read -r filepath; do
 
   # Preprocess Download Links +[alt](url "title")
   sed -i "" -E 's|\+\[([^]]+)\]\(([^ ]+) "([^"]+)"\)|'"$HTML_DOWNLOAD_BUTTON"'|g' "$preprocessed"
+
+  # Preprocess Email Links [alt](mailto:url "title")
+  sed -i "" -E 's|\[([^]]+)\]\(mailto:([^ ]+) "([^"]+)"\)|'"$HTML_EMAIL_BUTTON"'|g' "$preprocessed"
 
   # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
   sed -i "" -E "N;s|%\[([^]]+)\]\(([^)]+)\)\n%\[([^]]+)\]\(([^)]+)\)|${HTML_IMG_COMPARISON}|g" "$preprocessed"

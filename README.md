@@ -373,6 +373,30 @@ _Example:_
 
 `Sasha` supports a few components using special **Markdown** syntax.
 
+### `+[alt](url "title")` **Download Link**
+
+Links can be embedded as downloadable links directly inside articles using a link and display lablel.
+
+The `download-button.frag.html` **Download Button Component HTML Template** is used to render the parsed iFrame.
+
+_Example:_
+
+```
++[View My Resume](/public/resume.pdf "Download Alfred R. Duarte's Resume")
+```
+
+### `[alt](mailto:link "title")` **Email Link**
+
+Emails can be automatically transformed into a component.
+
+If no `email-button.frag.html` **Email Button Component HTML Template** is found, the email will be displayed as a normal link.
+
+_Example:_
+
+```
+[Email Me](mailto:alfred.r.duarte@gmail.com "Email Alfred R. Duarte")
+```
+
 ### `@[size](link)` **iFrame**
 
 iFrames can be embedded directly inside articles using a link and a display size.
@@ -563,6 +587,40 @@ The body template is used to render the **`Article`** contents into the page `<b
 - `{{ MARKDOWN }}`
 
   The content of the **`.md` Markdown** article rendered as HTML.
+
+### `download-button.frag.html`
+
+The download button template is used to render the **`+[alt](url "title")` Download Link** component.
+
+- `{{ DOWNLOAD_BUTTON_ALT }}`
+
+  The display label for the download link.
+
+- `{{ DOWNLOAD_BUTTON_SRC }}`
+
+  The `src` attribute of the download link.
+
+- `{{ DOWNLOAD_BUTTON_TITLE }}`
+
+  The `title` attribute of the download link.
+
+### `email-button.frag.html`
+
+The email button template is used to render the **`[alt](mailto:link "title")` Email Link** component.
+
+- `{{ EMAIL_BUTTON_ALT }}`
+
+  The display label for the email link.
+
+- `{{ EMAIL_BUTTON_SRC }}`
+
+  The `src` attribute of the email link.
+
+  This does **not** include the `mailto:` prefix.
+
+- `{{ EMAIL_BUTTON_TITLE }}`
+
+  The `title` attribute of the email link.
 
 ### `iframe.frag.html`
 

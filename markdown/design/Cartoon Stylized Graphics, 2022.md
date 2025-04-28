@@ -56,6 +56,6 @@ Below are some discarded samples that never made it to production.
 
 ---
 
-#### [`🎨`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte") **_`Book a `[`meeting`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")` to discuss your characters.` [`➔`](mailto:alfred.r.duarte@gmail.com "Calendly – Alfred R. Duarte")_**
+#### [`🎨` **_`Book a meeting to discuss your characters.` `➔`_**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
 
 .
