@@ -53,6 +53,31 @@ Internally, **articles** are converted using **Pandoc**. While **Markdown** is p
 
 I wrote a set of internal **plugins** to preprocess special Markdown syntax, like **embedded iFrames** and **image comparisons**.
 
+## Tailwind CSS & Vanilla HTML
+
+via the [method recommended by Tailwind](https://tailwindcss.com/blog/standalone-cli "Standalone CLI: Use Tailwind CSS without Node.js – Tailwind CSS").
+
+```bash
+curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64 && chmod +x tailwindcss-macos-arm64 && mv tailwindcss-macos-arm64 tailwindcss
+```
+
+then continued the regular [Tailwind CLI installation](https://tailwindcss.com/docs/installation/tailwind-cli "Tailwind CLI – Tailwind CSS").
+
+```css
+@import "tailwind.css";
+```
+
+```html
+<!-- Removed → <script src="https://cdn.tailwindcss.com"></script> -->
+<link rel="stylesheet" href="/public/tailwind.css" />
+```
+
+using the watcher & minifier
+
+```bash
+./tailwindcss -i ./public/styles.css -o ./public/tailwind.css -w -m
+```
+
 # Workflow
 
 The **static site generator** is a set of bash scripts.

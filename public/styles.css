@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --color-primary: #ff0055; /* #0969da */
 }
@@ -36,6 +38,7 @@ input[type="range"] {
 input[type="range"]::-webkit-slider-runnable-track {
   height: 4px;
   border-radius: 9999rem;
+  z-index: 0;
 }
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -49,6 +52,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-track {
   height: 4px;
   border-radius: 9999rem;
+  z-index: 0;
 }
 input[type="range"]::-moz-range-thumb {
   margin-top: -8px;
@@ -63,10 +67,12 @@ input[type="range"]::-moz-range-thumb {
     margin-top: -14px;
     width: 32px;
     height: 32px;
+    z-index: 10000;
   }
   input[type="range"]::-moz-range-thumb {
     margin-top: -14px;
     width: 32px;
     height: 32px;
+    z-index: 10000;
   }
 }

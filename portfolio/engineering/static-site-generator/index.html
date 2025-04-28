@@ -49,18 +49,16 @@
       href="https://alfred.ad/portfolio/engineering/Static%20Site%20Generator.html"
     />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="/public/gfm-light.css" />
     <link rel="stylesheet" href="/public/pastie.css" />
-    <link rel="stylesheet" href="/public/styles.css" />
+    <link rel="stylesheet" href="/public/tailwind.css" />
   </head>
   <body class="min-h-screen flex flex-col">
     <nav class="pt-1.5 flex flex-wrap justify-between items-center">
       <a
         href="/"
         title="Alfred R. Duarte | Portfolio Home"
-        class="text-[1.65rem] uppercase tracking-[-0.015em]"
+        class="text-[1.65rem] uppercase"
       >
         <span class="text-3xl tracking-[-0.005em]">Λ</span
         ><span class="tracking-[-0.03em]">lf</span
@@ -227,6 +225,45 @@
         Markdown syntax, like <strong>embedded iFrames</strong> and
         <strong>image comparisons</strong>.
       </p>
+      <h2 id="tailwind-css-vanilla-html">Tailwind CSS &amp; Vanilla HTML</h2>
+      <p>
+        via the
+        <a
+          href="https://tailwindcss.com/blog/standalone-cli"
+          title="Standalone CLI: Use Tailwind CSS without Node.js – Tailwind CSS"
+          >method recommended by Tailwind</a
+        >.
+      </p>
+      <div class="sourceCode" id="cb2">
+        <pre
+          class="sourceCode bash"
+        ><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sLO</span> https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">chmod</span> +x tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> tailwindcss-macos-arm64 tailwindcss</span></code></pre>
+      </div>
+      <p>
+        then continued the regular
+        <a
+          href="https://tailwindcss.com/docs/installation/tailwind-cli"
+          title="Tailwind CLI – Tailwind CSS"
+          >Tailwind CLI installation</a
+        >.
+      </p>
+      <div class="sourceCode" id="cb3">
+        <pre
+          class="sourceCode css"
+        ><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;tailwind.css&quot;</span><span class="op">;</span></span></code></pre>
+      </div>
+      <div class="sourceCode" id="cb4">
+        <pre
+          class="sourceCode html"
+        ><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Removed → &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt; --&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/public/tailwind.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span></code></pre>
+      </div>
+      <p>using the watcher &amp; minifier</p>
+      <div class="sourceCode" id="cb5">
+        <pre
+          class="sourceCode bash"
+        ><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tailwindcss</span> <span class="at">-i</span> ./public/styles.css <span class="at">-o</span> ./public/tailwind.css <span class="at">-w</span> <span class="at">-m</span></span></code></pre>
+      </div>
       <h1 id="workflow">Workflow</h1>
       <p>
         The <strong>static site generator</strong> is a set of bash scripts.
@@ -255,7 +292,6 @@
           ></strong
         >
       </h4>
-      <p>.</p>
     </main>
   </body>
   <footer class="mt-auto mb-1.5 pt-10 w-full">
