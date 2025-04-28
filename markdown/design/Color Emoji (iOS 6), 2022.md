@@ -245,4 +245,4 @@ In all, this was a fun project! My goal wasn't to perfectly recreate the origina
 
 ---
 
-#### `📚` **_[`Book a meeting`](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte") `to view the .afdesign files.` `➔`_**
+#### `📚` **_[`Book a meeting`](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte") `to view the .afdesign files.` [`➔`](mailto:alfred.r.duarte@gmail.com)_**
