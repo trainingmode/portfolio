@@ -78,5 +78,5 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .highlight strong {
-  @apply font-semibold hover:font-bold transition-all duration-500;
+  @apply font-semibold hover:font-bold active:font-black transition-all duration-500;
 }
