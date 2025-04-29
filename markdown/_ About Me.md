@@ -1,8 +1,8 @@
 ![](/public/photos/misc/me.jpg "Alfred R. Duarte 2023")
 
-### About Me
+### [**👋🏼 Nice to meet you!**]{.highlight}
 
-👋🏼 Nice to meet you! I'm **Alfred**.
+I'm **Alfred**.
 
 I specialize in driving innovative product development.
 
