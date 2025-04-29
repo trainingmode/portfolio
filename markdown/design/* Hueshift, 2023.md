@@ -6,7 +6,7 @@
 
 > **March** - **April 2023**
 
-> _**Note**: For an engineering perspective on this project, please see [here](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
+> _**Note**: For an engineering perspective on this project, please see the [companion article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
 
 1. [**Purpose**](#purpose)
 2. [**Interface Design**](#interface-design)
