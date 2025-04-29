@@ -80,3 +80,9 @@ input[type="range"]::-moz-range-thumb {
 .highlight strong {
   @apply font-semibold hover:font-bold active:font-black transition-all duration-500;
 }
+
+/** Markdown Video */
+
+.markdown video {
+  @apply mb-4;
+}
