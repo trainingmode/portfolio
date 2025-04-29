@@ -28,14 +28,6 @@ img[src=""] {
   display: none;
 }
 
-/** Images — Nearest-Neighbor Scaling */
-
-img {
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-}
-
 /** Markdown — Highlight */
 
 .highlight {
