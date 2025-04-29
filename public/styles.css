@@ -70,3 +70,13 @@ input[type="range"]::-moz-range-thumb {
     height: 32px;
   }
 }
+
+/** Markdown Highlight */
+
+.highlight {
+  @apply bg-[var(--color-primary)]/[7.5%] text-[var(--color-primary)] rounded-md px-1.5 cursor-default;
+}
+
+.highlight strong {
+  @apply font-semibold hover:font-bold transition-all duration-500;
+}
