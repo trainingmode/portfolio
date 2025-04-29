@@ -86,6 +86,7 @@
     </header>
     <main
       id="markdown"
+      onclick="this?.unfocus?.()"
       class="markdown w-full max-w-[980px] m-auto mt-6 md:mt-auto p-[15px] md:p-[45px]"
     >
       <figure>
@@ -395,8 +396,8 @@
             ></span>
             <button
               aria-label="Copy my email address to your clipboard"
-              onclick="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
-              ontouchend="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
+              onclick="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');this.blur()"
+              ontouchend="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');this.blur()"
               class="truncate grow w-full hover:bg-(--color-primary) hover:text-white md:active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] cursor-pointer text-left pl-2"
             >
               Copy
