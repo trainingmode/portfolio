@@ -377,7 +377,7 @@ _Example:_
 
 Links can be embedded as downloadable links directly inside articles using a link and display lablel.
 
-The `download-button.frag.html` **Download Button Component HTML Template** is used to render the parsed iFrame.
+The `download-link.frag.html` **Download Link Component HTML Template** is used to render the parsed download link.
 
 _Example:_
 
@@ -389,7 +389,7 @@ _Example:_
 
 Emails can be automatically transformed into a component.
 
-If no `email-button.frag.html` **Email Button Component HTML Template** is found, the email will be displayed as a normal link.
+If no `email-link.frag.html` **Email Link Component HTML Template** is found, the email will be displayed as a normal link.
 
 _Example:_
 
@@ -481,8 +481,11 @@ Both **`Article`** & **`Directory`** pages are rendered into the **`layout.frag.
 **_[Article](#article-templates):_**
 
 - [`body.frag.html`](#bodyfraghtml)
+- [`download-link.frag.html`](#downloadlinkfraghtml)
+- [`email-link.frag.html`](#emaillinkfraghtml)
 - [`iframe.frag.html`](#iframefraghtml)
 - [`img-compare.frag.html`](#imgcomparefraghtml)
+- [`video.frag.html`](#videofraghtml)
 
 **_[Directory](#directory-templates):_**
 
@@ -588,39 +591,39 @@ The body template is used to render the **`Article`** contents into the page `<b
 
   The content of the **`.md` Markdown** article rendered as HTML.
 
-### `download-button.frag.html`
+### `download-link.frag.html`
 
-The download button template is used to render the **`+[alt](url "title")` Download Link** component.
+The download link template is used to render the **`+[alt](url "title")` Download Link** component.
 
-- `{{ DOWNLOAD_BUTTON_ALT }}`
+- `{{ DOWNLOAD_LINK_ALT }}`
 
   The display label for the download link.
 
-- `{{ DOWNLOAD_BUTTON_SRC }}`
+- `{{ DOWNLOAD_LINK_SRC }}`
 
   The `src` attribute of the download link.
 
-- `{{ DOWNLOAD_BUTTON_TITLE }}`
+- `{{ DOWNLOAD_LINK_TITLE }}`
 
   The `title` attribute of the download link.
 
   This is used for the text displayed when hovering over the link.
 
-### `email-button.frag.html`
+### `email-link.frag.html`
 
-The email button template is used to render the **`[alt](mailto:link "title")` Email Link** component.
+The email link template is used to render the **`[alt](mailto:link "title")` Email Link** component.
 
-- `{{ EMAIL_BUTTON_ALT }}`
+- `{{ EMAIL_LINK_ALT }}`
 
   The display label for the email link.
 
-- `{{ EMAIL_BUTTON_SRC }}`
+- `{{ EMAIL_LINK_SRC }}`
 
   The `src` attribute of the email link.
 
   This does **not** include the `mailto:` prefix.
 
-- `{{ EMAIL_BUTTON_TITLE }}`
+- `{{ EMAIL_LINK_TITLE }}`
 
   The `title` attribute of the email link.
 
