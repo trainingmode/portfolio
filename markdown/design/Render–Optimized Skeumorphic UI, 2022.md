@@ -196,6 +196,8 @@ The **guides** did help speed up creation by helping me quickly place curves. Bu
 
 ---
 
-#### `🎛️` **_[`Book a meeting`](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte") `to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com)_**
+#### `🎛️` **_`Book a meeting to discuss your project.` [`➔`](mailto:alfred.r.duarte@gmail.com)_**
+
+[**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
 
 .
