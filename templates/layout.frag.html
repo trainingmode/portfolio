@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  {{HEAD}}
-  <body class="min-h-screen flex flex-col">
-    <nav class="pt-1.5 flex flex-wrap justify-between items-center">
+{{HEAD}}
+<body class="min-h-screen flex flex-col">
+  <nav class="pt-1.5 flex flex-wrap justify-between items-center">
+    <a
+      href="/"
+      title="Alfred R. Duarte | Portfolio Home"
+      class="text-[1.65rem]"
+    >
+      <span class="tracking-[-0.005em]">A</span><span class="tracking-[-0.0175em]">l</span><span
+        class="tracking-[-0.05em]">f</span><span class="tracking-[-0.04em]">r</span><span
+        class="tracking-[-0.02em]">ed</span>
+    </a>
+    <div class="flex gap-4 md:text-sm text-neutral-500 tracking-[0.0075em]">
       <a
-        href="/"
-        title="Alfred R. Duarte | Portfolio Home"
-        class="text-[1.65rem] uppercase"
+        href="/portfolio/design"
+        title="Design | Alfred R. Duarte | Portfolio"
+        class="hover:text-black hover:font-medium transition-all duration-300"
+        >Design</a
       >
-        <span class="text-3xl tracking-[-0.005em]">Λ</span
-        ><span class="tracking-[-0.03em]">lf</span
-        ><span class="tracking-[-0.035em]">r</span
-        ><span class="tracking-[-0.05em]">ed</span>
-      </a>
-      <div class="flex gap-4 md:text-sm text-neutral-500 tracking-[0.0075em]">
-        <a
-          href="/portfolio/design"
-          title="Design | Alfred R. Duarte | Portfolio"
-          class="hover:text-black hover:font-medium transition-all duration-300"
-          >Design</a
-        >
-        <a
-          href="/portfolio/engineering"
-          title="Engineering | Alfred R. Duarte | Portfolio"
-          class="hover:text-black hover:font-medium transition-all duration-300"
-          >Engineering</a
-        >
-      </div>
-    </nav>
-    {{BODY}}
-  </body>
-  {{FOOTER}}
+      <a
+        href="/portfolio/engineering"
+        title="Engineering | Alfred R. Duarte | Portfolio"
+        class="hover:text-black hover:font-medium transition-all duration-300"
+        >Engineering</a
+      >
+    </div>
+  </nav>
+  {{BODY}}
+</body>
+{{FOOTER}}
 </html>
