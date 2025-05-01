@@ -25,7 +25,7 @@
     />
     <meta
       property="og:image"
-      content="https://alfred.ad/public/photos/misc/ssg-terminal-output.png"
+      content="https://alfred.ad/public/photos/sasha/sasha-article-transformation.png"
     />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -37,7 +37,7 @@
     <meta name="twitter:creator" content="{{TWITTER_HANDLE}}" />
     <meta
       name="twitter:image"
-      content="https://alfred.ad/public/photos/misc/ssg-terminal-output.png"
+      content="https://alfred.ad/public/photos/sasha/sasha-article-transformation.png"
     />
     <meta name="twitter:site" content="{{TWITTER_HANDLE}}" />
 
@@ -55,12 +55,13 @@
       <a
         href="/"
         title="Alfred R. Duarte | Portfolio Home"
-        class="text-[1.65rem] uppercase"
+        class="text-[1.65rem]"
       >
-        <span class="text-3xl tracking-[-0.005em]">Λ</span
-        ><span class="tracking-[-0.03em]">lf</span
-        ><span class="tracking-[-0.035em]">r</span
-        ><span class="tracking-[-0.05em]">ed</span>
+        <span class="tracking-[-0.005em]">A</span
+        ><span class="tracking-[-0.0175em]">l</span
+        ><span class="tracking-[-0.05em]">f</span
+        ><span class="tracking-[-0.04em]">r</span
+        ><span class="tracking-[-0.02em]">ed</span>
       </a>
       <div class="flex gap-4 md:text-sm text-neutral-500 tracking-[0.0075em]">
         <a
@@ -82,16 +83,20 @@
     </header>
     <main
       id="markdown"
+      onclick="this?.unfocus?.()"
       class="markdown w-full max-w-[980px] m-auto mt-6 md:mt-auto p-[15px] md:p-[45px]"
     >
       <figure>
         <img
-          src="/public/photos/misc/ssg-terminal-output.png"
-          title="Static Site Generator Terminal Output, Alfred R. Duarte 2025"
-          alt="Static Site Generator Terminal Output, 2025"
+          src="/public/photos/sasha/sasha-article-transformation.png"
+          title="Sasha Article Transformation, Alfred R. Duarte 2025"
+          alt="Sasha Article Transformation, 2025"
         />
         <figcaption aria-hidden="true">
-          <em>Static Site Generator Terminal Output, <strong>2025</strong></em>
+          <em
+            ><code>Sasha</code> Article Transformation,
+            <strong>2025</strong></em
+          >
         </figcaption>
       </figure>
       <blockquote>
@@ -101,34 +106,68 @@
       <blockquote>
         <p><strong>April 2025</strong></p>
       </blockquote>
-      <h3 id="this-article-is-under-construction.">
-        <code>⚠️</code>
-        <strong
-          ><em><code>This article is under construction.</code></em></strong
-        >
-      </h3>
       <h3 id="github-trainingmodeportfolio">
         <em>GitHub</em>:
         <strong
           ><a
             href="https://github.com/trainingmode/portfolio"
-            title="Alfred R. Duarte Portfolio GitHub"
+            title="trainingmode/portfolio: Micro static site generator."
             ><code>trainingmode/portfolio</code></a
           ></strong
         >
       </h3>
       <ol type="1">
         <li>
+          <a href="#overview"><strong>Overview</strong></a>
+        </li>
+        <li>
           <a href="#workflow"><strong>Workflow</strong></a>
+        </li>
+        <li>
+          <a href="#writing-articles"><strong>Writing Articles</strong></a>
         </li>
         <li>
           <a href="#template-system"><strong>Template System</strong></a>
         </li>
         <li>
-          <a href="#lighthouse-metrics"><strong>Lighthouse Metrics</strong></a>
+          <a href="#portfolio-site"><strong>Portfolio Site</strong></a>
+        </li>
+        <li>
+          <a href="#benchmarks-metrics"
+            ><strong>Benchmarks &amp; Metrics</strong></a
+          >
+        </li>
+        <li>
+          <a href="#improvement-targets"
+            ><strong>Improvement Targets</strong></a
+          >
         </li>
       </ol>
-      <p>My portfolio site is built with a custom static site generator.</p>
+      <h3
+        id="this-site-loads-in-under-0.8s-on-mobile-0.2s-on-desktop-pagespeed-insights"
+      >
+        <span class="highlight"
+          ><a
+            href="https://pagespeed.web.dev/analysis/https-alfred-ad/6hw2k04xoa?form_factor=mobile"
+            title="alfred.ad — Mobile Device Metrics — PageSpeed Insights"
+            ><strong
+              >→
+              <em
+                >This site loads in under 0.8s on mobile, 0.2s on desktop</em
+              ></strong
+            ></a
+          ></span
+        >
+        (PageSpeed Insights)
+      </h3>
+      <p>
+        My portfolio site is built with a custom
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Glossary/SSG"
+          title="Static site generator (SSG) - MDN Web Docs Glossary: Definitions of Web-related terms | MDN"
+          >static site generator</a
+        >.
+      </p>
       <p>
         Markdown <strong>articles</strong> &amp; folder
         <strong>directories</strong> are rendered into
@@ -142,23 +181,25 @@
       <p>
         What I’ve learned from previous projects is to reduce or avoid
         complexity. I would have just written pure HTML, but that makes for a
-        horrible experience writing articles.
+        horrible experience writing neatly–formatted articles.
       </p>
       <p>
         There is only
         <strong
           ><em><code>1</code></em></strong
         >
-        line of inline JavaScript on this site. It’s on the home page CTA,
+        line of inline JavaScript on this site. It’s on the email button CTA,
         needed to copy my email to your clipboard and close the context menu:
       </p>
       <div class="sourceCode" id="cb1">
         <pre
           class="sourceCode javascript"
-        ><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;navigator.clipboard.writeText(&#39;alfred.r.duarte@gmail.com&#39;);document.activeElement.blur()&quot;</span><span class="op">;</span></span></code></pre>
+        ><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>onclick <span class="op">=</span> <span class="vs">`navigator.clipboard.writeText(&quot;alfred.r.duarte@gmail.com&quot;);this.blur();`</span><span class="op">;</span></span></code></pre>
       </div>
-      <p>Everything else is just CSS &amp; Tailwind.</p>
+      <p>
+        Everything else is just <strong>vanilla HTML</strong> &amp;
+        <strong>Tailwind CSS</strong>.
+      </p>
       <video autoplay muted loop playsinline width="1400" class="rounded-lg">
         <source
           src="/public/media/alfred-portfolio-lighthouse-metrics.mp4"
@@ -166,6 +207,16 @@
         />
         Your browser does not support the video tag.
       </video>
+      <p>
+        My
+        <a
+          href="https://pagespeed.web.dev/analysis/https-alfred-ad/6hw2k04xoa?form_factor=mobile"
+          title="alfred.ad — Mobile Metrics — PageSpeed Insights"
+          >Lighthouse metrics</a
+        >
+        speak for themselves.
+      </p>
+      <p>I didn’t even know it had fireworks.</p>
       <h4 id="tools-used">Tools used:</h4>
       <ul>
         <li><a href="https://www.cursor.com/">Cursor</a></li>
@@ -182,6 +233,7 @@
         <li><a href="https://github.com/paulmillr/chokidar">Chokidar</a></li>
         <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
         <li><a href="https://html.spec.whatwg.org/multipage/">HTML</a></li>
+        <li><a href="https://www.sketch.com/">Sketch</a> (diagrams)</li>
       </ul>
       <h1 id="overview">Overview</h1>
       <p>
@@ -201,82 +253,763 @@
         >.
       </p>
       <p>
-        For this project, I mixed <strong>pure HTML</strong> with
-        <strong>Tailwind CSS</strong> (via CDN) for the template system.
-        Generated sites are extremely lightweight, with only the Tailwind CDN
-        dependency.
+        It’s essentially a <strong>Markdown</strong> converter with a simple
+        template system. Generated sites are just HTML files, organized in the
+        folder structure you provide in the input directory.
       </p>
       <p>
         Internally, <strong>articles</strong> are converted using
-        <strong>Pandoc</strong>. While <strong>Markdown</strong> is preferred,
-        Pandoc will
+        <strong>Pandoc</strong>.
         <a
           href="https://pandoc.org/MANUAL.html#specifying-formats"
           title="Specifying formats – Pandoc – Pandoc User’s Guide"
-          >convert all files to HTML by default</a
-        >. You could write articles in any markup format that
-        <strong>Pandoc</strong> supports.
+          >Pandoc converts all files to HTML by default</a
+        >. While you could write articles in any markup format that
+        <strong>Pandoc</strong> supports, only <strong>Markdown</strong> is
+        supported.
       </p>
       <p>
-        I wrote a set of internal <strong>plugins</strong> to preprocess special
-        Markdown syntax, like <strong>embedded iFrames</strong> and
-        <strong>image comparisons</strong>.
-      </p>
-      <h2 id="tailwind-css-vanilla-html">Tailwind CSS &amp; Vanilla HTML</h2>
-      <p>
-        via the
-        <a
-          href="https://tailwindcss.com/blog/standalone-cli"
-          title="Standalone CLI: Use Tailwind CSS without Node.js – Tailwind CSS"
-          >method recommended by Tailwind</a
-        >.
+        A set of internal <strong>plugins</strong> preprocess special
+        <strong>Markdown</strong> syntax, like <strong>video</strong> and
+        <strong>embedded iFrames</strong>.
       </p>
       <div class="sourceCode" id="cb2">
         <pre
-          class="sourceCode bash"
-        ><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sLO</span> https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">chmod</span> +x tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> tailwindcss-macos-arm64 tailwindcss</span></code></pre>
+          class="sourceCode md"
+        ><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Video Component</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>∼<span class="co">[</span><span class="ot">&lt;video&gt; Attributes</span><span class="co">](link &quot;type&quot;)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu"># Example</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>∼<span class="co">[</span><span class="ot">loop controls playsinline width=&quot;320&quot; class=&quot;rounded-lg ring-(--color-primary) ring-0 ring-offset-1 hover:ring-4 active:ring-2 transition-shadow&quot;</span><span class="co">](/public/media/alfred-portfolio-lighthouse-metrics.mp4 &quot;video/mp4&quot;)</span></span></code></pre>
       </div>
       <p>
-        then continued the regular
+        <strong><em>Output:</em></strong>
+      </p>
+      <video
+        loop
+        controls
+        playsinline
+        width="320"
+        class="rounded-lg ring-(--color-primary) ring-0 ring-offset-1 hover:ring-4 active:ring-2 transition-shadow"
+      >
+        <source
+          src="/public/media/alfred-portfolio-lighthouse-metrics.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <p>
+        Both <strong>article</strong> files &amp;
+        <strong>directory</strong> folders are rendered as pages in your site.
+        <strong>Directory</strong> pages display
+        <strong>article</strong> listings and other
+        <strong>directory</strong> subfolders.
+      </p>
+      <p>
+        Complete documentation can be found in the
+        <a
+          href="https://github.com/trainingmode/portfolio?tab=readme-ov-file#sasha--static-site-generator"
+          title="trainingmode/portfolio: Micro static site generator."
+          >project <strong><code>README</code></strong></a
+        >.
+      </p>
+      <h1 id="workflow">Workflow</h1>
+      <p>
+        The <strong>static site generator</strong> is a set of bash scripts.
+      </p>
+      <p>
+        The <strong>CLI</strong> is used to watch the current project directory
+        for changes and preview your site.
+      </p>
+      <p>
+        Your site is automatically rebuilt when the
+        <strong>CLI</strong> observes any changes. You can specify an
+        <code>.ssgignore</code> file to define excluded file/folder patterns.
+      </p>
+      <p>
+        A <strong><code>ssg.config</code> Configuration</strong> file is created
+        for you when you first run the <strong>CLI</strong>. It contains a few
+        settings, like your domain for
+        <a
+          href="https://developers.google.com/search/docs/crawling-indexing/canonicalization"
+          title="What is URL Canonicalization | Google Search Central | Documentation | Google for Developers"
+          >canonical</a
+        >
+        &amp;
+        <a
+          href="https://ogp.me/#metadata"
+          title="Basic Metadata — The Open Graph protocol"
+          >Open Graph</a
+        >
+        URLs. None of the settings are required.
+      </p>
+      <p>
+        A folder of <strong>templates</strong> is used to render your folder of
+        <strong>articles</strong> &amp; <strong>directories</strong> into
+        <strong>HTML</strong> pages. The generated pages are saved into the
+        output folder. The structure of the output folder will mirror the input
+        folder.
+      </p>
+      <h2 id="cli">CLI</h2>
+      <p>The <strong>CLI</strong> is the main entrypoint for the SSG.</p>
+      <p>
+        It watches the current directory and serves your site for previewing.
+      </p>
+      <div class="sourceCode" id="cb3">
+        <pre
+          class="sourceCode sh"
+        ><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./ssg.sh</span> ssg.config <span class="st">&quot;articles&quot;</span> <span class="st">&quot;build&quot;</span></span></code></pre>
+      </div>
+      <h2 id="builder">Builder</h2>
+      <p>
+        You can run the <strong>Builder</strong> manually to build your site.
+      </p>
+      <div class="sourceCode" id="cb4">
+        <pre
+          class="sourceCode sh"
+        ><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./build.sh</span> ssg.config <span class="st">&quot;articles&quot;</span> <span class="st">&quot;build&quot;</span></span></code></pre>
+      </div>
+      <p>
+        The <a href="#cli"><strong>CLI</strong></a> can be used to watch your
+        project directory and automatically rebuild your site.
+      </p>
+      <h2 id="development-server">Development Server</h2>
+      <p>
+        The <strong>Development Server</strong> is a simple
+        <a href="https://github.com/vercel/serve" title="vercel/serve — GitHub"
+          >serve</a
+        >–based HTTP server for previewing your site.
+      </p>
+      <div class="sourceCode" id="cb5">
+        <pre
+          class="sourceCode sh"
+        ><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./server.sh</span> 3000</span></code></pre>
+      </div>
+      <p>
+        The server isn’t <strong>WebSockets</strong>–based, so you’ll need to
+        refresh your browser to see changes.
+      </p>
+      <p>
+        The <a href="#cli"><strong>CLI</strong></a> will automatically launch
+        the server for you.
+      </p>
+      <h1 id="writing-articles">Writing Articles</h1>
+      <p>
+        <strong>Articles</strong> are formatted in
+        <a href="https://commonmark.org/" title="CommonMark"
+          ><strong>Markdown</strong></a
+        >.
+      </p>
+      <p>
+        <strong>Article heading images</strong> are extracted as the
+        <strong>thumbnail</strong>. The <strong>thumbnail</strong> is displayed
+        in <strong>directory</strong> pages and for sharing on social media. The
+        first image in the article is used.
+      </p>
+      <p>
+        <strong>Article titles</strong> are extracted from the filename.
+        Filenames are slugified for SEO–friendly URLs.
+      </p>
+      <p>
+        <strong>Article descriptions</strong> are extracted as the first
+        paragraph of the article.
+      </p>
+      <p>
+        You can define an <strong>article category</strong> by adding a
+        <strong><code>&gt;</code> Blockquote</strong> before the first heading.
+      </p>
+      <div class="sourceCode" id="cb6">
+        <pre
+          class="sourceCode md"
+        ><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Case Study</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu"># Light &amp; Shadows</span></span></code></pre>
+      </div>
+      <h2 id="article-components">Article Components</h2>
+      <p>
+        <strong>Article components</strong> allow you to transform content using
+        special <strong>Markdown</strong> syntax.
+      </p>
+      <p>
+        A handful are available. Currently, they all extend the
+        <strong><code>[]()</code> link`</strong> syntax.
+      </p>
+      <p>
+        For example, add <code>+</code> to the beginning of a link to turn it
+        into a <strong>download link</strong>.
+      </p>
+      <div class="sourceCode" id="cb7">
+        <pre
+          class="sourceCode md"
+        ><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>＋<span class="co">[</span><span class="ot">Download Sketch Diagram</span><span class="co">]</span>(https://drive.google.com/uc?export=download&amp;id=1p-IP3XXRX8CAVHfLlhyUw3MDdahVhUTv &quot;Sasha Layout Assembly Diagram (Sketch), Alfred R. Duarte 2025.zip&quot;)</span></code></pre>
+      </div>
+      <p>
+        <strong><em>Output:</em></strong>
+      </p>
+      <p>
+        <a
+          href="https://drive.google.com/uc?export=download&id=1p-IP3XXRX8CAVHfLlhyUw3MDdahVhUTv"
+          download
+          title="Sasha Layout Assembly Diagram (Sketch), Alfred R. Duarte 2025.zip"
+          class="ssg-comp group/download text-neutral-700 border border-neutral-200 rounded-lg px-2 py-1 w-fit hover:font-medium hover:!bg-black ring-inset ring-white ring-[10rem] hover:ring-0 hover:text-white hover:border-transparent transition-all duration-500"
+        >
+          <span
+            class="select-none inline-block -mr-[0.125rem] max-w-0 opacity-0 group-hover/download:mr-0 group-hover/download:pr-[1.25rem] group-hover/download:opacity-100 transition-all duration-500"
+            >⤵️</span
+          >Download Sketch Diagram</a
+        >
+      </p>
+      <p>
+        See the
+        <a
+          href="https://github.com/trainingmode/portfolio?tab=readme-ov-file#article-components"
+          title="trainingmode/portfolio: Micro static site generator."
+          >project <strong><code>README</code></strong></a
+        >
+        for complete documentation.
+      </p>
+      <h2 id="article-listing-symbols">Article Listing Symbols</h2>
+      <p>
+        Special symbols are used to designate the
+        <strong>article listing</strong> type.
+      </p>
+      <ul>
+        <li>
+          <strong><code>*</code> Pinned</strong>
+        </li>
+        <li>
+          <strong><code>~</code> Hidden</strong>
+        </li>
+        <li>
+          <strong><code>_</code> Not Rendered</strong>
+        </li>
+      </ul>
+      <p>
+        For example, <code>~ Hueshift, 2023.md</code> will render as a page, but
+        will not be listed in any <strong>directory</strong> page.
+      </p>
+      <h1 id="template-system">Template System</h1>
+      <p>
+        The <strong>template system</strong> assembles template fragments into a
+        final layout.
+      </p>
+      <p>
+        It uses <strong><code>.frag.html</code> fragment HTML</strong> files for
+        templates.
+      </p>
+      <p>
+        There are no restrictions, and there are plenty of
+        <strong><code>{{ }}</code> Replacement Tags</strong> for injecting
+        content parsed from your articles.
+      </p>
+      <p>
+        You can target <strong>templates</strong> to specific
+        <strong>articles</strong> by mirroring the structure of your articles
+        folder.
+      </p>
+      <h2 id="layouts">Layouts</h2>
+      <p>
+        Layout templates are used to render both <strong>article</strong> &amp;
+        <strong>directory</strong> pages.
+      </p>
+      <p>
+        Layouts follow a hierarchal order to building a final
+        <strong>HTML</strong> page.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/sasha/sasha-layout-assembly.png"
+          title="Sasha Layout Assembly Diagram, Alfred R. Duarte 2025"
+          alt="Sasha Layout Assembly Diagram, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em
+            ><code>Sasha</code> Layout Assembly Diagram,
+            <strong>2025</strong></em
+          >
+        </figcaption>
+      </figure>
+      <p>
+        <strong>Articles</strong> are first converted to
+        <strong>HTML</strong> using <strong>Pandoc</strong>.
+      </p>
+      <p>
+        Through a series of
+        <strong><code>{{ }}</code> Replacement Tags</strong>, the
+        <strong>template system</strong> assembles fragments and injects them
+        into the
+        <strong><code>layout.frag.html</code> Layout Template</strong> file.
+      </p>
+      <p>The final output is a self–contained <strong>HTML</strong> page.</p>
+      <h2 id="replacement-tags">Replacement Tags</h2>
+      <p>
+        The <strong>template system</strong> uses
+        <strong><code>{{ }}</code> Replacement Tags</strong> to inject content
+        into <strong>template fragments</strong>.
+      </p>
+      <p>All tags are optional, and some tags can be used site–wide.</p>
+      <div class="sourceCode" id="cb8">
+        <pre
+          class="sourceCode html"
+        ><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Layout Template --&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>{{HEAD}}</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>{{BODY}}</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>{{FOOTER}}</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre>
+      </div>
+      <p>
+        The
+        <a
+          href="https://github.com/trainingmode/portfolio?tab=readme-ov-file#templates"
+          title="trainingmode/portfolio: Micro static site generator."
+          >project <strong><code>README</code></strong></a
+        >
+        contains complete documentation for the
+        <strong>template system</strong>.
+      </p>
+      <h1 id="portfolio-site">Portfolio Site</h1>
+      <p>
+        For my portfolio site itself, I mixed <strong>pure HTML</strong> with
+        <a
+          href="https://tailwindcss.com/"
+          title="Tailwind CSS — Rapidly build modern websites without ever leaving your HTML."
+          ><strong>Tailwind CSS</strong></a
+        >
+        to design templates.
+      </p>
+      <p>
+        My portfolio site is deployed on
+        <a
+          href="https://pages.github.com/"
+          title="GitHub Pages | Websites for you and your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live."
+          >GitHub Pages</a
+        >.
+      </p>
+      <p>
+        Writing articles, designing templates, and building this SSG took
+        blended about 3 weeks.
+      </p>
+      <h2 id="designing-with-tailwind">Designing with Tailwind</h2>
+      <p>
+        During development, the
+        <a
+          href="https://tailwindcss.com/docs/installation/play-cdn"
+          title="Play CDN – Tailwind CSS"
+          >Tailwind Play CDN</a
+        >
+        was used. Performance is fairly slow loading
+        <strong>Tailwind</strong> from the CDN each time a page loads.
+      </p>
+      <p>
+        For production, the
+        <a
+          href="https://tailwindcss.com/docs/installation/tailwind-cli"
+          title="Tailwind CLI – Tailwind CSS"
+          >Tailwind CLI</a
+        >
+        was used. Since <strong>Node.js</strong> is not used in this project,
+        the CLI was installed via the
+        <a
+          href="https://tailwindcss.com/blog/standalone-cli"
+          title="Standalone CLI: Use Tailwind CSS without Node.js – Tailwind CSS"
+          >standalone method recommended by Tailwind</a
+        >.
+      </p>
+      <div class="sourceCode" id="cb9">
+        <pre
+          class="sourceCode bash"
+        ><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-sLO</span> https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">chmod</span> +x tailwindcss-macos-arm64 <span class="kw">&amp;&amp;</span> <span class="fu">mv</span> tailwindcss-macos-arm64 tailwindcss</span></code></pre>
+      </div>
+      <p>It downloads as a single <code>tailwindcss</code> binary.</p>
+      <div class="sourceCode" id="cb10">
+        <pre
+          class="sourceCode bash"
+        ><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> ...</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> tailwindcss</span></code></pre>
+      </div>
+      <p>
+        After installing the executable, I continued the regular
         <a
           href="https://tailwindcss.com/docs/installation/tailwind-cli"
           title="Tailwind CLI – Tailwind CSS"
           >Tailwind CLI installation</a
         >.
       </p>
-      <div class="sourceCode" id="cb3">
+      <p>
+        First import <strong>Tailwind</strong> into the
+        <strong>main stylesheet</strong>.
+      </p>
+      <p>
+        <strong><code>styles.css</code></strong>
+      </p>
+      <div class="sourceCode" id="cb11">
         <pre
           class="sourceCode css"
-        ><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;tailwind.css&quot;</span><span class="op">;</span></span></code></pre>
+        ><code class="sourceCode css"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">@import</span> <span class="st">&quot;tailwindcss&quot;</span><span class="op">;</span></span></code></pre>
       </div>
-      <div class="sourceCode" id="cb4">
+      <p>
+        Then replace the CDN with the
+        <strong>stylesheet generated by Tailwind</strong>.
+      </p>
+      <p>
+        <strong><code>index.html</code></strong>
+      </p>
+      <div class="sourceCode" id="cb12">
         <pre
-          class="sourceCode html"
-        ><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Removed → &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt; --&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/public/tailwind.css&quot;</span><span class="ot"> </span><span class="dt">/&gt;</span></span></code></pre>
+          class="sourceCode diff"
+        ><code class="sourceCode diff"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="st">-  &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="va">+  &lt;link rel=&quot;stylesheet&quot; href=&quot;/public/tailwind.css&quot; /&gt;</span></span></code></pre>
       </div>
-      <p>using the watcher &amp; minifier</p>
-      <div class="sourceCode" id="cb5">
+      <p>Finally, compile <strong>Tailwind</strong>.</p>
+      <p>
+        The <strong><code>-m</code> minifier</strong> reduces the output size.
+      </p>
+      <p>
+        The <strong><code>-w</code> watcher</strong> observes changes in your
+        project and automatically rebuilds the Tailwind stylesheet.
+      </p>
+      <div class="sourceCode" id="cb13">
         <pre
           class="sourceCode bash"
-        ><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tailwindcss</span> <span class="at">-i</span> ./public/styles.css <span class="at">-o</span> ./public/tailwind.css <span class="at">-w</span> <span class="at">-m</span></span></code></pre>
+        ><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tailwindcss</span> <span class="at">-i</span> <span class="st">&quot;./public/styles.css&quot;</span> <span class="at">-o</span> <span class="st">&quot;./public/tailwind.css&quot;</span> <span class="at">-m</span> <span class="at">-w</span></span></code></pre>
       </div>
-      <h1 id="workflow">Workflow</h1>
+      <p>In total this setup took about 5–10 minutes.</p>
       <p>
-        The <strong>static site generator</strong> is a set of bash scripts.
+        This was my first time using <strong>Tailwind</strong> with vanilla HTML
+        and I really enjoyed it. Using it with my
+        <strong>template system</strong> felt like a natural extension from
+        other technologies like
+        <a href="https://react.dev/" title="React">React</a>.
       </p>
-      <p>I had a neatly organized folder of Markdown articles.</p>
+      <h1 id="benchmarks-metrics">Benchmarks &amp; Metrics</h1>
       <p>
-        I had an accompanying folder of HTML templates–organized in an
-        indentical structure–that I wanted .
+        <strong
+          ><em
+            >Every single page on my site achieves <code>100</code> Best
+            Practices &amp; SEO scores.</em
+          ></strong
+        >
       </p>
-      <h2 id="builder">Builder</h2>
-      <h2 id="development-server">Development Server</h2>
-      <h2 id="auto-rebuilder-watcher">Auto-Rebuilder &amp; Watcher</h2>
-      <h1 id="template-system">Template System</h1>
-      <h2 id="layouts">Layouts</h2>
-      <h2 id="features">Features</h2>
-      <h2 id="tag-replacements">Tag Replacements</h2>
+      <p>
+        Certain pages on my site achieve perfect
+        <strong><code>100</code></strong> scores on
+        <a
+          href="https://pagespeed.web.dev/analysis/https-alfred-ad/6hw2k04xoa?form_factor=mobile"
+          title="alfred.ad — Mobile Device Metrics — PageSpeed Insights"
+          >PageSpeed Insights</a
+        >
+        (Lighthouse).
+      </p>
+      <figure>
+        <img
+          src="/public/photos/sasha/portfolio-home-lighthouse-metrics.png"
+          title="Alfred Portfolio Home Page Lighthouse Metrics, Alfred R. Duarte 2025"
+          alt="Alfred Portfolio Home Page Lighthouse Metrics, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em
+            >Alfred Portfolio Home Page Lighthouse Metrics,
+            <strong>2025</strong></em
+          >
+        </figcaption>
+      </figure>
+      <p>
+        <strong><em>There are zero errors site-wide.</em></strong>
+      </p>
+      <figure>
+        <img
+          src="/public/photos/sasha/portfolio-clean-console-logs.png"
+          title="Alfred Portfolio Clean Console Logs, Alfred R. Duarte 2025"
+          alt="Alfred Portfolio Clean Console Logs, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em>Alfred Portfolio Clean Console Logs, <strong>2025</strong></em>
+        </figcaption>
+      </figure>
+      <h2 id="lighthouse-metrics">Lighthouse Metrics</h2>
+      <p>
+        Below are a sampling of
+        <a
+          href="https://developer.chrome.com/docs/lighthouse"
+          title="Lighthouse | Chrome for Developers"
+          >Lighthouse</a
+        >
+        reports (via <strong>PageSpeed Insights</strong>) for some pages.
+      </p>
+      <p>Metrics are based on <strong>mobile devices</strong>.</p>
+      <table style="width: 100%">
+        <colgroup>
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+          <col style="width: 14%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th><strong>FCP</strong></th>
+            <th><strong>LCP</strong></th>
+            <th><strong>Speed Index</strong></th>
+            <th><strong>Performance</strong></th>
+            <th><strong>Accessibility</strong></th>
+            <th><strong>Report</strong></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="/" title="Alfred R. Duarte | Portfolio Home"
+                ><code>/</code></a
+              >
+            </td>
+            <td>
+              <strong><code>0.8s</code></strong>
+            </td>
+            <td>
+              <strong><code>0.8s</code></strong>
+            </td>
+            <td>
+              <strong><code>0.8s</code></strong>
+            </td>
+            <td>
+              ✅ <strong><code>100</code></strong>
+            </td>
+            <td>
+              ✅ <strong><code>100</code></strong>
+            </td>
+            <td>
+              <a
+                href="https://pagespeed.web.dev/analysis/https-alfred-ad/q7m2zpfdhr?form_factor=mobile"
+                title="alfred.ad — Mobile Device Metrics — PageSpeed Insights"
+                >PageSpeed</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="/portfolio/design/"
+                title="Design | Alfred R. Duarte | Portfolio"
+                ><code>/design</code></a
+              >
+            </td>
+            <td>
+              <strong><code>0.9s</code></strong>
+            </td>
+            <td>
+              <strong><code>8.7s</code></strong>
+            </td>
+            <td>
+              <strong><code>3.5s</code></strong>
+            </td>
+            <td>
+              🟡 <strong><code>74</code></strong>
+            </td>
+            <td>
+              ✅ <strong><code>100</code></strong>
+            </td>
+            <td>
+              <a
+                href="https://pagespeed.web.dev/analysis/https-alfred-ad-portfolio-design/unm40zyykf?form_factor=mobile"
+                title="alfred.ad/portfolio/design — Mobile Device Metrics — PageSpeed Insights"
+                >PageSpeed</a
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a
+                href="/portfolio/design/color-emoji-ios-6-2022/"
+                title="Color Emoji (iOS 6), 2022 | Alfred R. Duarte | Portfolio"
+                ><code>/design/emojis</code></a
+              >
+            </td>
+            <td>
+              <strong><code>0.9s</code></strong>
+            </td>
+            <td>
+              <strong><code>15.5s</code></strong>
+            </td>
+            <td>
+              <strong><code>3.5s</code></strong>
+            </td>
+            <td>
+              🟡 <strong><code>74</code></strong>
+            </td>
+            <td>
+              🟡 <strong><code>86</code></strong>
+            </td>
+            <td>
+              <a
+                href="https://pagespeed.web.dev/analysis/https-alfred-ad-portfolio-design-color-emoji-ios-6-2022/m1nut8tn2d?form_factor=mobile"
+                title="alfred.ad/portfolio/design/color-emoji-ios-6-2022 — Mobile Device Metrics — PageSpeed Insights"
+                >PageSpeed</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <strong>Performance</strong> drops when a page includes a lot of media.
+      </p>
+      <p>
+        <strong>Accessibility</strong> drops a bit on
+        <strong>article</strong> pages due to the way some headings are used.
+      </p>
+      <p>
+        Personally, I think semantically skipping an <code>&lt;h2&gt;</code> to
+        create a subheading <code>&lt;h3&gt;</code> is perfectly reasonable. It
+        also reads in plain English—<em
+          >the subheading before the following section</em
+        >.
+      </p>
+      <div class="sourceCode" id="cb14">
+        <pre
+          class="sourceCode md"
+        ><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Title</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### Subheading ←[ Triggers Accessibility Error ]</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Section</span></span></code></pre>
+      </div>
+      <p>
+        <strong>Deployed sites</strong> ship with only what they need. A
+        generated <strong>article</strong> page is only a few dozen kilobytes in
+        size. Media used in an <strong>article</strong> will increase its page
+        size.
+      </p>
+      <p>
+        My
+        <a
+          href="/portfolio/design/color-emoji-ios-6-2022/"
+          title="Color Emoji (iOS 6), 2022 | Alfred R. Duarte | Portfolio"
+          >Emoji Case Study</a
+        >
+        page is <strong><code>13.5MB</code></strong> including images and
+        transfers in <strong><code>246ms</code></strong
+        >.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/sasha/portfolio-network-load.png"
+          title="Alfred Portfolio Network Load, Alfred R. Duarte 2025"
+          alt="Alfred Portfolio Network Load, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em>Alfred Portfolio Network Load, <strong>2025</strong></em>
+        </figcaption>
+      </figure>
+      <p>
+        As you can see, images are the largest bottleneck. Currently there is no
+        image optimization (lazy loading, serving smaller images for mobile,
+        etc). This is a clear target for future optimization.
+      </p>
+      <h2 id="builder-benchmarks">Builder Benchmarks</h2>
+      <p>
+        An article with <strong><code>2069</code></strong> words (my
+        <a
+          href="/portfolio/design/dataing-2023-2025/"
+          title="Dataing, 2023-2025 | Alfred R. Duarte | Portfolio"
+          ><strong>Dataing</strong></a
+        >
+        article) renders in around <strong><code>64ms</code></strong
+        >.
+      </p>
+      <figure>
+        <img
+          src="/public/photos/sasha/sasha-terminal-output.png"
+          title="Sasha Terminal Output, Alfred R. Duarte 2025"
+          alt="Sasha Terminal Output, 2025"
+        />
+        <figcaption aria-hidden="true">
+          <em><code>Sasha</code> Terminal Output, <strong>2025</strong></em>
+        </figcaption>
+      </figure>
+      <p>
+        My entire portfolio site with <strong><code>10</code></strong> articles
+        renders in just under <strong><code>3s</code></strong
+        >. It’s lengthy but doesn’t feel too bad when writing articles.
+      </p>
+      <p>
+        This could be improved by only rebuilding changed articles. However, it
+        would require hacking the <strong>chokidar-cli</strong> output to
+        determine which files changed.
+      </p>
+      <p>
+        It would make more sense to translate the <strong>CLI</strong> to
+        <strong>Node.js</strong> and use <strong>WebSockets</strong> to trigger
+        rebuilds. For this project, this was an acceptable compromise given I
+        was focused primarily on writing articles.
+      </p>
+      <h1 id="improvement-targets">Improvement Targets</h1>
+      <p>
+        There are a handful of targets for improvement that exceeded the initial
+        scope of this project.
+      </p>
+      <p>
+        I was mainly focused on writing articles for my portfolio and didn’t
+        want to add complexity.
+      </p>
+      <ul>
+        <li>
+          <p>
+            <strong>Image Optimization</strong><br />
+            <em>Impact</em>: 🔴 <strong><em>Critical</em></strong
+            ><br />
+            Images are served at their original size. This could be improved
+            with build-time optimization to resize &amp; compress images. This
+            would significantly reduce page size and thusly data usage for
+            mobile users.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Node.js Translation</strong><br />
+            <em>Impact</em>: 🟡 <em>Low</em><br />
+            The <strong>CLI</strong> is a shell script. Rewriting the
+            <strong>CLI</strong> in <strong>Node.js</strong> would improve
+            developer experience, and allow for extended features like
+            WebSockets &amp; plugins.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Targeted Rebuilds</strong><br />
+            <em>Impact</em>: 🟡 <em>Low</em><br />
+            Every change currently triggers a full site rebuild.
+            <strong>Hashing files</strong> &amp; building a
+            <strong>dependency graph</strong> would allow for granular
+            rebuilding of only files that changed. This would significantly
+            reduce build times.
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>WebSockets</strong><br />
+            <em>Impact</em>: 🔵 <em>Feature</em><br />
+            Browsers must be manually refreshed to see changes after rebuilds.
+            WebSocket-based <strong>hot reloading</strong> would enable
+            immediate visual feedback while writing articles. This would greatly
+            improve the experience for content creators.
+          </p>
+        </li>
+      </ul>
+      <p>
+        In all, I’m satisfied with performance results and
+        <strong>CLI</strong> UX given the scope.
+      </p>
+      <p>
+        Removing complexity from this project taught me a lot about focusing on
+        the core experience.
+      </p>
+      <p>Performant &amp; accessible design can look beautiful, too.</p>
       <hr />
       <h3 id="book-a-meeting-to-discuss-your-project.">
         <span class="highlight"
@@ -302,7 +1035,7 @@
             <a
               aria-label="Message me with your email client"
               href="mailto:alfred.r.duarte@gmail.com"
-              class="ssg-comp truncate grow w-full hover:bg-[var(--color-primary)] hover:text-white active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] flex items-center pl-2"
+              class="ssg-comp truncate grow w-full hover:bg-(--color-primary) hover:text-white active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] flex items-center pl-2"
               >Message</a
             >
             <span
@@ -310,9 +1043,9 @@
             ></span>
             <button
               aria-label="Copy my email address to your clipboard"
-              onclick="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
-              ontouchend="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');document.activeElement.blur()"
-              class="truncate grow w-full hover:bg-[var(--color-primary)] hover:text-white md:active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] cursor-pointer text-left pl-2"
+              onclick="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');this.blur()"
+              ontouchend="navigator.clipboard.writeText('alfred.r.duarte@gmail.com');this.blur()"
+              class="truncate grow w-full hover:bg-(--color-primary) hover:text-white md:active:bg-transparent active:text-current rounded-[calc(0.5rem-0.25rem)] cursor-pointer text-left pl-2"
             >
               Copy
             </button></span

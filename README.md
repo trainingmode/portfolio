@@ -2,6 +2,8 @@
 
 > _`Sasha` is a lightweight static site generator built on [Pandoc](https://pandoc.org/ "Pandoc — a universal document converter")._
 
+![_`Sasha` Article Transformation, **2025**_](/public/photos/sasha/sasha-article-transformation.png "Sasha Article Transformation, Alfred R. Duarte 2025")
+
 `Sasha` converts your folder of **`.md` Markdown** files into a static site.
 
 It ships with a simple **templating system** based on the **`{{ }}` Mustache** syntax. Templates are **HTML** fragments, with no other requirements.
@@ -269,7 +271,7 @@ Both **`Article`** files & **`Directory`** folders are rendered as pages in your
 
 An **`Article`** page displays the content of its associated **`.md` Markdown** file.
 
-## Templates
+## Template Fragments
 
 A **`Template`** is a **`.frag.html` HTML** fragment.
 
