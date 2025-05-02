@@ -795,6 +795,18 @@ The folder listing template is used to render **`Directory`** listings inside **
 
 # Deployment
 
+## Netlify Drop
+
+Netlify Drop is a simple way to deploy your site to Netlify.
+
+1. Navigate to [Netlify Drop](https://app.netlify.com/drop).
+
+2. Drag your project folder into the browser window.
+
+Netlify will automatically build & deploy your site.
+
+Your site is live at the URL provided by Netlify.
+
 ## GitHub Pages
 
 Using a public GitHub repository, you can deploy your site to [GitHub Pages](https://pages.github.com/) for free.
