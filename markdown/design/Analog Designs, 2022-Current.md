@@ -4,7 +4,7 @@
 
 # Analog Designs
 
-> **2022 – Current**
+> **2020 – April 2025**
 
 > _**Note**: These are one-half of my responsibilities at **Analog Designs**. The companion article on my engineering responsibilities is still being developed._
 
