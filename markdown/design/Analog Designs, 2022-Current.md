@@ -6,7 +6,7 @@
 
 > **2022 – Current**
 
-> _**Note**: These are one-half of my responsibilities at **Analog Designs**. For my engineering responsibilities, please see the [companion article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
+> _**Note**: These are one-half of my responsibilities at **Analog Designs**. The companion article on my engineering responsibilities is still being developed._
 
 1. [**Branding**](#branding)
 2. [**Design System**](#design-system)
