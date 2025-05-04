@@ -13,12 +13,13 @@ Generated sites are as lightweight as you make them. Sites can easily be deploye
 Built on the **`Directory`** → **`Article`** folder structure concept. Similar to other Static Site Generators like [Jekyll](https://jekyllrb.com/ "Jekyll • Simple, blog-aware, static sites | Transform your plain text into static websites and blogs") or [Gatsby](https://www.gatsbyjs.com/ "The Best React-Based Framework | Gatsby").
 
 1. [**Installation**](#installation)
-2. [**Usage**](#usage)
-3. [**Basic Concepts**](#basic-concepts)
-4. [**Folder Structure**](#folder-structure)
-5. [**Formatting Articles**](#formatting-articles)
-6. [**Templates**](#templates)
-7. [**Deployment**](#deployment)
+2. [**Configuration**](#configuration)
+3. [**Usage**](#usage)
+4. [**Basic Concepts**](#basic-concepts)
+5. [**Folder Structure**](#folder-structure)
+6. [**Formatting Articles**](#formatting-articles)
+7. [**Templates**](#templates)
+8. [**Deployment**](#deployment)
 
 ## Requirements
 
