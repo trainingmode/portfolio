@@ -1,4 +1,4 @@
-![_UI 1 – Analog Designs UI Styles Ⅰ, **2022**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui1-preview.png "UI 1 – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022")
+![_Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, **2022 & 2025**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui-1-7-desktop.png "Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022 & 2025")
 
 > Case Study — Design
 
@@ -11,7 +11,7 @@
 3. **[Fantasy Plugins](#fantasy-plugins)**
 4. **[Symbols](#symbols)**
 
-![_Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, **2022 & 2025**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui-1-7-desktop.png "Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022 & 2025")
+![_UI 1 – Analog Designs UI Styles Ⅰ, **2022**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui1-preview.png "UI 1 – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022")
 
 _**All of the interface assets I created in this project are purely vector-based**, excluding some image-based textures._
 
