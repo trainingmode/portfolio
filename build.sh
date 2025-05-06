@@ -38,6 +38,7 @@ X_HANDLE="@trainingmodedev"
 PRETTIER_ENABLED=true
 PURGE_BUILD_FOLDER=true
 SLUGIFY_ENABLED=true
+LLM_OUTPUT=""
 
 # — Default Images —
 DEFAULT_META_IMAGE="/public/og-image.png"
@@ -270,6 +271,14 @@ while read -r filepath; do
   else
     filepath_cleansed="$filepath"
     hidden=false
+  fi
+
+  # Add the Article to the llm.txt Output File
+  if [ -n "$LLM_OUTPUT" ] && [ "$hidden" = false ]; then
+    {
+      cat "$filepath"
+      printf "\n~~~\n\n"
+    } >> "$OUTPUT_DIRECTORY/$LLM_OUTPUT"
   fi
 
   # Determine if the Article is Pinned
