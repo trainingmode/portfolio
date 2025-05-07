@@ -1198,6 +1198,10 @@ An up–and–coming fintech company is launching a unique crypto product:
 
 We'll use **AI agents** to explore the product space, and iterate on the product.
 
+#### Project length:
+
+**`11 hours`**
+
 #### Tools used:
 
 - [Cursor](https://www.cursor.com/)
