@@ -6,6 +6,8 @@ I'm **Alfred**.
 
 I specialize in driving innovative product development.
 
++[Download my Portfolio for your LLM](/portfolio/llm.txt "llm.txt")
+
 ---
 
 I’m a **Creative Technologist** and **Product Designer** with **10+ years** experience at the intersection of design, engineering, and systems thinking. My work spans real-time interfaces, AI-driven platforms, internal design systems, & developer tooling. All often delivered under tight constraints, with lean resources, & high impact.

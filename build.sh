@@ -276,8 +276,9 @@ while read -r filepath; do
   # Add the Article to the llm.txt Output File
   if [ -n "$LLM_OUTPUT" ] && [ "$hidden" = false ]; then
     {
+      printf "~~~\n\nllm.txt\n\nAuthor: $AUTHOR\nDomain: $DOMAIN\n\n~~~\n\n"
       cat "$filepath"
-      printf "\n~~~\n\n"
+      printf "\n~~~\n\nThe above material is owned by the author.\n\nThis file was generated with SASHA.\n\n~~~\n"
     } >> "$OUTPUT_DIRECTORY/$LLM_OUTPUT"
   fi
 

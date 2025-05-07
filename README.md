@@ -139,6 +139,14 @@ _Example:_
 `welcome-here-s-my-new-site`
 ```
 
+### **`LLM_OUTPUT`**
+
+The filename of the file to output the `llm.txt` file to.
+
+The `llm.txt` file is stitched together from all processed articles.
+
+If empty, no `llm.txt` file will be output.
+
 ### **`DEFAULT_META_IMAGE`**
 
 The default image used for the meta tags in the generated site header, if no header image is found in the article.
