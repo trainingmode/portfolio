@@ -16,7 +16,7 @@
 - [**Generator Tags**](#generator-tags)
 - [**SwiftUI Control Transformations**](#swiftui-control-transformations)
 - [**Generator Settings**](#generator-settings)
-- [**Changes & Additions**](#changes--additions)
+- [**Changes & Additions**](#changes-additions)
 - [**How to Build**](#how-to-build)
 - [**Upcoming Fixes**](#upcoming-fixes)
 - [**Upcoming Features**](#upcoming-features)
