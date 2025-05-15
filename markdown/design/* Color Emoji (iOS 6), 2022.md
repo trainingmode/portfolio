@@ -12,6 +12,8 @@
 4. [**Comparisons & Close-ups**](#comparisons-close-ups)
 5. [**Side-by-Side Comparison**](#side-by-side-comparison)
 
+***I remade the original emoji set in 2022 as vector-based emoji.***
+
 I've always loved **Apple**'s [icon design](https://developer.apple.com/design/human-interface-guidelines/icons "Apple Human Interface Guidelines: Icons"). Their depth and precision is truly inspiring.
 
 The set of original **iOS 6.0** emoji are timeless & iconic. Their style set the standard for emoji design.

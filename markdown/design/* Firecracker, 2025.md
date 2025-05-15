@@ -18,7 +18,7 @@ In this light case study, I explore how **agentic design** could be applied to p
 
 An up–and–coming fintech company is launching a unique crypto product:
 
-### [🧨 **Firecracker** — on-chain credit cards.]{.highlight}
+### [🧨 ***Firecracker***]{.highlight} _on-chain credit cards._
 
 We'll use **AI agents** to explore the product space, and iterate on the product.
 
@@ -29,9 +29,8 @@ We'll use **AI agents** to explore the product space, and iterate on the product
 #### Tools used:
 
 - [Cursor](https://www.cursor.com/)
-- [ChatGPT](https://chatgpt.com/) (Product Development)
-- [Claude](https://claude.ai/) (Research & Product Development)
 - [DeepSeek](https://chat.deepseek.com/) (Research & Discovery)
+- [Claude](https://claude.ai/) (Research & Product Development)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Hueshift](/portfolio/design/hueshift-2023/ "Hueshift | Alfred R. Duarte | Portfolio") (Color Palettes)
@@ -62,7 +61,7 @@ Custodial platforms force users to lock their crypto in a centralized system, an
 
 You put **BTC** in, and get a loan amount—no asking, instant approval.
 
-> [**Key insight:**]{.highlight} _Decentralization_ was the unmet need, not just "crypto rewards."
+> [**Key insight:**]{.highlight} **_Decentralization_ was the unmet need, not just "crypto rewards."**
 
 ## _Learn a lil' crypto corner_ 💳
 
@@ -87,17 +86,17 @@ Zero custodial risk, backed by 100% Bitcoin finality.[^2]
 
 ### [[**Visit the v1 Site ➔**]{.highlight}](https://fintech-ghost-1.vercel.app/)
 
-### Conversion Killer
+### Conversion Killer 🥶
 
 **Generic fintech language** ("seamless," "global access") failed to stand out in the crypto space.
 
 **Multi-step signup process** added friction and discouraged users from completing the conversion.
 
-### Missed Opportunity
+### Missed Opportunity 😶‍🌫️
 
 Value proposition buried below fold under a generic card design.
 
-> [**Key Insight:**]{.highlight} Crypto users need immediate proof of decentralization.
+> [**Key Insight:**]{.highlight} **Crypto users need immediate proof of decentralization.**
 
 @[110%](https://fintech-ghost-1.vercel.app/)
 
@@ -105,7 +104,7 @@ Value proposition buried below fold under a generic card design.
 
 ### [[**Visit the v2 Site ➔**]{.highlight}](https://fintech-ghost-2.vercel.app/)
 
-### What Worked
+### What Worked 🤔
 
 "**…on-chain credit**" hero text speaks _directly_ to Web3 users.
 
@@ -113,11 +112,11 @@ Added **social proof** ("thousands of early adopters").
 
 More attractive animated card mockup creates desire.
 
-### New Problem
+### New Problem 😵‍💫
 
 Overwhelming **information density** (6 features + metrics).
 
-> [**Key insight:**]{.highlight} Crypto credit users need to _instantly_ understand the value proposition.
+> [**Key insight:**]{.highlight} **Crypto credit users need to _instantly_ understand the value proposition.**
 
 @[110%](https://fintech-ghost-2.vercel.app/)
 
@@ -125,7 +124,7 @@ Overwhelming **information density** (6 features + metrics).
 
 ### [[**Visit the Finalized Site ➔**]{.highlight}](https://fintech-ghost-3.vercel.app/)
 
-### Breakthrough Changes
+### Breakthrough Changes 😎
 
 "**Fully decentralized credit card**" above fold instantly communicates _differentiation_.
 
@@ -133,37 +132,37 @@ Card-as-NFT implied through expiration date (**04/28 ≅ Bitcoin halving year**[
 
 DeFi integration as a **primary feature** (not just "rewards").
 
-### Path to PMF
+### Path to PMF 🏎️
 
 **Monetize decentralization by packaging it as exclusive next–gen access.**
 
-> [**Key insight:**]{.highlight} Crypto users value sovereignty above all other features/metrics.
+> [**Key insight:**]{.highlight} **Crypto users value sovereignty above all other features/metrics.**
 
 @[110%](https://fintech-ghost-3.vercel.app/)
 
-# The Winning Formula
+# The Winning Formula 🎯
 
 ### [Decentralization Promise (`v2`/`v3`) + Desire (`v2`) + Urgency (`v3`)]{.highlight}
 
 ## Why This Works for Crypto Audiences
 
-### **Trust Through Transparency**
+### **Trust Through Transparency** 🤝
 
 [**v3's "secured by you"**]{.highlight} > **`v1's "complete ownership"`**
 
 (_passive_ vs _active_)
 
-### **Scarcity Engineering**
+### **Scarcity Engineering** 👀
 
 No explicit waitlist number creates **artificial scarcity** (vs v2's "thousands")
 
-### **Technical Credibility**
+### **Technical Credibility** 🔐
 
 "Cryptographically secured on-chain" satisfies advanced users without alienating beginners.
 
 Language meets users where they are, highlighting the unique value proposition, without leaning on technical jargon.
 
-## Conclusions
+## Conclusions 💭
 
 Crypto users prioritize _ownership over convenience_.
 
@@ -185,7 +184,7 @@ In crypto, trust is currency.
 
 [^1]: Cryptocurrency Adoption and Consumer Sentiment Report, [Security.org](https://www.security.org/digital-security/cryptocurrency-annual-consumer-report/ "2025 Cryptocurrency Adoption and Consumer Sentiment Report | Security.org")
 
-[^2]: Bitcoin has 100% finality on the Stacks L2 protocol thanks to the Nakamoto upgrade, [Stacks.org](https://stacks.org/nakamoto-is-here "Finally, Finality: Nakamoto Upgrade Sets the Stage sBTC, Bitcoin for Builders").
+[^2]: Bitcoin has 100% finality on the Stacks L2 protocol thanks to the Nakamoto upgrade, [Stacks.org](https://stacks.org/nakamoto-is-here "Finally, Finality: Nakamoto Upgrade Sets the Stage sBTC, Bitcoin for Builders")
 
-[^3]: The fifth Bitcoin halving is anticipated around April 2028, [Kraken.com](https://www.kraken.com/learn/bitcoin-halving-history#article-block-9943a4d1f561 "What is Bitcoin Halving? | Blockchain.com").
+[^3]: The fifth Bitcoin halving is anticipated around April 2028, [Kraken.com](https://www.kraken.com/learn/bitcoin-halving-history#article-block-9943a4d1f561 "What is Bitcoin Halving? | Blockchain.com")
 

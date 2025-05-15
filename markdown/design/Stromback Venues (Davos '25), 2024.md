@@ -10,7 +10,7 @@
 2. [**Graphics**](#graphics)
 3. [**Branding**](#branding)
 
-After my initial meetings with the clients, one requirement emerged: _design for the uber-wealthy & heads-of-state_.
+After my initial meetings with the clients, one requirement emerged: _design for the global-elite & heads-of-state_.
 
 **Stromback Venues** provides venue leasing in **Davos, Switzerland** during the [World Economic Forum](https://www.weforum.org/ "The World Economic Forum").
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>64x64 copy 2@4x</title>
+    <defs>
+        <polygon id="path-1" points="4.10893541e-14 7 6 10 6 15 4.10893541e-14 12"></polygon>
+        <polygon id="path-2" points="5 1 11 4 11 9 5 6"></polygon>
+        <polygon id="path-3" points="6 15 16 13 16 3 11 4 11 9 6 10"></polygon>
+    </defs>
+    <g id="64x64-copy-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="M-Block" transform="translate(6, 7.5)">
+            <g id="Rectangle">
+                <use fill="#FFD35A" xlink:href="#path-1"></use>
+                <use fill-opacity="0.0516280594" fill="#000000" xlink:href="#path-1"></use>
+            </g>
+            <g id="Rectangle-Copy">
+                <use fill="#FFD35A" xlink:href="#path-2"></use>
+                <use fill-opacity="0.0535948427" fill="#000000" xlink:href="#path-2"></use>
+            </g>
+            <polygon id="Rectangle" fill="#FFD35A" points="5 6 11 9 6 10 4.1083803e-14 7"></polygon>
+            <polygon id="Rectangle" fill-opacity="0.15" fill="#FFFFFF" style="mix-blend-mode: screen;" points="5 6 11 9 6 10 -6.10622664e-14 7"></polygon>
+            <polygon id="Rectangle-Copy-2" fill="#FFD35A" points="10 -3.97903932e-13 16 3 11 4 5 1"></polygon>
+            <g id="Path">
+                <use fill="#FFD35A" xlink:href="#path-3"></use>
+                <use fill-opacity="0.0971645542" fill="#000000" xlink:href="#path-3"></use>
+            </g>
+        </g>
+        <g id="L-Block" transform="translate(14, 11.5)">
+            <polygon id="Path-Copy-2" fill="#7AEFFF" points="0 12 10 10 10 -3.33066907e-16 5 1 5 6 0 7"></polygon>
+            <polygon id="Path-Copy" fill="#7AEFFF" points="2 13 12 11 12 1 10 7.21644966e-15 6 7 7.75490783e-14 12"></polygon>
+            <polygon id="Path-Copy-3" fill-opacity="0.097165" fill="#000000" points="2 13 12 11 12 1 7 2 7 7 2 8"></polygon>
+            <polygon id="Rectangle" fill-opacity="0.0496612762" fill="#000000" points="0 7 2 8 2 13 0 12"></polygon>
+            <polygon id="Rectangle-Copy-3" fill-opacity="0.0496612762" fill="#000000" points="5 1 7 2 7 7 5 6"></polygon>
+        </g>
+        <polygon id="Rectangle" fill-opacity="0.15" fill="#FFFFFF" style="mix-blend-mode: screen;" points="14 18.5 19 17.5 21 18.5 16 19.5"></polygon>
+    </g>
+</svg>

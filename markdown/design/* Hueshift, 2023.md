@@ -6,12 +6,12 @@
 
 > **March** - **April 2023**
 
-> _**Note**: For an engineering perspective on this project, please see the [companion article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio")._
-
 1. [**Purpose**](#purpose)
 2. [**Interface Design**](#interface-design)
 3. [**User Experience & Testing**](#user-experience-testing)
 4. [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
+
+***Hueshift is a tool that helps you generate harmonious color palettes using a recursive machine learning process.***
 
 ![_254 Spectrum Made with Hueshift, **2025**_](/public/photos/bloomhue/254-hueshift-spectrum.png "254 Spectrum, Hueshift, Alfred R. Duarte 2025")
 
