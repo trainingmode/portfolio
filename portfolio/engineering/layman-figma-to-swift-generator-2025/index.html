@@ -159,9 +159,6 @@
           >
         </li>
         <li>
-          <a href="#how-to-build"><strong>How to Build</strong></a>
-        </li>
-        <li>
           <a href="#upcoming-fixes"><strong>Upcoming Fixes</strong></a>
         </li>
         <li>
@@ -2247,34 +2244,6 @@
         </li>
       </ul>
       <p>also: in the interest of time lots of <code>any</code>. sorry mom.</p>
-      <h2 id="how-to-build">How to Build</h2>
-      <p><code>pnpm</code> is used as the package manager.</p>
-      <p><code>turbo</code> is used as the build/package tool.</p>
-      <p>Use <code>pnpm run build:clean</code> to build the plugin.</p>
-      <h3 id="distribute">Distribute</h3>
-      <ol type="1">
-        <li>
-          <p>Build the plugin.</p>
-          <div class="sourceCode" id="cb6">
-            <pre
-              class="sourceCode sh"
-            ><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pnpm</span> run build:clean</span></code></pre>
-          </div>
-        </li>
-        <li>
-          <p>Grab the plugin from the <code>dist</code> folder.</p>
-          <pre><code>/apps/plugin/dist/</code></pre>
-        </li>
-        <li>
-          <p>
-            Copy the <code>manifest.json</code> into the
-            <code>dist</code> folder.
-          </p>
-        </li>
-        <li>
-          <p>Zip the <code>dist</code> folder.</p>
-        </li>
-      </ol>
       <h2 id="upcoming-fixes">Upcoming Fixes</h2>
       <ul>
         <li><p>Fix Spacer() issue for auto layout.</p></li>

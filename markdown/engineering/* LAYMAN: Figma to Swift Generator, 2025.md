@@ -17,7 +17,6 @@
 - [**SwiftUI Control Transformations**](#swiftui-control-transformations)
 - [**Generator Settings**](#generator-settings)
 - [**Changes & Additions**](#changes-additions)
-- [**How to Build**](#how-to-build)
 - [**Upcoming Fixes**](#upcoming-fixes)
 - [**Upcoming Features**](#upcoming-features)
 
@@ -914,27 +913,6 @@ This plugin is supplied with extended support for SwiftUI, as well as many fixes
 - The original `frameToRectangleNode()` function can be made optional.
 
 also: in the interest of time lots of `any`. sorry mom.
-
-## How to Build
-
-`pnpm` is used as the package manager.
-
-`turbo` is used as the build/package tool.
-
-Use `pnpm run build:clean` to build the plugin.
-
-### Distribute
-
-1. Build the plugin.
-   ```sh
-   pnpm run build:clean
-   ```
-2. Grab the plugin from the `dist` folder.
-   ```
-   /apps/plugin/dist/
-   ```
-3. Copy the `manifest.json` into the `dist` folder.
-4. Zip the `dist` folder.
 
 ## Upcoming Fixes
 
