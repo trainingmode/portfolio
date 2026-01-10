@@ -1,26 +1,22 @@
 ![](/public/photos/misc/me.jpg "Alfred R. Duarte 2023")
 
-### [**👋🏼 Nice to meet you!**]{.highlight}
+### [**what's good 🤙🏼**]{.highlight}
 
 I'm **Alfred**.
 
-I specialize in driving innovative product development.
-
-+[Download my Portfolio for your LLM](/portfolio/llm.txt "llm.txt")
+<!-- +[Download my Portfolio for your LLM](/portfolio/llm.txt "llm.txt") -->
 
 ---
 
-I’m a **Creative Technologist** and **Product Designer** with **11+ years** experience at the intersection of design, engineering, and systems thinking. My work is cross-functional, and often delivered under tight constraints, with lean resources, & high impact.
+I serve as **Chief Polymorphic, Product & Platform Officer** (C³PO) at [Labs Companies, Inc.](https://labscompanies.com/){target="_blank"}
 
-My adaptability is always in service of those around me. You put me on the starting team, and I'll set up the rest of the organization for success.
-
-Most recently, I **led product at Dataing**, an AI matchmaking startup, managing cross-functional teams across web, iOS, and design systems.
-
-Alongside that, I’ve **operated my own studio**, delivering creative & technical solutions for clients in music, fashion, real estate, luxury, and tech.
+I unify engineering, design, and applied services.  
+I bridge design intent and code execution.  
+I architect foundational infrastructure.
 
 ---
 
-I care about clarity, craft, mentorship, and shipping products that feel good to use, whether that’s in a leadership role or in the trenches with the team.
+My adaptability is in service of those around me.
 
 🌊 🎹 💻
 

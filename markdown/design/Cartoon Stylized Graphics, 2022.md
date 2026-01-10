@@ -56,7 +56,7 @@ Below are some discarded samples that never made it to production.
 
 ---
 
-### [🎨 **Book a meeting to discuss your characters. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
+### [🎨 **Book a consultation to discuss your characters. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
 
 [**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
 

@@ -238,7 +238,7 @@ HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_SOURCE\}\}/\\2}"
 HTML_VIDEO="${HTML_VIDEO//\{\{VIDEO_TYPE\}\}/\\3}"
 
 # Remove Leftover Temp Files
-rm -f ~tmp.XXXXXX*
+rm -f "./~tmp."* 2>/dev/null || true
 
 # Purge Build Folder
 
@@ -337,9 +337,18 @@ while read -r filepath; do
 
   mkdir -p "$output_directory"
 
+  # Create a Temporary File for Preprocessing
+  tmp_base="${TMPDIR%/}"
+  tmp_base="${tmp_base:-/tmp}"
+  preprocessed_raw="$(mktemp "${tmp_base}/ssg-preprocess.XXXXXX")"
+  preprocessed="${preprocessed_raw}.md"
+  mv -f "$preprocessed_raw" "$preprocessed"
+  if [ -z "$preprocessed" ] || [ ! -f "$preprocessed" ]; then
+    echo "ERROR: mktemp failed while preprocessing '$filepath'."
+    exit 1
+  fi
+
   # Preprocess Embedded iFrames @[height](url)
-  preprocessed=$(mktemp ~tmp.XXXXXX.md)
-  # Syntax: @[height](url)
   sed -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$filepath" > "$preprocessed"
 
   # Preprocess Download Links +[alt](url "title")

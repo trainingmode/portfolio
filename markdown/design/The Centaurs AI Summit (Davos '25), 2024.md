@@ -100,7 +100,7 @@ I produced the **main event deck** & **scheduling** given to attendees.
 
 ---
 
-### [🧠 **Book a meeting to discuss your project. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
+### [🧠 **Book a consultation to discuss your project. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
 
 [**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
 

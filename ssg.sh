@@ -26,6 +26,11 @@
 # >> sudo npm install -g serve
 # >> brew install python3
 
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
 WATCH_FOLDER="."
 BUILD_SCRIPT="./build.sh"
 DEV_SERVER_SCRIPT="./server.sh"
@@ -35,6 +40,44 @@ INPUT_DIRECTORY="${2:-markdown}"
 OUTPUT_DIRECTORY="${3:-portfolio}"
 TEMPLATE_DIRECTORY="${4:-templates}"
 IGNORE_FILE="${5:-.ssgignore}"
+
+LOCKDIR="${SCRIPT_DIR}/.ssg.lock"
+
+cleanup() {
+  pids="$(jobs -pr 2>/dev/null || true)"
+  if [ -n "${pids:-}" ]; then
+    kill $pids 2>/dev/null || true
+  fi
+  rm -rf "$LOCKDIR" 2>/dev/null || true
+}
+
+acquire_lock() {
+  if mkdir "$LOCKDIR" 2>/dev/null; then
+    echo "$$" > "$LOCKDIR/pid"
+    trap cleanup EXIT INT TERM HUP
+    return 0
+  fi
+
+  if [ -f "$LOCKDIR/pid" ]; then
+    other_pid="$(cat "$LOCKDIR/pid" 2>/dev/null || true)"
+    if [ -n "${other_pid:-}" ] && kill -0 "$other_pid" 2>/dev/null; then
+      echo "🧯🤠 LOCKED: Another ssg.sh is already running (pid $other_pid)."
+      echo "          Stop it (Ctrl+C in that terminal) or: kill $other_pid"
+      exit 1
+    fi
+  fi
+
+  echo "🧹🤠 LOCK: Found a stale lock. Clearing it and continuing..."
+  rm -rf "$LOCKDIR" 2>/dev/null || true
+  if mkdir "$LOCKDIR" 2>/dev/null; then
+    echo "$$" > "$LOCKDIR/pid"
+    trap cleanup EXIT INT TERM HUP
+    return 0
+  fi
+
+  echo "ERROR: Could not acquire lock at '$LOCKDIR'."
+  exit 1
+}
 
 build() {
   echo "🪏🤠 BUILDING: $INPUT_DIRECTORY/ → $OUTPUT_DIRECTORY/"
@@ -50,8 +93,9 @@ serve() {
   echo "🐴🤠 RUNNING DEV SERVER: $!"
 }
 
+acquire_lock
 build
-serve &
+serve
 
 # Build Ignore List
 

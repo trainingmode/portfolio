@@ -247,6 +247,6 @@ In all, this was a fun project! My goal wasn't to perfectly recreate the origina
 
 ---
 
-### [📚 **Book a meeting to view the .afdesign files. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
+### [📚 **Book a consultation to view the .afdesign files. [➔](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
 
 [**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
