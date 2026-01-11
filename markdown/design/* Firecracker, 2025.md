@@ -33,7 +33,7 @@ We'll use **AI agents** to explore the product space, and iterate on the product
 - [Claude](https://claude.ai/) (Research & Product Development)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Hueshift](/portfolio/design/hueshift-2023/ "Hueshift | Alfred R. Duarte | Portfolio") (Color Palettes)
+- [Hueshift](/portfolio/design/hueshift-2023/ "Hueshift | Alfred R. Duarte") (Color Palettes)
 
 # Research & Discovery
 

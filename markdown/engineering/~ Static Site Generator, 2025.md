@@ -309,7 +309,7 @@ Personally, I think semantically skipping an `<h2>` to create a subheading `<h3>
 
 **Deployed sites** ship with only what they need. A generated **article** page is only a few dozen kilobytes in size. Media used in an **article** will increase its page size.
 
-My [Emoji Case Study](/portfolio/design/color-emoji-ios-6-2022/ "Color Emoji (iOS 6), 2022 | Alfred R. Duarte | Portfolio") page is **`13.5MB`** including images and transfers in **`246ms`**.
+My [Emoji Case Study](/portfolio/design/color-emoji-ios-6-2022/ "Color Emoji (iOS 6), 2022 | Alfred R. Duarte") page is **`13.5MB`** including images and transfers in **`246ms`**.
 
 ![_Alfred Portfolio Network Load, **2025**_](/public/photos/sasha/portfolio-network-load.png "Alfred Portfolio Network Load, Alfred R. Duarte 2025")
 
@@ -317,7 +317,7 @@ As you can see, images are the largest bottleneck. Currently there is no image o
 
 ## Builder Benchmarks
 
-An article with **`2069`** words (my [**Dataing**](/portfolio/design/dataing-2023-2025/ "Dataing, 2023-2025 | Alfred R. Duarte | Portfolio") article) renders in around **`64ms`**.
+An article with **`2069`** words (my [**Dataing**](/portfolio/design/dataing-2023-2025/ "Dataing, 2023-2025 | Alfred R. Duarte") article) renders in around **`64ms`**.
 
 ![_`Sasha` Terminal Output, **2025**_](/public/photos/sasha/sasha-terminal-output.png "Sasha Terminal Output, Alfred R. Duarte 2025")
 

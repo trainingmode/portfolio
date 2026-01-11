@@ -52,6 +52,54 @@ EOF
 fi
 source "$CONFIG_FILE"
 
+# --- Output directory normalization ---
+# OUTPUT_DIRECTORY may be intentionally empty to output into the repo root.
+# In that case, we must never accidentally create absolute paths like "/design/..."
+OUTPUT_DIRECTORY="${OUTPUT_DIRECTORY:-}"
+if [ "$OUTPUT_DIRECTORY" = "." ]; then
+  # Treat "." the same as empty for path-joining purposes.
+  OUTPUT_DIRECTORY=""
+fi
+
+# Public directory (optional config). Used to exclude assets folder(s) from directory index crawling.
+PUBLIC_DIRECTORY="${PUBLIC_DIRECTORY:-public}"
+
+# Directory index crawling ignore list:
+# - Markdown source directory (articles)
+# - Public assets directory
+# - Template fragments directory
+should_ignore_directory() {
+  local dir="${1%/}"
+  dir="${dir#./}"
+
+  local input_dir="${INPUT_DIRECTORY%/}"
+  input_dir="${input_dir#./}"
+  local public_dir="${PUBLIC_DIRECTORY%/}"
+  public_dir="${public_dir#./}"
+  local template_dir="${TEMPLATE_DIRECTORY%/}"
+  template_dir="${template_dir#./}"
+
+  local -a roots=("$input_dir" "$public_dir" "$template_dir")
+  local root
+  for root in "${roots[@]}"; do
+    [ -z "$root" ] && continue
+
+    # Match root or any descendant.
+    if [ "$dir" = "$root" ] || [[ "$dir" == "$root/"* ]]; then
+      return 0
+    fi
+
+    # Also match when these roots appear under OUTPUT_DIRECTORY (if set).
+    if [ -n "$OUTPUT_DIRECTORY" ]; then
+      if [ "$dir" = "$OUTPUT_DIRECTORY/$root" ] || [[ "$dir" == "$OUTPUT_DIRECTORY/$root/"* ]]; then
+        return 0
+      fi
+    fi
+  done
+
+  return 1
+}
+
 # HTML Template Fragment Filenames
 HTML_LAYOUT_FILENAME="layout.frag.html"
 HTML_HEAD_FILENAME="head.frag.html"
@@ -243,8 +291,12 @@ rm -f "./~tmp."* 2>/dev/null || true
 # Purge Build Folder
 
 if [ "$PURGE_BUILD_FOLDER" = true ]; then
-  echo "🧹😮‍💨 CLEANUP: Removing build folder '$OUTPUT_DIRECTORY'."
-  rm -rf "$OUTPUT_DIRECTORY"
+  if [ -n "$OUTPUT_DIRECTORY" ]; then
+    echo "🧹😮‍💨 CLEANUP: Removing build folder '$OUTPUT_DIRECTORY'."
+    rm -rf "$OUTPUT_DIRECTORY"
+  else
+    echo "🧹😮‍💨 CLEANUP: OUTPUT_DIRECTORY is empty; skipping purge to avoid deleting the project root."
+  fi
 fi
 
 # Build Articles
@@ -254,8 +306,11 @@ declare -A article_images
 declare -A article_descriptions
 declare -A pinned_articles
 declare -A hidden_articles
+declare -A generated_directories
 
-mkdir -p "$OUTPUT_DIRECTORY"
+if [ -n "$OUTPUT_DIRECTORY" ]; then
+  mkdir -p "$OUTPUT_DIRECTORY"
+fi
 
 while read -r filepath; do
   # Determine if the Article is Skipped
@@ -275,11 +330,12 @@ while read -r filepath; do
 
   # Add the Article to the llm.txt Output File
   if [ -n "$LLM_OUTPUT" ] && [ "$hidden" = false ]; then
+    llm_out_path="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$LLM_OUTPUT"
     {
       printf "~~~\n\nllm.txt\n\nAuthor: $AUTHOR\nDomain: $DOMAIN\n\n~~~\n\n"
       cat "$filepath"
       printf "\n~~~\n\nThe above material is owned by the author.\n\nThis file was generated with SASHA.\n\n~~~\n"
-    } >> "$OUTPUT_DIRECTORY/$LLM_OUTPUT"
+    } >> "$llm_out_path"
   fi
 
   # Determine if the Article is Pinned
@@ -300,12 +356,12 @@ while read -r filepath; do
     slug=$(echo "$slug" | tr -s '-') # Replace Multiple Consecutive Hyphens with a Single Hyphen
     slug=${slug##-}; slug=${slug%%-} # Remove Leading & Trailing Hyphens
   fi
-  output_directory="$OUTPUT_DIRECTORY/${slug}"
+  output_directory="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}${slug}"
   output_path="$output_directory/index.html"
   page_title="$title$PAGE_TITLE_SUFFIX"
 
   # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
-  url="$DOMAIN/$OUTPUT_DIRECTORY/$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
+  url="$DOMAIN/${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
   # Extract First Non-Empty Line
   first_line=$(grep -m 1 '.' "$filepath")
   # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
@@ -394,12 +450,28 @@ while read -r filepath; do
   fi
 
   article_lut["$output_directory"]="$title"
+  # Track generated directories so directory index generation doesn't walk the entire repo.
+  dir="$output_directory"
+  while [ -n "$dir" ] && [ "$dir" != "." ] && [ "$dir" != "/" ]; do
+    generated_directories["$dir"]=true
+    parent="$(dirname "$dir")"
+    if [ "$parent" = "$dir" ]; then
+      break
+    fi
+    dir="$parent"
+  done
   echo "🔨🤠 GENERATED: $output_path"
 done < <(find "$INPUT_DIRECTORY" -name "*.md")
 
 # Build Directory Indexes
 
-while read -r directory; do
+directories_to_index="$(printf "%s\n" "${!generated_directories[@]}" | sort)"
+while IFS= read -r directory; do
+  [ -z "$directory" ] && continue
+  if should_ignore_directory "$directory"; then
+    continue
+  fi
+
   # Determine Articles by Counting Subfolders Within a Directory (Articles Only Contain a Single index.html)
   if [ -f "$directory/index.html" ]; then
     folder_count=$(find "$directory" -mindepth 1 -maxdepth 1 -type d | wc -l)
@@ -408,9 +480,14 @@ while read -r directory; do
     fi
   fi  
 
-  directory_relative="${directory#$OUTPUT_DIRECTORY/}"
+  if [ -n "$OUTPUT_DIRECTORY" ]; then
+    directory_relative="${directory#$OUTPUT_DIRECTORY/}"
+  else
+    directory_relative="$directory"
+  fi
+  directory_relative="${directory_relative#./}"
   page_title="${directory_relative}${PAGE_TITLE_SUFFIX}"
-  url="$DOMAIN/$OUTPUT_DIRECTORY/$directory_relative"
+  url="$DOMAIN/${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$directory_relative"
 
   folder_links=""
   article_links=""
@@ -420,7 +497,15 @@ while read -r directory; do
     [ ! -d "$subdirectory" ] && continue # Skip Empty Directories
 
     slug=$(basename "$subdirectory")
-    href="/${subdirectory}"
+    if should_ignore_directory "$subdirectory"; then
+      continue
+    fi
+    subdirectory_relative="$subdirectory"
+    if [ -n "$OUTPUT_DIRECTORY" ]; then
+      subdirectory_relative="${subdirectory#$OUTPUT_DIRECTORY/}"
+    fi
+    subdirectory_relative="${subdirectory_relative#./}"
+    href="/${subdirectory_relative}"
 
     article_image="${article_images["${subdirectory%/}"]}"
     if [ -z "$article_image" ]; then
@@ -487,7 +572,12 @@ while read -r directory; do
   fi
 
   # Parent Directory
-  parent_directory_href="/$(dirname "$directory")"
+  parent_rel="$(dirname "$directory_relative")"
+  if [ "$parent_rel" = "." ]; then
+    parent_directory_href="/"
+  else
+    parent_directory_href="/$parent_rel"
+  fi
   parent_listing="${HTML_DIRECTORY_FOLDER//\{\{ARTICLE_HREF\}\}/$parent_directory_href}"
   parent_listing="${parent_listing//\{\{ARTICLE_TITLE\}\}/$(basename "$parent_directory_href")}"
   parent_listing="${parent_listing//\{\{ARTICLE_IMAGE\}\}/$DEFAULT_ARTICLE_IMAGE}"
@@ -549,4 +639,4 @@ while read -r directory; do
   fi
 
   echo "🔨🤠 GENERATED DIRECTORY: $output_path"
-done < <(find "$OUTPUT_DIRECTORY" -type d)
+done <<< "$directories_to_index"

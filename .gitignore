@@ -1,2 +1,4 @@
 .DS_STORE
 tailwindcss
+.git
+.ssg.lock

@@ -127,6 +127,8 @@ Enables formatting via Prettier for the generated HTML.
 
 Purges the entire output directory before building the site.
 
+If your output directory is empty (repo-root output), purge is skipped to avoid deleting your project root.
+
 ### **`SLUGIFY_ENABLED`**
 
 Enables slugification of the file names of the articles.
@@ -163,6 +165,14 @@ If empty, no default article thumbnail is displayed.
 
 The port the development server will run on.
 
+### **`PUBLIC_DIRECTORY`**
+
+_Default: `public`_
+
+The directory containing static assets (images, CSS, media, etc).
+
+This folder is ignored during directory page crawling (so directory index pages won’t list it as a navigable folder).
+
 # Usage
 
 The `Sasha` CLI is used to build & serve your site.
@@ -192,6 +202,8 @@ It watches the current directory, and automatically rebuilds your site whenever 
   _Default: `portfolio`_
 
   The directory where your generated site will be saved.
+
+  If set to an empty string (`""`), output will be written to the project root (e.g. `design/...`, `engineering/...`).
 
 - **`[template_directory]`**
 
@@ -238,9 +250,11 @@ The `Sasha` Builder can be run manually to build your site.
 
 - **`[output_directory]`**
 
-  _Default: `portfolio`_
+  _Default: `build`_
 
   The directory where your generated site will be saved.
+
+  If set to an empty string (`""`), output will be written to the project root (e.g. `design/...`, `engineering/...`).
 
 - **`[template_directory]`**
 
@@ -277,6 +291,12 @@ A **`Directory`** is a folder containing **`Article`** files, or other **`Direct
 Both **`Article`** files & **`Directory`** folders are rendered as pages in your site.
 
 **`Directory`** pages display **`Article`** files and other **`Directory`** subfolders.
+
+Directory crawling ignores:
+
+- Your Markdown input directory (e.g. `markdown/`)
+- Your public assets directory (e.g. `public/`, configurable via `PUBLIC_DIRECTORY`)
+- Your template fragments directory (e.g. `templates/`)
 
 An **`Article`** page displays the content of its associated **`.md` Markdown** file.
 

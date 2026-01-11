@@ -85,11 +85,11 @@ Using these principles, I designed the **logo icon** motif.
 
 ## Design System
 
-I've written a [companion article](/portfolio/design/case-study-ui-styles-i-2022/ "Case Study: UI Styles I, 2022 | Alfred R. Duarte | Portfolio") with a detailed breakdown on the **design system** I developed.
+I've written a [companion article](/portfolio/design/case-study-ui-styles-i-2022/ "Case Study: UI Styles I, 2022 | Alfred R. Duarte") with a detailed breakdown on the **design system** I developed.
 
 ## UI Engine
 
-For more on the **OpenGL 2.1** (not ES2.1–_the 19 year old 2.1_) **graphics pipeline framework**, **graphics engine**, & **UI framework** I developed, please see [this article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte | Portfolio").
+For more on the **OpenGL 2.1** (not ES2.1–_the 19 year old 2.1_) **graphics pipeline framework**, **graphics engine**, & **UI framework** I developed, please see [this article](/portfolio/engineering/under-construction/ "UNDER CONSTRUCTION | Alfred R. Duarte").
 
 ## Diode
 
