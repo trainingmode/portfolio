@@ -12,17 +12,13 @@
 4. [**Shading**](#shading)
 5. [**Samples**](#samples)
 
-During _Fall 2022_, I was tasked with **mocking up a series of character designs** for a children's sticker subscription box.
+During _Fall 2022_, **I mocked up a series of character designs** for a popular children's sticker subscription box brand.
 
 The client wanted a **cartoon-stylized look**, with fun, friendly characters. They asked for an "animation" style that "popped".
 
-After completing the project, I wanted to document my learnings & process.
+After completing the project, I documented my learnings & process. I produced a `20in` x `200in` poster detailing techniques ranging from **tooling** to **shading**, geared towards replicating the style in vector tools like **Adobe Illustrator** or **Canva Affinity**.
 
-I produced a sprawling `20in` x `200in` poster detailing techniques ranging from **tooling** to **shading**, geared towards replicating the style in vector tools like **Adobe Illustrator**.
-
-I've split the poster into **`4`** sections to make it easier to include in this article.
-
-Techniques discussed are _generalized_ and based on **physical principles** (even though these are cartoons). Most techniques can be easily adapted to other styles.
+I've split the poster into **`4`** sections to make it easier to include in this article. Most techniques are based on **physical principles**.
 
 #### Tools used:
 

@@ -1,6 +1,6 @@
 ![_Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, **2022 & 2025**_](/public/photos/analog-designs/analog-designs-ui-styles-i-ui-1-7-desktop.png "Sample UIs 1-7 on Desktop – Analog Designs UI Styles Ⅰ, Alfred R. Duarte 2022 & 2025")
 
-> Case Study — Design
+> GPU-Optimized Design
 
 # Render–Optimized Skeumorphic UI
 

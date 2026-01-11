@@ -14,7 +14,7 @@ It's the _only_ tool with **1:1 translation** from the [Figma Document API]{.hig
 
 ### [[**LAYMAN**](https://laymanlabs.io "LAYMAN — Figma to Swift Plugin") by Layman Labs]{.highlight}
 
-The compiler renders spec-compliant MVVM SwiftUI code.
+The compiler renders spec-compliant SwiftUI code.
 
 It generates a **view** (_graphics_) & **view model** (_functionality_) for each frame.
 

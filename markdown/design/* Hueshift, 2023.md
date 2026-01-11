@@ -1,6 +1,6 @@
 ![_Hueshift Palette Board, **2023**_](/public/photos/bloomhue/hueshift-board.png "Hueshift Palette Board, Alfred R. Duarte 2023")
 
-> Design & Product
+> AI & Product
 
 # Hueshift
 
@@ -11,7 +11,7 @@
 3. [**User Experience & Testing**](#user-experience-testing)
 4. [**Try Hueshift.io 🎨 🖼️**](#try-hueshift.io)
 
-***Hueshift is a tool that helps you generate harmonious color palettes using a recursive machine learning process.***
+***Hueshift is a machine learning tool that generates harmonious color palettes using a recursive neural network model.***
 
 ![_254 Spectrum Made with Hueshift, **2025**_](/public/photos/bloomhue/254-hueshift-spectrum.png "254 Spectrum, Hueshift, Alfred R. Duarte 2025")
 
@@ -44,8 +44,6 @@ I created **Hueshift** as a tool to automate this process. It uses a [two-stage 
 - **Choose interesting colors that complement each other.**
 - **Automatically generate a set of light to dark shades for each color.**
 
-**_There are no high-fidelity mockups for this project. Hueshift was designed & built directly in React._**
-
 #### Tools used:
 
 - [VS Code](https://code.visualstudio.com/)
@@ -65,6 +63,9 @@ I wanted to create a tool that bridged the gap between mathematical precision an
 **Hueshift** recursively generates harmonious colors starting from the **base hue**.
 
 This method allows for a wider range of generated palettes, with colors that still feel naturally harmonious.
+
+![_Hueshift Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-closeup.png "Hueshift Palette Board Close-up, Alfred R. Duarte 2023")
+
 
 ## Interface Design
 
@@ -134,45 +135,6 @@ If you feel like shades generated are "missing something", you can add or remove
 **Hueshift** ships with **_`98`_** pre-defined **color models**, with `21` **color models** enabled by default.
 
 It also ships with **_`19`_** **greytone models**, with `5` **greytone models** enabled by default.
-
-## User Experience & Testing
-
-I conducted light **user testing** with some designer & marketing friends to see how they used **Hueshift** and their thoughts on the process provided by the tool.
-
-![_Hueshift Palette Board Close-up, **2023**_](/public/photos/bloomhue/hueshift-board-closeup.png "Hueshift Palette Board Close-up, Alfred R. Duarte 2023")
-
-### Testing Process
-
-Feedback was collected through various forms, mainly **text messaging** and **Discord**. With a small test group, I wanted to meet people where they were.
-
-I sent around a survey as text that people could easily reply to rather than ask them to fill out a form. I provided an open space for suggestions & comments.
-
-I sent them a succinct set of targeted questions to understand their usage patterns:
-
-1. **Did you produce any palettes that you used, or would use in a project?**
-2. **Was there any point you said, "_I hope/wonder if Hueshift could do this?_" What were trying to do?**
-3. **What did you find cumbersome about the process or interface?**
-4. **What reasons hold you back from using Hueshift in your workflow?**
-
-### Feedback Summary
-
-> _"...really fun to play with!"_
-
-Through this research, the feature for **dragging a row of swatches out of the palette to remove it** surfaced. Many people didn't understand how to get rid of swatches that they didn't want, and just wanted to "toss them out".
-
-I also received feedback from basically everyone for one feature:
-
-> _"Can I generate a palette from an image?"_
-
-While this was out of the project scope, it's a great suggestion for a future release.
-
-### Conclusions
-
-In all, most found the process mostly intuitive and easy to navigate. However, no designers really mentioned they'll actually use the tool. The honest feedback I received was picking colors manually in-app was just quicker and easier than using a totally separate tool.
-
-With that said, my marketing friends were very excited about its potential, but it was still just a bit too hands-on for them.
-
-I would like to revisit this project and incorporate the feedback I received. I think making the process even more streamlined would help increase the tool's usability and get people to actually adopt it.
 
 ## Try Hueshift.io 🎨 🖼️
 
