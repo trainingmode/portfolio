@@ -297,6 +297,8 @@ Directory crawling ignores:
 - Your Markdown input directory (e.g. `markdown/`)
 - Your public assets directory (e.g. `public/`, configurable via `PUBLIC_DIRECTORY`)
 - Your template fragments directory (e.g. `templates/`)
+- Paths matched by `.gitignore`
+- Paths matched by `.ssgignore` (if present; also supported as `..ssgignore`)
 
 An **`Article`** page displays the content of its associated **`.md` Markdown** file.
 

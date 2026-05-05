@@ -17,6 +17,8 @@ INPUT_DIRECTORY="${2:-markdown}"
 OUTPUT_DIRECTORY="${3:-build}"
 TEMPLATE_DIRECTORY="${4:-templates}"
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 if [ ! -d "$INPUT_DIRECTORY" ]; then
   echo "ERROR: Input directory '$INPUT_DIRECTORY' does not exist."
   exit 1
@@ -64,6 +66,111 @@ fi
 # Public directory (optional config). Used to exclude assets folder(s) from directory index crawling.
 PUBLIC_DIRECTORY="${PUBLIC_DIRECTORY:-public}"
 
+# Ignore patterns (from .gitignore + optional .ssgignore / ..ssgignore)
+declare -a SSG_IGNORE_PATTERNS
+
+load_ignore_patterns_from_file() {
+  local file="$1"
+  [ ! -f "$file" ] && return 0
+
+  while IFS= read -r raw || [ -n "$raw" ]; do
+    # Trim whitespace
+    line="$(echo "$raw" | sed -E 's/^[[:space:]]+//; s/[[:space:]]+$//')"
+    # Skip blanks/comments
+    [ -z "$line" ] && continue
+    [[ "$line" == \#* ]] && continue
+
+    # For now we treat patterns as simple globs. Negation is supported via leading "!".
+    SSG_IGNORE_PATTERNS+=("$line")
+  done < "$file"
+}
+
+load_ignore_patterns_from_file "$SCRIPT_DIR/.gitignore"
+load_ignore_patterns_from_file "$SCRIPT_DIR/.ssgignore"
+load_ignore_patterns_from_file "$SCRIPT_DIR/..ssgignore"
+
+normalize_path_for_ignore_matching() {
+  local p="$1"
+  p="${p%/}"
+  p="${p#./}"
+  # If an absolute path under the project root is provided, normalize to project-relative.
+  if [[ "$p" == "$SCRIPT_DIR/"* ]]; then
+    p="${p#"$SCRIPT_DIR"/}"
+  fi
+  echo "$p"
+}
+
+matches_ignore_pattern() {
+  local path="$1"
+  local pattern="$2"
+  local is_dir="${3:-false}"
+
+  local negated=false
+  if [[ "$pattern" == "!"* ]]; then
+    negated=true
+    pattern="${pattern#!}"
+  fi
+
+  # Directory-only patterns (ending with /)
+  local dir_only=false
+  if [[ "$pattern" == */ ]]; then
+    dir_only=true
+    pattern="${pattern%/}"
+  fi
+  if [ "$dir_only" = true ] && [ "$is_dir" != true ]; then
+    return 1
+  fi
+
+  local anchored=false
+  if [[ "$pattern" == /* ]]; then
+    anchored=true
+    pattern="${pattern#/}"
+  fi
+
+  path="$(normalize_path_for_ignore_matching "$path")"
+
+  local matched=false
+  if [[ "$pattern" == *"/"* ]]; then
+    # Path glob
+    if [ "$anchored" = true ]; then
+      [[ "$path" == $pattern || "$path" == $pattern/* ]] && matched=true
+    else
+      [[ "$path" == $pattern || "$path" == $pattern/* || "$path" == */$pattern || "$path" == */$pattern/* ]] && matched=true
+    fi
+  else
+    # Basename glob (matches anywhere)
+    base="$(basename "$path")"
+    [[ "$base" == $pattern ]] && matched=true
+  fi
+
+  if [ "$matched" = true ]; then
+    if [ "$negated" = true ]; then
+      echo "unignore"
+    else
+      echo "ignore"
+    fi
+    return 0
+  fi
+
+  return 1
+}
+
+should_ignore_by_patterns() {
+  local path="$1"
+  local is_dir="${2:-false}"
+  local decision=""
+
+  local p
+  for p in "${SSG_IGNORE_PATTERNS[@]}"; do
+    res="$(matches_ignore_pattern "$path" "$p" "$is_dir" || true)"
+    if [ -n "$res" ]; then
+      decision="$res"
+    fi
+  done
+
+  [ "$decision" = "ignore" ]
+}
+
 # Directory index crawling ignore list:
 # - Markdown source directory (articles)
 # - Public assets directory
@@ -96,6 +203,11 @@ should_ignore_directory() {
       fi
     fi
   done
+
+  # Respect ignore files (.gitignore + optional .ssgignore / ..ssgignore)
+  if should_ignore_by_patterns "$dir" true; then
+    return 0
+  fi
 
   return 1
 }
