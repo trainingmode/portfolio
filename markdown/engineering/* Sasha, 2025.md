@@ -1,12 +1,12 @@
 ![_`Sasha` Article Transformation, **2025**_](/public/photos/sasha/sasha-article-transformation.png "Sasha Article Transformation, Alfred R. Duarte 2025")
 
-> Engineering
+> [Engineering](/engineering)
 
 # **Sasha** — Static Site Generator
 
 > **April 2025**
 
-### [[**→ *This site loads in under 0.8s on mobile, 0.2s on desktop***](https://pagespeed.web.dev/analysis/https-alfred-ad/bqqnla9hxa?form_factor=mobile "alfred.ad — Mobile Device Metrics — PageSpeed Insights")]{.highlight} (PageSpeed Insights)
+### [[**View on GitHub ↗**](https://github.com/trainingmode/portfolio "GitHub — Sasha: Micro static site generator.")]{.highlight}
 
 A simple system for writing articles and generating sites that are effortless to maintain.
 
@@ -50,12 +50,3 @@ The **template system** uses **`{{ }}` Replacement Tags** to inject content into
 The [project **`README`**](https://github.com/trainingmode/portfolio?tab=readme-ov-file#templates "trainingmode/portfolio: Micro static site generator.") contains complete documentation for the **template system**.
 
 ---
-
-Performant & accessible layouts can look good—when you design them with care.
-
----
-
-### [🌐 **Book a consultation to discuss your project. [→](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
-
-[**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
-

@@ -1,10 +1,10 @@
 ![_**LAYMAN** Logo, **2025**_](/public/photos/layman/layman-logo.png "LAYMAN Logo, Alfred R. Duarte 2025")
 
-> Engineering & Design
+> [Engineering](/engineering) & [Design](/design)
 
 # **LAYMAN** — Figma to SwiftUI Compiler
 
-> **August 2024 — Present**
+> **August 2024 — September 2025**
 
 **LAYMAN** is a [Figma Dev Mode](https://www.figma.com/plugin-docs/working-in-dev-mode/ "Working in Dev Mode | Plugin API | Figma") plugin that compiles [Figma Frames](https://www.figma.com/plugin-docs/api/FrameNode/ "FrameNode | Plugin API | Figma") into [SwiftUI View](https://developer.apple.com/documentation/swiftui/view "View | Apple Developer Documentation") code.
 
@@ -16,11 +16,8 @@ It's the _only_ tool with **1:1 translation** from the [Figma Document API]{.hig
 
 The compiler renders spec-compliant SwiftUI code.
 
-It generates a **view** (_graphics_) & **view model** (_functionality_) for each frame.
+It generates a **view** (the _graphics_) & **view model** (the _functionality_) for each Figma frame.
 
 ---
 
-### [📱 **Book a consultation to discuss your project. [→](mailto:alfred.r.duarte@gmail.com)**]{.highlight}
-
-[**alfred.r.duarte@gmail.com**](mailto:alfred.r.duarte@gmail.com "Gmail – Alfred R. Duarte")
-
+.
