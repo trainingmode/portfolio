@@ -1,22 +1,36 @@
-<div class="flex flex-col gap-4 md:gap-5 mt-2">
+<div
+  class="flex flex-col gap-4 md:gap-5 mt-2 w-full mx-auto xl:h-[calc(100vh-4rem)] xl:max-h-[calc(100vh-6rem)] xl:min-h-0 xl:overflow-hidden"
+>
   <div class="flex flex-wrap gap-2 text-xs items-baseline whitespace-nowrap">
     <span class="mr-1 text-sm">Index of</span>
     <a href="/" class="truncate"><pre>alfred/</pre></a>
     {{CRUMBS}}
   </div>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 text-sm items-end empty:hidden"
+    class="flex flex-col gap-4 md:gap-5 xl:grid xl:grid-cols-3 xl:flex-1 xl:min-h-0 xl:overflow-hidden"
   >
-    {{PINNED_ARTICLES}}
-  </div>
-  <div
-    class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden"
-  >
-    {{FOLDERS}}
-  </div>
-  <div
-    class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden"
-  >
-    {{ARTICLES}}
+    <div
+      class="xl:col-span-2 xl:grid xl:min-h-0 xl:place-items-center xl:overflow-hidden"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 text-sm items-end empty:hidden xl:w-fit xl:max-w-full xl:max-h-full xl:overflow-y-auto xl:place-items-center xl:[scrollbar-width:none] xl:[&::-webkit-scrollbar]:hidden xl:[&>a]:w-80 xl:[&>a]:grow-0 xl:[&>a>div:first-child]:h-48"
+      >
+        {{PINNED_ARTICLES}}
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-4 md:gap-5 xl:col-span-1 xl:min-h-0 xl:overflow-y-auto xl:[scrollbar-width:none] xl:[&::-webkit-scrollbar]:hidden"
+    >
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden xl:flex xl:flex-col xl:[&>a]:grow-0 xl:[&>a]:h-auto"
+      >
+        {{FOLDERS}}
+      </div>
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden xl:flex xl:flex-col xl:[&>a]:grow-0 xl:[&>a]:h-auto"
+      >
+        {{ARTICLES}}
+      </div>
+    </div>
   </div>
 </div>

@@ -1,15 +1,27 @@
-<div class="flex flex-col gap-4 md:gap-5 mt-2">
+<div
+  class="flex flex-col gap-4 md:gap-5 mt-2 w-full mx-auto lg:h-[calc(100vh-53px)] lg:max-h-[calc(100vh-53px)] lg:min-h-0 lg:overflow-hidden"
+>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 text-sm items-end empty:hidden"
+    class="flex flex-col gap-4 md:gap-5 lg:gap-10 lg:grid lg:grid-cols-3 lg:flex-1 lg:min-h-0 lg:overflow-hidden"
   >
-    {{PINNED_ARTICLES}}
-  </div>
-  <div class="flex flex-col gap-3 md:gap-4 pt-3 border-neutral-200">
-    <h3 class="text-xl font-medium">Design</h3>
     <div
-      class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden"
+      class="lg:col-span-2 lg:grid lg:min-h-0 lg:place-items-center lg:overflow-hidden"
     >
-      {{FOLDERS}}{{ARTICLES}}
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 text-sm items-end empty:hidden lg:pt-0 lg:p-10 xl:p-15 lg:w-fit lg:max-w-full lg:max-h-full lg:overflow-y-auto lg:place-items-center lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden"
+      >
+        {{PINNED_ARTICLES}}
+      </div>
+    </div>
+    <div
+      class="flex flex-col gap-3 md:gap-4 pt-3 border-neutral-200 lg:col-span-1 lg:min-h-0 lg:pt-0"
+    >
+      <h3 class="text-xl font-medium">Design</h3>
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 text-sm items-end empty:hidden lg:flex lg:flex-col lg:-ml-3 pl-3 lg:pb-5 lg:overflow-y-auto lg:[scrollbar-width:none] lg:[&::-webkit-scrollbar]:hidden"
+      >
+        {{FOLDERS}}{{ARTICLES}}
+      </div>
     </div>
   </div>
 </div>
