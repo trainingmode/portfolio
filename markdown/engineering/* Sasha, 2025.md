@@ -1,6 +1,6 @@
 ![_`Sasha` Article Transformation, **2025**_](/public/photos/sasha/sasha-article-transformation.png "Sasha Article Transformation, Alfred R. Duarte 2025")
 
-> [Engineering](/engineering)
+> Engineering
 
 # **Sasha** — Static Site Generator
 

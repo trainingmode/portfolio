@@ -214,6 +214,8 @@ should_ignore_directory() {
 
 # HTML Template Fragment Filenames
 HTML_LAYOUT_FILENAME="layout.frag.html"
+HTML_DIRECTORY_LAYOUT_FILENAME="directory.layout.frag.html"
+HTML_ARTICLE_LAYOUT_FILENAME="article.layout.frag.html"
 HTML_HEAD_FILENAME="head.frag.html"
 HTML_BODY_FILENAME="body.frag.html"
 HTML_FOOTER_FILENAME="footer.frag.html"
@@ -311,6 +313,15 @@ read_page_footer_template() {
 
   fallback_template="$(read_scoped_template "$relative_path" "$HTML_FOOTER_FILENAME" "$HTML_FOOTER")"
   read_scoped_template "$relative_path" "$scoped_footer_filename" "$fallback_template"
+}
+
+read_page_layout_template() {
+  local relative_path="$1"
+  local scoped_layout_filename="$2"
+  local fallback_template
+
+  fallback_template="$(read_scoped_template "$relative_path" "$HTML_LAYOUT_FILENAME" "$HTML_LAYOUT")"
+  read_scoped_template "$relative_path" "$scoped_layout_filename" "$fallback_template"
 }
 
 HTML_DIRECTORY_FILE="${TEMPLATE_DIRECTORY}/${HTML_DIRECTORY_FILENAME}"
@@ -576,8 +587,10 @@ while read -r filepath; do
   body=$(pandoc "$preprocessed")
   rm "$preprocessed"
 
+  layout_template="$(read_page_layout_template "$slug" "$HTML_ARTICLE_LAYOUT_FILENAME")"
+
   # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
-  layout=$(echo "${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}")
+  layout=$(echo "${layout_template//\{\{HEAD\}\}/$HTML_HEAD}")
   # Replace {{BODY}} in the Layout HTML Template with the Contents of the Body HTML Template
   layout="${layout//\{\{BODY\}\}/$HTML_BODY}"
   # Replace {{FOOTER}} in the Layout HTML Template with the Contents of the Footer HTML Template
@@ -767,8 +780,10 @@ while IFS= read -r directory; do
   # Sanitize the Body (& Prevent Reinjection)
   body="${body//&/\\&}"
 
+  layout_template="$(read_page_layout_template "$directory_relative" "$HTML_DIRECTORY_LAYOUT_FILENAME")"
+
   # Replace {{HEAD}} in the Layout HTML Template with the Contents of the Head HTML Template
-  layout=$(echo "${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}")
+  layout=$(echo "${layout_template//\{\{HEAD\}\}/$HTML_HEAD}")
   # Replace {{BODY}} in the Layout HTML Template with the Contents of the Populated Directory HTML Template
   layout="${layout//\{\{BODY\}\}/$body}"
   # Replace {{FOOTER}} in the Layout HTML Template with the Contents of the Footer HTML Template

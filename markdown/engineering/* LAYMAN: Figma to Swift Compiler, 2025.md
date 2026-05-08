@@ -1,6 +1,6 @@
 ![_**LAYMAN** Logo, **2025**_](/public/photos/layman/layman-logo.png "LAYMAN Logo, Alfred R. Duarte 2025")
 
-> [Engineering](/engineering) & [Design](/design)
+> Engineering & Design
 
 # **LAYMAN** — Figma to SwiftUI Compiler
 
