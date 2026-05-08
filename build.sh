@@ -41,6 +41,9 @@ PRETTIER_ENABLED=true
 PURGE_BUILD_FOLDER=true
 SLUGIFY_ENABLED=true
 LLM_OUTPUT=""
+SITEMAP_OUTPUT="sitemap.xml"
+ROBOTS_OUTPUT="robots.txt"
+ARCHIVE_OUTPUT_DIRECTORY="archive"
 
 # — Default Images —
 DEFAULT_META_IMAGE="/public/og-image.png"
@@ -65,6 +68,172 @@ fi
 
 # Public directory (optional config). Used to exclude assets folder(s) from directory index crawling.
 PUBLIC_DIRECTORY="${PUBLIC_DIRECTORY:-public}"
+SITEMAP_OUTPUT="${SITEMAP_OUTPUT:-sitemap.xml}"
+ROBOTS_OUTPUT="${ROBOTS_OUTPUT:-robots.txt}"
+ARCHIVE_OUTPUT_DIRECTORY="${ARCHIVE_OUTPUT_DIRECTORY:-archive}"
+TWITTER_HANDLE="${TWITTER_HANDLE:-${X_HANDLE:-}}"
+X_HANDLE="${X_HANDLE:-$TWITTER_HANDLE}"
+
+site_url_for_path() {
+  local path="$1"
+  local domain="${DOMAIN%/}"
+
+  path="${path#./}"
+  path="${path#/}"
+  path="${path%/}"
+
+  if [ -z "$path" ]; then
+    printf '%s/' "$domain"
+  else
+    printf '%s/%s/' "$domain" "$path"
+  fi
+}
+
+site_file_url_for_path() {
+  local path="$1"
+  local domain="${DOMAIN%/}"
+
+  path="${path#./}"
+  path="${path#/}"
+
+  if [ -z "$path" ]; then
+    printf '%s/' "$domain"
+  else
+    printf '%s/%s' "$domain" "$path"
+  fi
+}
+
+slugify_path_relative() {
+  local path_relative="$1"
+  local slug="${path_relative%.md}"
+
+  if [ "$SLUGIFY_ENABLED" = true ]; then
+    slug=${slug,,}
+    slug=${slug//[^a-z0-9\/]/-}
+    slug=$(echo "$slug" | tr -s '-')
+    slug=${slug##-}
+    slug=${slug%%-}
+  fi
+
+  printf '%s' "$slug"
+}
+
+html_escape() {
+  local value="$1"
+  value="${value//&/&amp;}"
+  value="${value//</&lt;}"
+  value="${value//>/&gt;}"
+  value="${value//\"/&quot;}"
+  printf '%s' "$value"
+}
+
+xml_escape() {
+  html_escape "$1"
+}
+
+file_lastmod() {
+  local file="$1"
+  local fallback
+
+  fallback="$(date -u +"%Y-%m-%d")"
+  if [ -f "$file" ]; then
+    date -u -r "$file" +"%Y-%m-%d" 2>/dev/null || printf '%s' "$fallback"
+  else
+    printf '%s' "$fallback"
+  fi
+}
+
+article_description_from_file() {
+  local filepath="$1"
+  local first_line description
+
+  first_line=$(grep -m 1 '.' "$filepath" || true)
+  description="${first_line:0:160}"
+  if [ "${first_line:0:2}" = "![" ]; then
+    description=$(grep -m 2 '.' "$filepath" | tail -n 1 | cut -c1-160)
+  fi
+
+  description="$(printf '%s' "$description" | sed -E 's/^[#>[:space:]]+//; s/\{[^}]*\}//g; s/[][()_*`]//g; s/[[:space:]]+/ /g; s/^[[:space:]]+//; s/[[:space:]]+$//')"
+  printf '%s' "$description"
+}
+
+build_article_breadcrumbs() {
+  local slug="$1"
+  local title="$2"
+  local parent_path
+  local breadcrumbs
+  local current_path=""
+  local segment label href
+  local hidden_style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
+
+  parent_path="$(dirname "$slug")"
+  breadcrumbs='<nav aria-label="Breadcrumb" style="'"$hidden_style"'"><a href="/" tabindex="-1">Home</a>'
+
+  if [ "$parent_path" != "." ] && [ -n "$parent_path" ]; then
+    IFS='/' read -r -a segments <<< "$parent_path"
+    for segment in "${segments[@]}"; do
+      [ -z "$segment" ] && continue
+      if [ -z "$current_path" ]; then
+        current_path="$segment"
+      else
+        current_path="$current_path/$segment"
+      fi
+      label="$(printf '%s' "${segment//-/ }" | awk '{for (i = 1; i <= NF; i++) $i = toupper(substr($i, 1, 1)) substr($i, 2)} 1')"
+      href="/$current_path/"
+      breadcrumbs+=' <span aria-hidden="true">/</span> <a href="'"$href"'" tabindex="-1">'"$(html_escape "$label")"'</a>'
+    done
+  fi
+
+  breadcrumbs+=' <span aria-hidden="true">/</span> <span>'"$(html_escape "$title")"'</span></nav>'
+  printf '%s' "$breadcrumbs"
+}
+
+build_related_work() {
+  local current_slug="$1"
+  local current_path_relative="$2"
+  local parent_dir candidate candidate_base filename_cleansed candidate_cleansed
+  local candidate_path_relative candidate_slug candidate_title candidate_href candidate_description
+  local items="" count=0
+  local hidden_style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
+
+  parent_dir="$(dirname "$current_path_relative")"
+  [ "$parent_dir" = "." ] && return 0
+  [ ! -d "$INPUT_DIRECTORY/$parent_dir" ] && return 0
+
+  while IFS= read -r candidate; do
+    [ -z "$candidate" ] && continue
+    candidate_base="$(basename "$candidate")"
+    [ "${candidate_base:0:1}" = "_" ] && continue
+    [ "${candidate_base:0:1}" = "~" ] && continue
+
+    candidate_cleansed="$candidate"
+    if [ "${candidate_base:0:1}" = "*" ]; then
+      filename_cleansed=$(basename "$candidate_cleansed" | sed 's/^[* ]*//')
+      candidate_cleansed="$(dirname "$candidate_cleansed")/$filename_cleansed"
+    fi
+
+    candidate_path_relative="${candidate_cleansed#$INPUT_DIRECTORY/}"
+    candidate_slug="$(slugify_path_relative "$candidate_path_relative")"
+    [ "$candidate_slug" = "$current_slug" ] && continue
+
+    candidate_title=$(basename "${candidate_path_relative%.md}")
+    candidate_href="/${candidate_slug}/"
+    candidate_description="$(article_description_from_file "$candidate")"
+
+    items+='<li><a href="'"$candidate_href"'" tabindex="-1">'"$(html_escape "$candidate_title")"'</a>'
+    if [ -n "$candidate_description" ]; then
+      items+='<p>'"$(html_escape "$candidate_description")"'</p>'
+    fi
+    items+='</li>'
+
+    count=$((count + 1))
+    [ "$count" -ge 4 ] && break
+  done < <(find "$INPUT_DIRECTORY/$parent_dir" -maxdepth 1 -name "*.md" | sort)
+
+  [ "$count" -eq 0 ] && return 0
+
+  printf '%s' '<section aria-label="Related work" style="'"$hidden_style"'"><h2>Related work</h2><ul>'"$items"'</ul></section>'
+}
 
 # Ignore patterns (from .gitignore + optional .ssgignore / ..ssgignore)
 declare -a SSG_IGNORE_PATTERNS
@@ -488,6 +657,29 @@ declare -A article_descriptions
 declare -A pinned_articles
 declare -A hidden_articles
 declare -A generated_directories
+declare -a sitemap_entries
+declare -a archive_entries
+
+add_sitemap_url() {
+  local loc="$1"
+  local lastmod="$2"
+  local changefreq="${3:-monthly}"
+  local priority="${4:-0.5}"
+
+  sitemap_entries+=("$loc|$lastmod|$changefreq|$priority")
+}
+
+add_archive_entry() {
+  local section="$1"
+  local href="$2"
+  local title="$3"
+  local description="$4"
+
+  archive_entries+=("$section|$href|$title|$description")
+}
+
+add_sitemap_url "$(site_url_for_path "${OUTPUT_DIRECTORY}")" "$(date -u +"%Y-%m-%d")" "weekly" "1.0"
+add_archive_entry "pages" "/" "Home" "Alfred R. Duarte portfolio homepage."
 
 if [ -n "$OUTPUT_DIRECTORY" ]; then
   mkdir -p "$OUTPUT_DIRECTORY"
@@ -535,20 +727,12 @@ while read -r filepath; do
   fi
 
   path_relative="${filepath_cleansed#$INPUT_DIRECTORY/}"
-  slug="${path_relative%.md}"
-  title=$(basename "${slug}")
-  if [ "$SLUGIFY_ENABLED" = true ]; then
-    slug=${slug,,} # Convert to Lowercase
-    slug=${slug//[^a-z0-9\/]/-} # Replace Non-Alphanumeric (+ Non-Forwardslash) Characters with Hyphens
-    slug=$(echo "$slug" | tr -s '-') # Replace Multiple Consecutive Hyphens with a Single Hyphen
-    slug=${slug##-}; slug=${slug%%-} # Remove Leading & Trailing Hyphens
-  fi
+  slug="$(slugify_path_relative "$path_relative")"
+  title=$(basename "${path_relative%.md}")
   output_directory="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}${slug}"
   output_path="$output_directory/index.html"
   page_title="$title$PAGE_TITLE_SUFFIX"
-
-  # Encode Path as URL-Safe String (Strip Newlines to Avoid Trailing %0A)
-  url="$DOMAIN/${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$(dirname "$path_relative")/$(basename "${path_relative%.md}" | tr -d '\n' | jq -sRr @uri).html"
+  url="$(site_url_for_path "${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$slug")"
   # Extract First Non-Empty Line
   first_line=$(grep -m 1 '.' "$filepath")
   # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
@@ -576,6 +760,15 @@ while read -r filepath; do
   # Mark the Article as Pinned if its Original Filename Started with *
   if [ "$pinned" = true ]; then
     pinned_articles["$output_directory"]="$title"
+  fi
+  if [ "$hidden" = false ]; then
+    article_section="$(dirname "$slug")"
+    article_section="${article_section%%/*}"
+    if [ "$article_section" = "." ]; then
+      article_section="pages"
+    fi
+    add_sitemap_url "$url" "$(file_lastmod "$filepath")" "monthly" "0.8"
+    add_archive_entry "$article_section" "/${slug}/" "$title" "$(article_description_from_file "$filepath")"
   fi
 
   mkdir -p "$output_directory"
@@ -627,8 +820,13 @@ while read -r filepath; do
   layout="${layout//\{\{TITLE\}\}/$title}"
   layout="${layout//\{\{AUTHOR\}\}/$AUTHOR}"
   layout="${layout//\{\{X_HANDLE\}\}/$X_HANDLE}"
+  layout="${layout//\{\{TWITTER_HANDLE\}\}/$TWITTER_HANDLE}"
   layout="${layout//\{\{DESCRIPTION\}\}/$description}"
   layout="${layout//\{\{MARKDOWN\}\}/"$body"}"
+  article_breadcrumbs="$(build_article_breadcrumbs "$slug" "$title")"
+  related_work="$(build_related_work "$slug" "$path_relative")"
+  layout="${layout//\{\{ARTICLE_BREADCRUMBS\}\}/"$article_breadcrumbs"}"
+  layout="${layout//\{\{RELATED_WORK\}\}/"$related_work"}"
   layout="${layout//\{\{URL\}\}/$url}"
 
   # Replace {{YEAR}} in the Layout HTML Template with the Current Year
@@ -680,7 +878,7 @@ while IFS= read -r directory; do
   fi
   directory_relative="${directory_relative#./}"
   page_title="${directory_relative}${PAGE_TITLE_SUFFIX}"
-  url="$DOMAIN/${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$directory_relative"
+  url="$(site_url_for_path "${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$directory_relative")"
 
   folder_links=""
   article_links=""
@@ -698,7 +896,7 @@ while IFS= read -r directory; do
       subdirectory_relative="${subdirectory#$OUTPUT_DIRECTORY/}"
     fi
     subdirectory_relative="${subdirectory_relative#./}"
-    href="/${subdirectory_relative}"
+    href="/${subdirectory_relative%/}/"
 
     article_image="${article_images["${subdirectory%/}"]}"
     if [ -z "$article_image" ]; then
@@ -769,7 +967,7 @@ while IFS= read -r directory; do
   if [ "$parent_rel" = "." ]; then
     parent_directory_href="/"
   else
-    parent_directory_href="/$parent_rel"
+    parent_directory_href="/$parent_rel/"
   fi
   parent_listing="${HTML_DIRECTORY_FOLDER//\{\{ARTICLE_HREF\}\}/$parent_directory_href}"
   parent_listing="${parent_listing//\{\{ARTICLE_TITLE\}\}/$(basename "$parent_directory_href")}"
@@ -819,6 +1017,7 @@ while IFS= read -r directory; do
   layout="${layout//\{\{PAGE_TITLE\}\}/$page_title}"
   layout="${layout//\{\{AUTHOR\}\}/$AUTHOR}"
   layout="${layout//\{\{X_HANDLE\}\}/$X_HANDLE}"
+  layout="${layout//\{\{TWITTER_HANDLE\}\}/$TWITTER_HANDLE}"
   layout="${layout//\{\{DESCRIPTION\}\}/Directory index for $directory_relative}"
   layout="${layout//\{\{URL\}\}/$url}"
 
@@ -834,5 +1033,123 @@ while IFS= read -r directory; do
     prettier --write "$output_path"
   fi
 
+  add_sitemap_url "$url" "$(date -u +"%Y-%m-%d")" "weekly" "0.6"
+
   echo "🔨🤠 GENERATED DIRECTORY: $output_path"
 done <<< "$directories_to_index"
+
+# Build HTML Archive
+
+archive_item_list_for_section() {
+  local target_section="$1"
+  local entry section href title description
+  local items=""
+
+  for entry in "${archive_entries[@]}"; do
+    IFS='|' read -r section href title description <<< "$entry"
+    [ "$section" != "$target_section" ] && continue
+
+    items+='<li class="border-t border-neutral-200 py-3"><a href="'"$(html_escape "$href")"'" class="font-medium text-neutral-800 hover:underline">'"$(html_escape "$title")"'</a>'
+    if [ -n "$description" ]; then
+      items+='<p class="mt-1 text-xs leading-5 text-neutral-500">'"$(html_escape "$description")"'</p>'
+    fi
+    items+='</li>'
+  done
+
+  printf '%s' "$items"
+}
+
+archive_section_heading() {
+  local section="$1"
+
+  case "$section" in
+    pages)
+      printf 'Pages'
+      ;;
+    *)
+      printf '%s' "${section//-/ }" | awk '{for (i = 1; i <= NF; i++) $i = toupper(substr($i, 1, 1)) substr($i, 2)} 1'
+      ;;
+  esac
+}
+
+archive_section_markup() {
+  local section="$1"
+  local heading items
+
+  heading="$(archive_section_heading "$section")"
+  items="$(archive_item_list_for_section "$section")"
+  [ -z "$items" ] && return 0
+
+  printf '%s' '<section class="mt-8"><h2 class="text-sm font-medium text-neutral-800">'"$(html_escape "$heading")"'</h2><ul class="mt-2 grid gap-x-6 md:grid-cols-2">'"$items"'</ul></section>'
+}
+
+archive_sections=""
+declare -A archive_sections_seen
+for archive_section in pages design engineering; do
+  archive_sections+="$(archive_section_markup "$archive_section")"
+  archive_sections_seen["$archive_section"]=true
+done
+for archive_entry in "${archive_entries[@]}"; do
+  IFS='|' read -r archive_section archive_href archive_title archive_description <<< "$archive_entry"
+  [ -n "${archive_sections_seen["$archive_section"]}" ] && continue
+  archive_sections+="$(archive_section_markup "$archive_section")"
+  archive_sections_seen["$archive_section"]=true
+done
+
+archive_body='<header><h1 class="mt-2 text-sm font-medium">Archive</h1></header><main class="w-full max-w-[980px] m-auto mt-6 md:mt-auto p-[15px] md:p-[45px]"><p class="text-sm leading-6 text-neutral-500">A crawlable index of public portfolio pages and case studies.</p><section class="mt-8"><h2 class="text-sm font-medium text-neutral-800">Sections</h2><ul class="mt-2 grid gap-x-6 md:grid-cols-2"><li class="border-t border-neutral-200 py-3"><a href="/design/" class="font-medium text-neutral-800 hover:underline">Design</a></li><li class="border-t border-neutral-200 py-3"><a href="/engineering/" class="font-medium text-neutral-800 hover:underline">Engineering</a></li></ul></section>'"$archive_sections"'</main>'
+archive_directory="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}${ARCHIVE_OUTPUT_DIRECTORY}"
+archive_output_path="$archive_directory/index.html"
+archive_url="$(site_url_for_path "${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$ARCHIVE_OUTPUT_DIRECTORY")"
+
+mkdir -p "$archive_directory"
+
+layout="${HTML_LAYOUT//\{\{HEAD\}\}/$HTML_HEAD}"
+layout="${layout//\{\{BODY\}\}/"$archive_body"}"
+layout="${layout//\{\{FOOTER\}\}/$HTML_FOOTER}"
+layout="${layout//\{\{PAGE_TITLE\}\}/Archive$PAGE_TITLE_SUFFIX}"
+layout="${layout//\{\{TITLE\}\}/Archive}"
+layout="${layout//\{\{AUTHOR\}\}/$AUTHOR}"
+layout="${layout//\{\{X_HANDLE\}\}/$X_HANDLE}"
+layout="${layout//\{\{TWITTER_HANDLE\}\}/$TWITTER_HANDLE}"
+layout="${layout//\{\{DESCRIPTION\}\}/Crawlable index of public portfolio pages and case studies.}"
+layout="${layout//\{\{URL\}\}/$archive_url}"
+layout="${layout//\{\{YEAR\}\}/$(date +%Y)}"
+layout="${layout//\{\{IMAGE\}\}/$DOMAIN$DEFAULT_META_IMAGE}"
+
+echo "$layout" > "$archive_output_path"
+if [ "$PRETTIER_ENABLED" = true ]; then
+  prettier --write "$archive_output_path"
+fi
+add_sitemap_url "$archive_url" "$(date -u +"%Y-%m-%d")" "weekly" "0.7"
+echo "🔨🤠 GENERATED ARCHIVE: $archive_output_path"
+
+# Build robots.txt and sitemap.xml
+
+sitemap_path="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$SITEMAP_OUTPUT"
+robots_path="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$ROBOTS_OUTPUT"
+sitemap_url="$(site_file_url_for_path "${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$SITEMAP_OUTPUT")"
+
+mkdir -p "$(dirname "$sitemap_path")"
+{
+  printf '<?xml version="1.0" encoding="UTF-8"?>\n'
+  printf '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+  for sitemap_entry in "${sitemap_entries[@]}"; do
+    IFS='|' read -r sitemap_loc sitemap_lastmod sitemap_changefreq sitemap_priority <<< "$sitemap_entry"
+    printf '  <url>\n'
+    printf '    <loc>%s</loc>\n' "$(xml_escape "$sitemap_loc")"
+    printf '    <lastmod>%s</lastmod>\n' "$(xml_escape "$sitemap_lastmod")"
+    printf '    <changefreq>%s</changefreq>\n' "$(xml_escape "$sitemap_changefreq")"
+    printf '    <priority>%s</priority>\n' "$(xml_escape "$sitemap_priority")"
+    printf '  </url>\n'
+  done
+  printf '</urlset>\n'
+} > "$sitemap_path"
+echo "🔨🤠 GENERATED SITEMAP: $sitemap_path"
+
+mkdir -p "$(dirname "$robots_path")"
+{
+  printf 'User-agent: *\n'
+  printf 'Allow: /\n\n'
+  printf 'Sitemap: %s\n' "$sitemap_url"
+} > "$robots_path"
+echo "🔨🤠 GENERATED ROBOTS: $robots_path"
