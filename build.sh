@@ -73,6 +73,7 @@ ROBOTS_OUTPUT="${ROBOTS_OUTPUT:-robots.txt}"
 ARCHIVE_OUTPUT_DIRECTORY="${ARCHIVE_OUTPUT_DIRECTORY:-archive}"
 TWITTER_HANDLE="${TWITTER_HANDLE:-${X_HANDLE:-}}"
 X_HANDLE="${X_HANDLE:-$TWITTER_HANDLE}"
+SSG_HIDDEN_STYLE="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
 
 site_url_for_path() {
   local path="$1"
@@ -131,6 +132,12 @@ xml_escape() {
   html_escape "$1"
 }
 
+explicit_article_description_from_file() {
+  local filepath="$1"
+
+  sed -n -E 's/^[[:space:]]*<!--[[:space:]]*ssg:description[[:space:]]+(.+)-->[[:space:]]*$/\1/p' "$filepath" | head -n 1 | sed -E 's/[[:space:]]+$//' | cut -c1-160
+}
+
 file_lastmod() {
   local file="$1"
   local fallback
@@ -164,10 +171,9 @@ build_article_breadcrumbs() {
   local breadcrumbs
   local current_path=""
   local segment label href
-  local hidden_style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
 
   parent_path="$(dirname "$slug")"
-  breadcrumbs='<nav aria-label="Breadcrumb" style="'"$hidden_style"'"><a href="/" tabindex="-1">Home</a>'
+  breadcrumbs='<nav aria-label="Breadcrumb" style="'"$SSG_HIDDEN_STYLE"'"><a href="/" tabindex="-1">Home</a>'
 
   if [ "$parent_path" != "." ] && [ -n "$parent_path" ]; then
     IFS='/' read -r -a segments <<< "$parent_path"
@@ -194,7 +200,6 @@ build_related_work() {
   local parent_dir candidate candidate_base filename_cleansed candidate_cleansed
   local candidate_path_relative candidate_slug candidate_title candidate_href candidate_description
   local items="" count=0
-  local hidden_style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;"
 
   parent_dir="$(dirname "$current_path_relative")"
   [ "$parent_dir" = "." ] && return 0
@@ -232,7 +237,64 @@ build_related_work() {
 
   [ "$count" -eq 0 ] && return 0
 
-  printf '%s' '<section aria-label="Related work" style="'"$hidden_style"'"><h2>Related work</h2><ul>'"$items"'</ul></section>'
+  printf '%s' '<section aria-label="Related work" style="'"$SSG_HIDDEN_STYLE"'"><h2>Related work</h2><ul>'"$items"'</ul></section>'
+}
+
+preprocess_seo_content_blocks() {
+  local source="$1"
+  local target="$2"
+  local line label label_attr in_block=false
+
+  : > "$target"
+
+  while IFS= read -r line || [ -n "$line" ]; do
+    if [[ "$line" =~ ^[[:space:]]*\<\!--[[:space:]]*ssg:description[[:space:]].*--\>[[:space:]]*$ ]]; then
+      continue
+    fi
+
+    if [[ "$line" =~ ^::seo-content\[([^]]*)\][[:space:]]*$ ]]; then
+      if [ "$in_block" = true ]; then
+        echo "ERROR: Nested seo-content blocks are not supported in '$source'."
+        exit 1
+      fi
+      label="${BASH_REMATCH[1]}"
+      label_attr=' aria-label="'"$(html_escape "$label")"'"'
+      printf '<section class="ssg-seo-content"%s style="%s">\n' "$label_attr" "$SSG_HIDDEN_STYLE" >> "$target"
+      in_block=true
+      continue
+    fi
+
+    if [[ "$line" =~ ^::seo-content[[:space:]]*$ ]]; then
+      if [ "$in_block" = true ]; then
+        echo "ERROR: Nested seo-content blocks are not supported in '$source'."
+        exit 1
+      fi
+      printf '<section class="ssg-seo-content" style="%s">\n' "$SSG_HIDDEN_STYLE" >> "$target"
+      in_block=true
+      continue
+    fi
+
+    if [[ "$line" =~ ^::/seo-content[[:space:]]*$ ]]; then
+      if [ "$in_block" = false ]; then
+        echo "ERROR: Found closing seo-content marker without an opening marker in '$source'."
+        exit 1
+      fi
+      printf '</section>\n<!-- /ssg-seo-content -->\n' >> "$target"
+      in_block=false
+      continue
+    fi
+
+    printf '%s\n' "$line" >> "$target"
+  done < "$source"
+
+  if [ "$in_block" = true ]; then
+    echo "ERROR: Unclosed seo-content block in '$source'."
+    exit 1
+  fi
+}
+
+disable_hidden_content_links() {
+  perl -0pe 's{(<section\b(?=[^>]*\bclass="[^"]*\bssg-seo-content\b[^"]*")[^>]*>.*?</section>)}{my $section = $1; $section =~ s/<a\b(?![^>]*\btabindex=)/<a tabindex="-1"/g; $section;}gse'
 }
 
 # Ignore patterns (from .gitignore + optional .ssgignore / ..ssgignore)
@@ -733,6 +795,7 @@ while read -r filepath; do
   output_path="$output_directory/index.html"
   page_title="$title$PAGE_TITLE_SUFFIX"
   url="$(site_url_for_path "${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$slug")"
+  explicit_description="$(explicit_article_description_from_file "$filepath")"
   # Extract First Non-Empty Line
   first_line=$(grep -m 1 '.' "$filepath")
   # Limit First Non-Empty Line to 160 Characters (Meta Description Limit)
@@ -754,6 +817,9 @@ while read -r filepath; do
     article_descriptions["$output_directory"]="$description"
   else
     meta_image="$DEFAULT_META_IMAGE"
+  fi
+  if [ -n "$explicit_description" ]; then
+    description="$explicit_description"
   fi
   # Mark the Article as Hidden if its Original Filename Started with ~
   hidden_articles["$output_directory"]="$hidden"
@@ -784,8 +850,11 @@ while read -r filepath; do
     exit 1
   fi
 
+  # Preprocess hidden SEO content blocks and metadata comments.
+  preprocess_seo_content_blocks "$filepath" "$preprocessed"
+
   # Preprocess Embedded iFrames @[height](url)
-  sed -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$filepath" > "$preprocessed"
+  sed -i "" -E "s|@\[([^]]+)\]\(([^)]+)\)|${HTML_IFRAME}|g" "$preprocessed"
 
   # Preprocess Download Links +[alt](url "title")
   sed -i "" -E 's|\+\[([^]]+)\]\(([^ ]+) "([^"]+)"\)|'"$HTML_DOWNLOAD_LINK"'|g' "$preprocessed"
@@ -804,6 +873,8 @@ while read -r filepath; do
 
   # Process the Markdown Article
   body=$(pandoc "$preprocessed")
+  body="${body//<!-- \/ssg-seo-content -->/}"
+  body=$(printf '%s' "$body" | disable_hidden_content_links)
   rm "$preprocessed"
 
   layout_template="$(read_page_layout_template "$slug" "$HTML_ARTICLE_LAYOUT_FILENAME")"

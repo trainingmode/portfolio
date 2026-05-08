@@ -481,6 +481,36 @@ _Example:_
 ~[autoplay muted loop playsinline width="1080"](/video.mp4 "video/mp4")
 ```
 
+### `::seo-content[label]` **Hidden SEO Content**
+
+Sections can be wrapped as visually hidden, crawlable content using opening and closing block markers.
+
+The block is rendered with the same hidden behavior used by breadcrumbs and related work. Links inside the block are automatically removed from the tab order.
+
+_Example:_
+
+```
+::seo-content[Canonical biography]
+
+# Alfred R. Duarte
+
+Founder, CEO, Principal Engineer & Designer
+
+Alfred R. Duarte is a founder, principal engineer, and designer.
+
+::/seo-content
+```
+
+### `<!-- ssg:description text -->` **Article Description Override**
+
+Article metadata can be given an explicit description without adding visible page content.
+
+_Example:_
+
+```
+<!-- ssg:description Alfred R. Duarte is a founder, principal engineer, and designer. -->
+```
+
 ## Article Listing Special Symbols
 
 You can prefix special symbols to the start of the filename of an **`Article`** to change its rendering behavior.
