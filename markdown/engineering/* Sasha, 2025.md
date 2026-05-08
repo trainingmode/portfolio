@@ -6,7 +6,7 @@
 
 > **April 2025**
 
-### [[**View on GitHub ↗**](https://github.com/trainingmode/portfolio "GitHub — Sasha: Micro static site generator.")]{.highlight}
+### [[**View on GitHub ↗**](https://github.com/trainingmode/portfolio "GitHub — Sasha — Static Site Generator"){target="_blank"}]{.highlight}
 
 A simple system for writing articles and generating sites that are effortless to maintain.
 
@@ -47,6 +47,6 @@ The **template system** uses **`{{ }}` Replacement Tags** to inject content into
 </html>
 ```
 
-The [project **`README`**](https://github.com/trainingmode/portfolio?tab=readme-ov-file#templates "trainingmode/portfolio: Micro static site generator.") contains complete documentation for the **template system**.
+The [project **`README`**](https://github.com/trainingmode/portfolio?tab=readme-ov-file#templates "Templates — trainingmode/portfolio: Micro static site generator."){target="_blank"} contains complete documentation for the **template system**.
 
 ---

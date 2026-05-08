@@ -8,11 +8,11 @@ I'm **Alfred**.
 
 ---
 
-I serve as **Chief Polymorphic, Product & Platform Officer** (C³PO) at [Labs Companies, Inc.](https://labscompanies.com/){target="_blank"}
-
-I unify engineering, design, and applied services.  
-I bridge design intent and code execution.  
+I unify [engineering](/engineering "Engineering | Alfred R. Duarte"), [design](/design "Design | Alfred R. Duarte"), and applied systems.  
+I turn design intent into production code.  
 I architect foundational infrastructure.
+
+#### I've helped build a [[**unicorn**](https://labsnewsroom.com/newsroom/writings/seriesseed2 "$22.5M + $35M Series Seed I & II at $12.6B"){target="_blank"}]{.highlight} from scratch.
 
 ---
 
