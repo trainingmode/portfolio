@@ -1351,11 +1351,9 @@ I'm **Alfred**.
 
 ---
 
-I unify [engineering](/engineering "Engineering | Alfred R. Duarte"), [design](/design "Design | Alfred R. Duarte"), and applied systems.  
-I turn design intent into production code.  
-I architect foundational infrastructure.
 
-#### I've helped build a [[**unicorn**](https://labsnewsroom.com/newsroom/writings/seriesseed2 "$22.5M + $35M Series Seed I & II at $12.6B"){target="_blank"}]{.highlight} from scratch.
+
+#### I [helped build](https://labsnewsroom.com/newsroom/writings/labscareers/welcomealfred "Welcome to the Tube: Alfred!"){target="_blank"} a [[**unicorn company**](https://www.investopedia.com/investing/10-biggest-start-ups-valuation-recode/#:~:text=raised%20$61.5%20million%20in%20venture%20funding%20and%20had%20a%20post%2Dvaluation%20of%20$12.5%20billion "Investopedia — These Are the 10 Biggest U.S. Startups by Valuation"){target="_blank"}]{.highlight} from scratch.
 
 ---
 
