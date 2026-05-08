@@ -16,8 +16,7 @@ I architect foundational infrastructure.
 
 ---
 
-My adaptability is in service of those around me.
-
-🌊 🎹 💻
-
-.
+>[/public/icons/linkedin.svg](https://www.linkedin.com/in/alfredrd/ "LinkedIn - Alfred R. Duarte")
+>[/public/icons/crunchbase.svg](https://www.crunchbase.com/person/alfred-r-duarte "Crunchbase - Alfred R. Duarte")
+>[/public/icons/theorg.svg](https://theorg.com/org/analog-designs/org-chart/alfred-r-duarte "The Org - Alfred R. Duarte")
+>[/public/icons/google.svg](https://www.google.com/search?q=Alfred+R.+Duarte&kgmid=/g/11vjym_mtk "Google Search Profile - Alfred R. Duarte")

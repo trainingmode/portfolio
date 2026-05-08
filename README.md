@@ -430,6 +430,18 @@ _Example:_
 [Email Me](mailto:alfred.r.duarte@gmail.com "Email Alfred R. Duarte")
 ```
 
+### `>[icon link](url "title")` **Social Link**
+
+Profile links can be embedded as bare linked images using an icon link, URL, and accessible title.
+
+The `social-link.frag.html` **Social Link Component HTML Template** is used to render the parsed social link.
+
+_Example:_
+
+```
+>[/public/icons/linkedin.svg](https://www.linkedin.com/in/alfredrd/ "LinkedIn - Alfred R. Duarte")
+```
+
 ### `@[size](link)` **iFrame**
 
 iFrames can be embedded directly inside articles using a link and a display size.
@@ -659,6 +671,22 @@ The email link template is used to render the **`[alt](mailto:link "title")` Ema
 - `{{ EMAIL_LINK_TITLE }}`
 
   The `title` attribute of the email link.
+
+### `social-link.frag.html`
+
+The social link template is used to render the **`>[icon link](url "title")` Social Link** component.
+
+- `{{ SOCIAL_LINK_ICON_SRC }}`
+
+  The image or icon `src` used by the social link.
+
+- `{{ SOCIAL_LINK_SRC }}`
+
+  The `href` attribute of the social link.
+
+- `{{ SOCIAL_LINK_TITLE }}`
+
+  The accessible label and `title` attribute of the social link.
 
 ### `iframe.frag.html`
 

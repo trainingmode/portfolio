@@ -228,6 +228,7 @@ HTML_DIRECTORY_PINNED_ARTICLE_FILENAME="listing-pinned.frag.html"
 HTML_DIRECTORY_FOLDER_FILENAME="listing-folder.frag.html"
 HTML_DOWNLOAD_LINK_FILENAME="download-link.frag.html"
 HTML_EMAIL_LINK_FILENAME="email-link.frag.html"
+HTML_SOCIAL_LINK_FILENAME="social-link.frag.html"
 HTML_IFRAME_FILENAME="iframe.frag.html"
 HTML_IMG_COMPARISON_FILENAME="img-compare.frag.html"
 HTML_VIDEO_FILENAME="video.frag.html"
@@ -413,6 +414,22 @@ HTML_EMAIL_LINK="${HTML_EMAIL_LINK//\{\{EMAIL_LINK_ALT\}\}/\\1}"
 HTML_EMAIL_LINK="${HTML_EMAIL_LINK//\{\{EMAIL_LINK_SRC\}\}/\\2}"
 HTML_EMAIL_LINK="${HTML_EMAIL_LINK//\{\{EMAIL_LINK_TITLE\}\}/\\3}"
 
+HTML_SOCIAL_LINK_FILE="${TEMPLATE_DIRECTORY}/${HTML_SOCIAL_LINK_FILENAME}"
+if [ ! -f "$HTML_SOCIAL_LINK_FILE" ]; then
+  echo "ERROR: Social link template '$HTML_SOCIAL_LINK_FILE' does not exist."
+  exit 1
+fi
+HTML_SOCIAL_LINK=$(<"$HTML_SOCIAL_LINK_FILE")
+if [ -z "$HTML_SOCIAL_LINK" ]; then
+  echo "ERROR: Social link template is empty."
+  exit 1
+fi
+HTML_SOCIAL_LINK=$(tr -d '\n' < "$HTML_SOCIAL_LINK_FILE") # Strip Newlines for sed RegEx Replacement
+HTML_SOCIAL_LINK="${HTML_SOCIAL_LINK//&/\\&}" # Escape All & Ampersands for sed RegEx Replacement
+# Substitute {{SOCIAL_LINK_ICON_SRC}}, {{SOCIAL_LINK_SRC}}, & {{SOCIAL_LINK_TITLE}} in the Social Link HTML Template for the sed RegEx Replacement
+HTML_SOCIAL_LINK="${HTML_SOCIAL_LINK//\{\{SOCIAL_LINK_ICON_SRC\}\}/\\1}"
+HTML_SOCIAL_LINK="${HTML_SOCIAL_LINK//\{\{SOCIAL_LINK_SRC\}\}/\\2}"
+HTML_SOCIAL_LINK="${HTML_SOCIAL_LINK//\{\{SOCIAL_LINK_TITLE\}\}/\\3}"
 
 HTML_IFRAME_FILE="${TEMPLATE_DIRECTORY}/${HTML_IFRAME_FILENAME}"
 if [ ! -f "$HTML_IFRAME_FILE" ]; then
@@ -474,6 +491,12 @@ declare -A generated_directories
 
 if [ -n "$OUTPUT_DIRECTORY" ]; then
   mkdir -p "$OUTPUT_DIRECTORY"
+fi
+
+if [ -n "$LLM_OUTPUT" ]; then
+  llm_out_path="${OUTPUT_DIRECTORY:+$OUTPUT_DIRECTORY/}$LLM_OUTPUT"
+  mkdir -p "$(dirname "$llm_out_path")"
+  : > "$llm_out_path"
 fi
 
 while read -r filepath; do
@@ -576,6 +599,9 @@ while read -r filepath; do
 
   # Preprocess Email Links [alt](mailto:url "title")
   sed -i "" -E 's|\[([^]]+)\]\(mailto:([^ ]+) "([^"]+)"\)|'"$HTML_EMAIL_LINK"'|g' "$preprocessed"
+
+  # Preprocess Social Links >[icon link](url "title")
+  sed -i "" -E 's|>\[([^]]+)\]\(([^ ]+) "([^"]+)"\)|'"$HTML_SOCIAL_LINK"'|g' "$preprocessed"
 
   # Preprocess Embedded Image Comparisons %[alt](url)\n%[alt](url) (Use N; to Match Multiple Lines)
   sed -i "" -E "N;s|%\[([^]]+)\]\(([^)]+)\)\n%\[([^]]+)\]\(([^)]+)\)|${HTML_IMG_COMPARISON}|g" "$preprocessed"
